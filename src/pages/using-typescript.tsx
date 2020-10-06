@@ -5,7 +5,7 @@ import { PageProps, Link, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 
-type DataProps = {
+interface DataProps {
   site: {
     buildTime: string
   }

@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import * as styles from "./logo.module.scss"
 
-function Logo() {
+const Logo: React.FC = () => {
   return (
     <Link to={`/`}>
       <span className={styles.hidden}>Brian Phillips</span>
