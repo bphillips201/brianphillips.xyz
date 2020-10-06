@@ -1,0 +1,22 @@
+body {
+  font-family: $fonts-base;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fonts-fancy;
+  font-weight: 700;
+}
+
+a {
+  color: $brand-dark;
+}
+
+p {
+  line-height: 1.55;
+}

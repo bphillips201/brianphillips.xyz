@@ -38,6 +38,21 @@ module.exports = {
       },
     },
     `gatsby-plugin-scss-typescript`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Barlow`,
+            variants: [`700`],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`, `400i`, `700i`],
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

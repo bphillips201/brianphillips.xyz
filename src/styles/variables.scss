@@ -1,0 +1,43 @@
+// Colors
+
+$black: #151a1f;
+$baseDark: #21272f;
+$lightBlue: #90b5ea;
+$strongBlue: #2275d3;
+$softDark: #464f5c;
+
+$text-color: #373737;
+$brand-dark: #415065;
+$navy: #5a6f8c;
+$gray: #d8d8d8;
+$light-gray: #dcdcdc;
+$soft-gray: #f5f5f5;
+$body-bg: #fff;
+$selection-bg: #04a4cc;
+$darkGradientEnd: $softDark;
+$darkGradientStart: $baseDark;
+
+// Spacing
+
+$base: 8px;
+$base2X: $base * 2;
+$base3X: $base * 3;
+$base4X: $base * 4;
+
+$wrapper-width: 1200;
+$wrapper-thin-width: 800px;
+$wrapper-small-width: 700px;
+
+// Fonts
+
+$fonts-base: "Open Sans", Arial, Helvetica, sans-serif;
+$fonts-fancy: "Barlow", Georgia, "Times New Roman", Times, serif;
+
+// Mixins
+
+@mixin alt-font($letter-spacing) {
+  font-family: $fonts-base;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: #{$letter-spacing}px;
+}

@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .logo {
   position: relative;
   width: 32px;
@@ -22,7 +24,7 @@
 .bottomRight {
   height: 16px;
   width: 16px;
-  background: #415065;
+  background: $brand-dark;
   border-radius: 50%;
   position: absolute;
   opacity: 0;
