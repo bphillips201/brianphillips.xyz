@@ -18,20 +18,8 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             id
             slug
-            title
-            publishDate
-            heroImage {
-              description
-              file {
-                url
-              }
-            }
-            content {
-              content
-            }
           }
         }
-        totalCount
       }
     }
   `).then(result => {
@@ -48,7 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: p.slug,
         component: path.resolve("src/templates/post.tsx"),
         context: {
-          page: p,
+          id: p.id,
         },
       })
     })
