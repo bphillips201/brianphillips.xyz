@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import CustomMarkdown from "../components/customMarkdown"
+import Tags from "../components/tags/tags"
 
 type TPostProps = {
   contentfulBlogPost: {
@@ -28,14 +29,12 @@ type TPostProps = {
 const PostTemplate: React.FC<PageProps<TPostProps>> = ({ data }) => {
   const { content, heroImage, tags, title } = data.contentfulBlogPost
 
-  console.log(heroImage)
-
   return (
     <Layout>
       <SEO title={title} />
-      <div>{tags.join(" • ")}</div>
-      <Img alt={heroImage.description} fluid={heroImage.fluid} />
+      <Tags tags={tags} />
       <h1>{title}</h1>
+      <Img alt={heroImage.description} fluid={heroImage.fluid} />
       <CustomMarkdown>{content.content}</CustomMarkdown>
     </Layout>
   )
