@@ -6,6 +6,8 @@ import Img from "gatsby-image"
 import CustomMarkdown from "../components/customMarkdown"
 import Tags from "../components/tags/tags"
 
+import * as styles from "../components/postLayout/postLayout.module.scss"
+
 type TPostProps = {
   contentfulBlogPost: {
     content: {
@@ -32,10 +34,18 @@ const PostTemplate: React.FC<PageProps<TPostProps>> = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <Tags tags={tags} />
-      <h1>{title}</h1>
-      <Img alt={heroImage.description} fluid={heroImage.fluid} />
-      <CustomMarkdown>{content.content}</CustomMarkdown>
+      <article className={styles.article}>
+        <div className={styles.postMeta}>
+          <Tags tags={tags} />
+          <h1>{title}</h1>
+        </div>
+
+        <Img alt={heroImage.description} fluid={heroImage.fluid} />
+
+        <div className={styles.content}>
+          <CustomMarkdown>{content.content}</CustomMarkdown>
+        </div>
+      </article>
     </Layout>
   )
 }

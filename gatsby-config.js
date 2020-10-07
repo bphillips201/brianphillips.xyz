@@ -45,11 +45,11 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Barlow`,
-            variants: [`700`],
+            family: `Piazzolla`,
+            variants: [`600`],
           },
           {
-            family: `Open Sans`,
+            family: `Source Sans Pro`,
             variants: [`400`, `700`, `400i`, `700i`],
           },
         ],
