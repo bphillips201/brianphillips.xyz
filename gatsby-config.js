@@ -45,7 +45,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Piazzolla`,
+            family: `Work Sans`,
             variants: [`600`],
           },
           {
