@@ -1,12 +1,34 @@
 import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import CustomMarkdown from "../components/customMarkdown"
 
-const PostTemplate = ({ data }: any) => {
+type TPostProps = {
+  contentfulBlogPost: {
+    content: {
+      content: string
+    }
+    tags: Array<string>
+    title: string
+    heroImage: {
+      description: string
+      fluid: {
+        aspectRatio: number
+        base64: string
+        sizes: string
+        src: string
+        srcSet: string
+      }
+    }
+  }
+}
+
+const PostTemplate: React.FC<PageProps<TPostProps>> = ({ data }) => {
   const { content, heroImage, tags, title } = data.contentfulBlogPost
+
+  console.log(heroImage)
 
   return (
     <Layout>

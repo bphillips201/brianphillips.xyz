@@ -23,13 +23,10 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+    if (result.errors) return Promise.reject(result.errors)
 
     const { allContentfulBlogPost } = result.data
-    const postNodes = allContentfulBlogPost.edges
-    const posts = postNodes.map(n => n.node)
+    const posts = allContentfulBlogPost.edges.map(n => n.node)
 
     posts.forEach(p => {
       createPage({
