@@ -1,4 +1,4 @@
-export type THeroImage = {
+export type TImage = {
   description: string
   fluid: {
     aspectRatio: number
@@ -21,10 +21,10 @@ export type TPost = {
     tags: Array<string>
     title: string
     slug: string
-    featuredPost: boolean
-    readFirst: boolean
+    isFeatured: boolean
+    isFirstFeatured: boolean
     publishedDate: Date
-    heroImage: THeroImage
+    heroImage: TImage
     content: {
       content: string
     }
