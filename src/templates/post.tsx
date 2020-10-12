@@ -7,28 +7,9 @@ import CustomMarkdown from "../components/customMarkdown"
 import Tags from "../components/tags/tags"
 
 import * as styles from "../components/postLayout/postLayout.module.scss"
+import { TPost } from "../utils/constants"
 
-type TPostProps = {
-  contentfulBlogPost: {
-    content: {
-      content: string
-    }
-    tags: Array<string>
-    title: string
-    heroImage: {
-      description: string
-      fluid: {
-        aspectRatio: number
-        base64: string
-        sizes: string
-        src: string
-        srcSet: string
-      }
-    }
-  }
-}
-
-const PostTemplate: React.FC<PageProps<TPostProps>> = ({ data }) => {
+const PostTemplate: React.FC<PageProps<TPost>> = ({ data }) => {
   const { content, heroImage, tags, title } = data.contentfulBlogPost
 
   return (

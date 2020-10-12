@@ -62,7 +62,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
         environment:
-          process.env.NODE_ENV === "development" ? "development" : "master",
+          process.env.NODE_ENV === "development" ? "master" : "master",
       },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,

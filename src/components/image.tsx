@@ -30,8 +30,6 @@ const Image: React.FC = () => {
     return <div>Picture not found</div>
   }
 
-  console.log(data.placeholderImage.childImageSharp.fluid)
-
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
