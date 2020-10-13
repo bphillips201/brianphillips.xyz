@@ -5,10 +5,11 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { TPostList } from "../utils/constants"
 import language from "../utils/language"
+import Tag from "../components/tags/tags"
 
 const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
   const allPosts = data.allContentfulBlogPost.edges.map(n => n.node)
-  const featuredPosts = allPosts.filter(p => p.isFeatured)
+  const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 4)
   const latestPosts = allPosts.slice(0, 5)
 
   return (
@@ -18,9 +19,7 @@ const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
         <h3>{language.homePage.featuredWriting}</h3>
         {featuredPosts.map(post => (
           <div key={post.id}>
-            <Link to={post.slug}>
-              <h4>{post.title}</h4>
-            </Link>
+            <Link to={post.slug}>{post.title}</Link>
           </div>
         ))}
       </section>
@@ -29,9 +28,8 @@ const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
         <h3>{language.homePage.latestPosts}</h3>
         {latestPosts.map(post => (
           <div key={post.id}>
-            <Link to={post.slug}>
-              <h4>{post.title}</h4>
-            </Link>
+            <Tag tags={post.tags} />
+            <Link to={post.slug}>{post.title}</Link>
           </div>
         ))}
       </section>
