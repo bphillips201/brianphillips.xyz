@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  padding: 6rem 2.4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  flex: 1;
+  text-align: center;
+  margin: 4.2rem 0;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    text-decoration: none;
+    color: $black;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    margin: 0 1rem;
+  }
+}
+
+.copyright {
+  font-size: 1.2rem;
+}
