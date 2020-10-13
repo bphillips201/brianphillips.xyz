@@ -7,9 +7,7 @@ import language from "../../utils/language"
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div>
-        <Logo />
-      </div>
+      <Logo />
 
       <nav className={styles.nav}>
         <ul>

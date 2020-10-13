@@ -27,7 +27,7 @@ const language: TLanguage = {
   global: {
     darkToggle: "Switch to Dark Mode",
     lightToggle: "Switch to Light Mode",
-    copyright: `Copyright © ${new Date().getFullYear()} Brian Phillips`,
+    copyright: `© ${new Date().getFullYear()} Brian Phillips`,
   },
   homePage: {
     featuredWriting: "Featured Writing",

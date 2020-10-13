@@ -7,22 +7,34 @@ import { TPostList } from "../utils/constants"
 import language from "../utils/language"
 
 const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
-  const posts = data.allContentfulBlogPost.edges.map(n => n.node)
-  const featuredPosts = posts.filter(p => p.isFeatured)
-  const firstRead = posts.filter(p => p.isFirstFeatured)[0]
+  const allPosts = data.allContentfulBlogPost.edges.map(n => n.node)
+  const featuredPosts = allPosts.filter(p => p.isFeatured)
+  const latestPosts = allPosts.slice(0, 5)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <h3>{language.homePage.featuredWriting}</h3>
-      {featuredPosts.map(post => (
-        <div key={post.id}>
-          <Link to={post.slug}>
-            <div></div>
-            <h4>{post.title}</h4>
-          </Link>
-        </div>
-      ))}
+      <section>
+        <h3>{language.homePage.featuredWriting}</h3>
+        {featuredPosts.map(post => (
+          <div key={post.id}>
+            <Link to={post.slug}>
+              <h4>{post.title}</h4>
+            </Link>
+          </div>
+        ))}
+      </section>
+
+      <section>
+        <h3>{language.homePage.latestPosts}</h3>
+        {latestPosts.map(post => (
+          <div key={post.id}>
+            <Link to={post.slug}>
+              <h4>{post.title}</h4>
+            </Link>
+          </div>
+        ))}
+      </section>
     </Layout>
   )
 }
