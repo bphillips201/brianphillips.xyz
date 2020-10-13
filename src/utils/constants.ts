@@ -23,7 +23,7 @@ export type TPost = {
     slug: string
     isFeatured: boolean
     isFirstFeatured: boolean
-    publishedDate: Date
+    publishDate: Date
     heroImage: TImage
     content: {
       content: string

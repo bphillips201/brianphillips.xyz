@@ -8,9 +8,9 @@ import language from "../utils/language"
 import Tag from "../components/tags/tags"
 
 const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
-  const allPosts = data.allContentfulBlogPost.edges.map(n => n.node)
+  const allPosts = data.allContentfulBlogPost.edges.map(n => n.node);
   const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 4)
-  const latestPosts = allPosts.slice(0, 5)
+  const latestPosts = allPosts.slice(0, 8)
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ export default IndexPage
 
 export const postQuery = graphql`
   query {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: {fields: publishDate, order: DESC}) {
       edges {
         node {
           id
