@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, PageProps, graphql } from "gatsby"
-
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { TPostList } from "../utils/constants"
 import language from "../utils/language"
 import Tag from "../components/tags/tags"
+import Wrapper from "../components/wrapper/wrapper"
 
 const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
   const allPosts = data.allContentfulBlogPost.edges.map(n => n.node);
@@ -15,24 +15,24 @@ const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section>
-        <h3>{language.homePage.featuredWriting}</h3>
-        {featuredPosts.map(post => (
-          <div key={post.id}>
-            <Link to={post.slug}>{post.title}</Link>
-          </div>
-        ))}
-      </section>
+        <Wrapper color="gray" className="featuredWriting">
+          <div>{language.homePage.featuredWriting}</div>
+          {featuredPosts.map(post => (
+            <div key={post.id}>
+              <Link to={post.slug}>{post.title}</Link>
+            </div>
+          ))}
+        </Wrapper>
 
-      <section>
-        <h3>{language.homePage.latestPosts}</h3>
-        {latestPosts.map(post => (
-          <div key={post.id}>
-            <Tag tags={post.tags} />
-            <Link to={post.slug}>{post.title}</Link>
-          </div>
-        ))}
-      </section>
+        <Wrapper>
+          <div>{language.homePage.latestPosts}</div>
+          {latestPosts.map(post => (
+            <div key={post.id}>
+              <Tag tags={post.tags} />
+              <Link to={post.slug}>{post.title}</Link>
+            </div>
+          ))}
+        </Wrapper>
     </Layout>
   )
 }

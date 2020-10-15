@@ -1,12 +1,11 @@
 @import "../../styles/variables.scss";
 
 .header {
-  background: white;
-  padding: 24px;
   position: relative;
   display: flex;
-  // border-bottom: 1px solid $soft-gray;
+  width: 100%;
   align-items: center;
+  z-index: 1;
 }
 
 .logo {

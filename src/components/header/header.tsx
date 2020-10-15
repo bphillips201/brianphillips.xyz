@@ -2,10 +2,11 @@ import React from "react"
 import Logo from "../logo/logo"
 import { Link } from "gatsby"
 import * as styles from "./header.module.scss"
+import Wrapper from "../wrapper/wrapper"
 
 const Header: React.FC = () => {
   return (
-    <header className={styles.header}>
+    <Wrapper as="header" width="full" className={styles.header}>
       <div className={styles.logo}>
         <Logo />
       </div>
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </Wrapper>
   )
 }
 

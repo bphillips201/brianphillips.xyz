@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.wrapper {
+  margin: 0 auto;
+  padding: 3.2rem;
+  position: relative;
+
+  &.full {
+    max-width: 100%;
+  }
+
+  &.wrap {
+    max-width: $wrapper-width;
+  }
+
+  &.content {
+    max-width: $wrapper-width-content;
+  }
+
+  &.thin {
+    max-width: $wrapper-width-thin;
+  }
+}
+
+.chunk {
+  margin: 0;
+  padding: 0;
+
+  &.white {
+    background-color: white;
+  }
+
+  &.gray {
+    background-color: $soft-gray;
+  }
+}

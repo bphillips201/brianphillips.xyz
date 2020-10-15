@@ -24,20 +24,11 @@ $base2X: $base * 2;
 $base3X: $base * 3;
 $base4X: $base * 4;
 
-$wrapper-width: 1200;
-$wrapper-thin-width: 800px;
-$wrapper-small-width: 700px;
+$wrapper-width: 1200px;
+$wrapper-width-content: 900px;
+$wrapper-width-thin: 680px;
 
 // Fonts
 
 $fonts-base: "Source Sans Pro", Arial, Helvetica, sans-serif;
 $fonts-fancy: "Work Sans", $fonts-base;
-
-// Mixins
-
-@mixin alt-font($letter-spacing) {
-  font-family: $fonts-base;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: #{$letter-spacing}px;
-}

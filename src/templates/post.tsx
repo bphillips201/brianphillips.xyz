@@ -5,9 +5,9 @@ import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import CustomMarkdown from "../components/customMarkdown"
 import Tags from "../components/tags/tags"
-
-import * as styles from "../components/postLayout/postLayout.module.scss"
 import { TPost } from "../utils/constants"
+import Wrapper from "../components/wrapper/wrapper"
+import * as styles from "../components/layout/layout.module.scss"
 
 const PostTemplate: React.FC<PageProps<TPost>> = ({ data }) => {
   const { content, heroImage, tags, title } = data.contentfulBlogPost
@@ -15,7 +15,7 @@ const PostTemplate: React.FC<PageProps<TPost>> = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <article className={styles.article}>
+      <Wrapper width="content" as="article">
         <div className={styles.postMeta}>
           <Tags tags={tags} />
           <h1>{title}</h1>
@@ -23,10 +23,10 @@ const PostTemplate: React.FC<PageProps<TPost>> = ({ data }) => {
 
         <Img alt={heroImage.description} fluid={heroImage.fluid} />
 
-        <div className={styles.content}>
+        <Wrapper width="thin" className={styles.content}>
           <CustomMarkdown>{content.content}</CustomMarkdown>
-        </div>
-      </article>
+        </Wrapper>
+      </Wrapper>
     </Layout>
   )
 }
@@ -42,14 +42,7 @@ export const postQuery = graphql`
       }
       heroImage {
         description
-        fluid(
-          toFormat: JPG
-          resizingBehavior: FILL
-          maxWidth: 1000
-          cropFocus: CENTER
-          maxHeight: 500
-          quality: 75
-        ) {
+        fluid {
           ...GatsbyContentfulFluid
         }
       }
