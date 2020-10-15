@@ -15,7 +15,7 @@ const IndexPage: React.FC<PageProps<TPostList>> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-        <Wrapper color="gray" className="featuredWriting">
+        <Wrapper color="gray">
           <div>{language.homePage.featuredWriting}</div>
           {featuredPosts.map(post => (
             <div key={post.id}>
