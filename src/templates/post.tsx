@@ -42,7 +42,14 @@ export const postQuery = graphql`
       }
       heroImage {
         description
-        fluid {
+        fluid(
+          toFormat: JPG
+          resizingBehavior: FILL
+          maxWidth: 1000
+          cropFocus: CENTER
+          maxHeight: 500
+          quality: 90
+        ) {
           ...GatsbyContentfulFluid
         }
       }
