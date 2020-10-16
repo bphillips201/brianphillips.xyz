@@ -16,14 +16,14 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
     <Layout>
       <SEO title={title} />
       <Wrapper width="content" as="article">
-        <div className={styles.postMeta}>
+        <Wrapper padX={false} width="thin" className={styles.postMeta}>
           <Category cat={category} />
           <h1>{title}</h1>
-        </div>
+        </Wrapper>
 
         <Img alt={heroImage.description} fluid={heroImage.fluid} />
 
-        <Wrapper width="thin" className={styles.content}>
+        <Wrapper padX={false} width="thin" className={styles.content}>
           <CustomMarkdown>{content.content}</CustomMarkdown>
         </Wrapper>
       </Wrapper>

@@ -8,7 +8,6 @@ body {
 
 .postMeta {
   position: relative;
-  padding: 3.2rem 0 0.8rem;
 
   &:before {
     content: "";
@@ -27,7 +26,7 @@ body {
   h1 {
     font-size: 4rem;
     line-height: 1.3;
-    margin: 3.2rem 0 5.2rem 0;
+    margin: 3.2rem 0;
     position: relative;
     z-index: 1;
   }

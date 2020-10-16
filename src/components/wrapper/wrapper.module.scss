@@ -2,8 +2,9 @@
 
 .wrapper {
   margin: 0 auto;
-  padding: 3.2rem;
   position: relative;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
 
   &.full {
     max-width: 100%;
@@ -33,4 +34,9 @@
   &.gray {
     background-color: $soft-gray;
   }
+}
+
+.padX {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
 }
