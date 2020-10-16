@@ -9,7 +9,7 @@ type WrapperProps = AllHTMLAttributes<HTMLElement> & {
     as?: ReactNode
 }
 
-const Wrapper: React.FC<WrapperProps> = (props: WrapperProps) => {
+const Wrapper: React.FC<WrapperProps> = props => {
     const { 
         children, 
         className = '', 
