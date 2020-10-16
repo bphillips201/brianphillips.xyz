@@ -50,7 +50,7 @@ module.exports = {
           },
           {
             family: `Source Sans Pro`,
-            variants: [`400`, `700`, `400i`, `700i`],
+            variants: [`400`, `600`, `400i`, `600i`],
           },
         ],
       },

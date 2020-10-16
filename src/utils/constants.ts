@@ -9,26 +9,28 @@ export type TImage = {
   }
 }
 
-export type TPostList = {
+export type TPost = {
+  id: string
+  tags: Array<string>
+  title: string
+  slug: string
+  isFeatured: boolean
+  isFirstFeatured: boolean
+  publishDate: Date
+  heroImage: TImage
+  content: {
+    content: string
+  }  
+}
+
+export type TAllContentfulBlogPosts = {
   [name: string]: {
-    edges: Array<TPost>
+    edges: Array<TContentfulBlogPost>
   }
 }
 
-export type TPost = {
-  [name: string]: {
-    id: string
-    tags: Array<string>
-    title: string
-    slug: string
-    isFeatured: boolean
-    isFirstFeatured: boolean
-    publishDate: Date
-    heroImage: TImage
-    content: {
-      content: string
-    }
-  }
+export type TContentfulBlogPost = {
+  [name: string]: TPost
 }
 
 export type TTag = {
