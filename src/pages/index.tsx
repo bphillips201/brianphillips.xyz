@@ -2,14 +2,14 @@ import React from "react"
 import { Link, PageProps, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import { TAllContentfulBlogPosts } from "../utils/constants"
+import { TAllContentfulPosts } from "../utils/constants"
 import language from "../utils/language"
 import Tag from "../components/tags/tags"
 import Wrapper from "../components/wrapper/wrapper"
 import PostList from "../components/postList/postList"
 
-const IndexPage: React.FC<PageProps<TAllContentfulBlogPosts>> = ({ data }) => {
-  const allPosts = data.allContentfulBlogPost.edges.map(n => n.node);
+const IndexPage: React.FC<PageProps<TAllContentfulPosts>> = ({ data }) => {
+  const allPosts = data.allContentfulPosts.edges.map(n => n.node);
   const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 4)
   const latestPosts = allPosts.slice(0, 8)
 
@@ -37,7 +37,7 @@ export default IndexPage
 
 export const postQuery = graphql`
   query {
-    allContentfulBlogPost(sort: {fields: publishDate, order: DESC}) {
+    allContentfulPosts(sort: {fields: publishDate, order: DESC}) {
       edges {
         node {
           id

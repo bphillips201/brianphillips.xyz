@@ -23,13 +23,13 @@ export type TPost = {
   }  
 }
 
-export type TAllContentfulBlogPosts = {
+export type TAllContentfulPosts = {
   [name: string]: {
-    edges: Array<TContentfulBlogPost>
+    edges: Array<TContentfulPost>
   }
 }
 
-export type TContentfulBlogPost = {
+export type TContentfulPost = {
   [name: string]: TPost
 }
 
