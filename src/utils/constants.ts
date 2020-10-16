@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type TImage = {
   description: string
   fluid: {
@@ -9,9 +11,13 @@ export type TImage = {
   }
 }
 
+export type TTag = {
+  tags: Array<string>
+}
+
 export type TPost = {
   id: string
-  tags: Array<string>
+  category: TCategory
   title: string
   slug: string
   isFeatured: boolean
@@ -20,12 +26,6 @@ export type TPost = {
   heroImage: TImage
   content: {
     content: string
-  }  
-}
-
-export type TAllContentfulPosts = {
-  [name: string]: {
-    edges: Array<TContentfulPost>
   }
 }
 
@@ -33,6 +33,23 @@ export type TContentfulPost = {
   [name: string]: TPost
 }
 
-export type TTag = {
-  tags: Array<string>
+export type TAllContentfulPosts = {
+  allContentfulPosts: {
+    edges: Array<TContentfulPost>
+  }
+}
+
+export type TCategory = {
+  title: string
+  slug: string
+}
+
+export type TContentfulCategories = {
+  [name: string]: TCategory
+}
+
+export type TAllContentfulCategories = {
+  allContentfulCategories: {
+    edges: Array<TContentfulCategories>
+  }
 }

@@ -4,20 +4,21 @@ import SEO from "../components/seo"
 import { graphql, PageProps } from "gatsby"
 import Img from "gatsby-image"
 import CustomMarkdown from "../components/customMarkdown"
-import Tags from "../components/tags/tags"
+import Category from "../components/category/category"
 import { TContentfulPost } from "../utils/constants"
 import Wrapper from "../components/wrapper/wrapper"
 import * as styles from "../components/layout/layout.module.scss"
 
 const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
-  const { content, heroImage, tags, title } = data.contentfulPosts;
+  const { content, heroImage, title, category } = data.contentfulPosts;
+  console.log(category)
 
   return (
     <Layout>
       <SEO title={title} />
       <Wrapper width="content" as="article">
         <div className={styles.postMeta}>
-          <Tags tags={tags} />
+          <Category category={category} />
           <h1>{title}</h1>
         </div>
 
@@ -36,9 +37,12 @@ export const postQuery = graphql`
     contentfulPosts(id: { eq: $id }) {
       title
       publishDate
-      tags
       content {
         content
+      }
+      category {
+        title
+        slug
       }
       heroImage {
         description

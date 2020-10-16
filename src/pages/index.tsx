@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { TAllContentfulPosts } from "../utils/constants"
 import language from "../utils/language"
-import Tag from "../components/tags/tags"
+import Category from "../components/category/category"
 import Wrapper from "../components/wrapper/wrapper"
 import PostList from "../components/postList/postList"
 
@@ -46,9 +46,12 @@ export const postQuery = graphql`
           publishDate
           isFeatured
           isFirstFeatured
-          tags
           content {
             content
+          }
+          category {
+            title
+            slug
           }
           heroImage {
             description

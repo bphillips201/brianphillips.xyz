@@ -1,7 +1,7 @@
 import React from "react"
 import { TPost } from "../../utils/constants";
 import { Link } from "gatsby"
-import Tag from "../tags/tags";
+import Category from "../category/category";
 import * as styles from "./postList.module.scss";
 
 type TPostList = {
@@ -13,8 +13,8 @@ const PostList: React.FC<TPostList> = ({ posts }) => {
     <ul className={styles.postList}>
         {posts.map(post => (
             <li key={post.id}>
-                <Tag tags={post.tags} />
-                <h3><Link to={post.slug}>{post.title}</Link></h3>
+                <Category category={post.category} />
+                <h3><Link to={`/${post.slug}`}>{post.title}</Link></h3>
             </li>
         ))}
     </ul>

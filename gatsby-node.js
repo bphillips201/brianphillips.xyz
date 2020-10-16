@@ -21,12 +21,21 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allContentfulCategories {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) return Promise.reject(result.errors)
 
-    const { allContentfulPosts } = result.data
+    const { allContentfulPosts, allContentfulCategories } = result.data
     const posts = allContentfulPosts.edges.map(n => n.node)
+    const categories = allContentfulCategories.edges.map(n => n.node)
 
     posts.forEach(p => {
       createPage({
@@ -34,6 +43,16 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve("src/templates/post.tsx"),
         context: {
           id: p.id,
+        },
+      })
+    })
+
+    categories.forEach(c => {
+      createPage({
+        path: `c/${c.slug}`,
+        component: path.resolve("src/templates/category.tsx"),
+        context: {
+          id: c.id,
         },
       })
     })
