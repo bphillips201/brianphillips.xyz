@@ -38,6 +38,7 @@ export type TAllContentfulPosts = {
 }
 
 export type TCategory = {
+  id?: string
   title: string
   slug: string
 }

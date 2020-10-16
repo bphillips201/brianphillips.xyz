@@ -45,8 +45,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Work Sans`,
-            variants: [`600`],
+            family: `Libre Baskerville`,
+            variants: [`400`],
           },
           {
             family: `Source Sans Pro`,
