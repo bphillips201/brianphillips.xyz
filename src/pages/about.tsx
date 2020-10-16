@@ -9,9 +9,7 @@ const About = () => (
   <Layout>
     <SEO title="About" />
     <Wrapper>
-      <h1>About Me</h1>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
+      <h2>Engineer<br/>Investor<br/>Writer</h2>
     </Wrapper>
   </Layout>
 )
