@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export type TImage = {
   description: string
   fluid: {
@@ -44,12 +42,12 @@ export type TCategory = {
   slug: string
 }
 
-export type TContentfulCategories = {
+export type TContentfulCategory = {
   [name: string]: TCategory
 }
 
 export type TAllContentfulCategories = {
   allContentfulCategories: {
-    edges: Array<TContentfulCategories>
+    edges: Array<TContentfulCategory>
   }
 }

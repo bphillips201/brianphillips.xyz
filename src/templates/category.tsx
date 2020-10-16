@@ -4,14 +4,13 @@ import SEO from "../components/seo"
 import { graphql, PageProps } from "gatsby"
 import Wrapper from "../components/wrapper/wrapper"
 // import * as styles from "../components/layout/layout.module.scss"
-import { TAllContentfulPosts, TContentfulCategories } from "../utils/constants"
+import { TAllContentfulPosts, TContentfulCategory } from "../utils/constants"
 import PostList from "../components/postList/postList"
 
-type TCategoryPageProps = TAllContentfulPosts & TContentfulCategories;
+type TCategoryPageProps = TAllContentfulPosts & TContentfulCategory;
 
 const PostTemplate: React.FC<PageProps<TCategoryPageProps>> = ({ data }) => {
   const category = data.contentfulCategories;
-  console.log(category)
   const posts = data.allContentfulPosts.edges.map(n => n.node);
 
   return (

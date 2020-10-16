@@ -13,7 +13,7 @@ const PostList: React.FC<TPostList> = ({ posts }) => {
     <ul className={styles.postList}>
         {posts.map(post => (
             <li key={post.id}>
-                <Category category={post.category} />
+                <Category cat={post.category} />
                 <h3><Link to={`/${post.slug}`}>{post.title}</Link></h3>
             </li>
         ))}

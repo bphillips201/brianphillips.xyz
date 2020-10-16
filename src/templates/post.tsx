@@ -11,14 +11,13 @@ import * as styles from "../components/layout/layout.module.scss"
 
 const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
   const { content, heroImage, title, category } = data.contentfulPosts;
-  console.log(category)
 
   return (
     <Layout>
       <SEO title={title} />
       <Wrapper width="content" as="article">
         <div className={styles.postMeta}>
-          <Category category={category} />
+          <Category cat={category} />
           <h1>{title}</h1>
         </div>
 
