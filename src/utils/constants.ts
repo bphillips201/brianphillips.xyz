@@ -41,6 +41,7 @@ export type TCategory = {
   id?: string
   title: string
   slug: string
+  readOnly?: boolean
 }
 
 export type TContentfulCategory = {

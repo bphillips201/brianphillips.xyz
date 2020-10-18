@@ -17,7 +17,7 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
       <SEO title={title} />
       <Wrapper width="content" as="article">
         <Wrapper padX={false} width="thin" className={styles.postMeta}>
-          <Category cat={category} />
+          <Category title={category.title} slug={category.slug} />
           <h1>{title}</h1>
         </Wrapper>
 

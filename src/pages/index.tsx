@@ -4,7 +4,6 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { TAllContentfulCategories, TAllContentfulPosts } from "../utils/constants"
 import language from "../utils/language"
-import Category from "../components/category/category"
 import Wrapper from "../components/wrapper/wrapper"
 import PostList from "../components/postList/postList"
 import CategoryList from "../components/categoryList/categoryList"
@@ -14,7 +13,7 @@ type HomePostData = TAllContentfulPosts & TAllContentfulCategories
 const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
   const allPosts = data.allContentfulPosts.edges.map(n => n.node);
   const allCategories = data.allContentfulCategories.edges.map(n => n.node);
-  const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 4)
+  const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 3)
   const latestPosts = allPosts.slice(0, 8)
 
   return (
@@ -22,11 +21,7 @@ const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
       <SEO title="Home" />
         <Wrapper color="gray">
           <div>{language.homePage.featuredWriting}</div>
-          {featuredPosts.map(post => (
-            <div key={post.id}>
-              <Link to={post.slug}>{post.title}</Link>
-            </div>
-          ))}
+          <PostList posts={featuredPosts} variant="featured" backgroundImage={true} />
         </Wrapper>
 
         <Wrapper>
@@ -65,10 +60,10 @@ export const postQuery = graphql`
             fluid(
               toFormat: JPG
               resizingBehavior: FILL
-              maxWidth: 1000
+              maxWidth: 800
               cropFocus: CENTER
-              maxHeight: 500
-              quality: 75
+              maxHeight: 400
+              quality: 90
             ) {
               ...GatsbyContentfulFluid
             }
