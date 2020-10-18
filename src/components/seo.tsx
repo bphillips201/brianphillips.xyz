@@ -45,6 +45,7 @@ const SEO: React.FC<ISEOProps> = ({
         lang,
       }}
       title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: `description`,
