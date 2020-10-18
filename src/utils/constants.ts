@@ -9,10 +9,6 @@ export type TImage = {
   }
 }
 
-export type TTag = {
-  tags: Array<string>
-}
-
 export type TPost = {
   id: string
   category: TCategory
