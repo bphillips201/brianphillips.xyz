@@ -8,6 +8,7 @@ import Wrapper from "../components/wrapper/wrapper"
 import PostList from "../components/postList/postList"
 import CategoryList from "../components/categoryList/categoryList"
 import { Grid, Cell } from "styled-css-grid";
+import SectionHeader from "../components/sectionHeader/sectionHeader"
 
 type HomePostData = TAllContentfulPosts & TAllContentfulCategories
 
@@ -22,7 +23,7 @@ const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
     <Layout>
       <SEO title="Home" />
         <Wrapper color="gray">
-          <div>{language.homePage.featuredWriting}</div>
+          <SectionHeader>{language.homePage.featuredWriting}</SectionHeader>
           <Grid columns={3} gap="3.2rem" style={{ marginBottom: "3.2rem" }}>
             <Cell width={2}>
               <PostList posts={firstRead} variant="first" backgroundImage={true} />
@@ -38,12 +39,12 @@ const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
         <Wrapper>
           <Grid columns={4} gap={"3.2rem"}>
             <Cell width={3}>
-              <div>{language.homePage.latestPosts}</div>
+              <SectionHeader>{language.homePage.latestPosts}</SectionHeader>
               <PostList posts={latestPosts} />
             </Cell>
 
             <Cell width={1}>
-              <div>{language.homePage.topics}</div> 
+              <SectionHeader>{language.homePage.topics}</SectionHeader> 
               <CategoryList categories={allCategories} />
             </Cell>
           </Grid>
