@@ -9,6 +9,7 @@ import PostList from "../components/postList/postList"
 import CategoryList from "../components/categoryList/categoryList"
 import { Grid, Cell } from "styled-css-grid";
 import SectionHeader from "../components/sectionHeader/sectionHeader"
+import BioCard from "../components/bioCard/bioCard"
 
 type HomePostData = TAllContentfulPosts & TAllContentfulCategories
 
@@ -29,7 +30,7 @@ const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
               <PostList posts={firstRead} variant="first" backgroundImage={true} />
             </Cell>
             <Cell width={1}>
-              <h3>About me</h3>
+              <BioCard/>
             </Cell>
           </Grid>
           

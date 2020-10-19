@@ -14,7 +14,7 @@ const Header: React.FC = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link to="/writing">Writing</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
