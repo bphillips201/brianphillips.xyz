@@ -35,7 +35,7 @@ const language: TLanguage = {
     latestPosts: `Latest Posts`,
     topics: `Topics`,
     learnMore: `Learn More`,
-    aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the central coast of California.`
+    aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`
   },
   newsletter: {
     newsletterHeader: `Get the newsletter`,
