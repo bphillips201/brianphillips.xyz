@@ -7,7 +7,7 @@ import Wrapper from "../wrapper/wrapper"
 
 const Footer: React.FC = () => {
   return (
-    <Wrapper as="footer" width="full" className={styles.footer}>
+    <Wrapper as="footer" width="full" bigY={true} className={styles.footer}>
       <Logo />
 
       <nav className={styles.nav}>

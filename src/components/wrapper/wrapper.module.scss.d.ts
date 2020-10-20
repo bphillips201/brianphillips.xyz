@@ -7,3 +7,4 @@ export const chunk: string;
 export const white: string;
 export const gray: string;
 export const padX: string;
+export const bigY: string;

@@ -6,6 +6,7 @@ type WrapperProps = AllHTMLAttributes<HTMLElement> & {
     color?: 'white' | 'gray'
     width?: 'full' | 'wrap' | 'content' | 'thin'
     padX?: boolean
+    bigY?: boolean
     as?: ReactNode
 }
 
@@ -14,7 +15,8 @@ const Wrapper: React.FC<WrapperProps> = props => {
         children, 
         className = '', 
         color = 'white', 
-        padX = true, 
+        padX = true,
+        bigY = false,
         width = 'wrap', 
         as = "section", 
         ...rest 
@@ -28,6 +30,7 @@ const Wrapper: React.FC<WrapperProps> = props => {
     const wrapperClasses = classnames({
         [styles.wrapper]: true,
         [styles.padX]: padX,
+        [styles.bigY]: bigY,
         [styles[width]]: true,
         [className]: className
     })
