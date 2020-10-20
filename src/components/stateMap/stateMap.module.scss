@@ -1,0 +1,44 @@
+svg {
+  width: 100%;
+}
+
+ellipse {
+  opacity: 0;
+}
+
+.jackson {
+  animation: pop 1s forwards;
+  transform-origin: 348px 254px;
+}
+
+.memphis {
+  animation: pop 1s forwards 2s;
+  transform-origin: 349px 215px;
+}
+
+.slo {
+  animation: pop 1s forwards 4s;
+  transform-origin: 23px 181px;
+}
+
+.nyc {
+  animation: pop 1s forwards 6s;
+  transform-origin: 502px 117px;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
