@@ -14,4 +14,42 @@
   p {
     margin-bottom: 0;
   }
+
+  label {
+    font-size: 0rem;
+    display: block;
+    color: $softDark;
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+    line-height: 0;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.2rem;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    margin-bottom: 1.6rem;
+  }
+
+  button {
+    background-color: $strongBlue;
+    color: white;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background-color: darken($strongBlue, 5%);
+    }
+
+    &:active {
+      background-color: darken($strongBlue, 10%);
+    }
+  }
 }
