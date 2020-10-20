@@ -1,4 +1,4 @@
-import React from "react"
+import React, { AllHTMLAttributes } from "react"
 import { TPost } from "../../utils/constants";
 import { Link } from "gatsby"
 import Category from "../category/category";
@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 import classnames from "classnames"
 import * as styles from "./postList.module.scss";
 
-type TPostList = {
+type TPostList = AllHTMLAttributes<HTMLElement> & {
     posts: Array<TPost>
     variant?: 'plain' | 'featured' | 'first',
     backgroundImage?: boolean,

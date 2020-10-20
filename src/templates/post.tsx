@@ -8,6 +8,7 @@ import Category from "../components/category/category"
 import { TContentfulPost } from "../utils/constants"
 import Wrapper from "../components/wrapper/wrapper"
 import * as styles from "../components/layout/layout.module.scss"
+import NewsletterForm from "../components/newsletterForm/newsletterForm"
 
 const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
   const { content, heroImage, title, category } = data.contentfulPosts;
@@ -25,6 +26,10 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
 
         <Wrapper padX={false} width="thin" className={styles.content}>
           <CustomMarkdown>{content.content}</CustomMarkdown>
+        </Wrapper>
+
+        <Wrapper padX={false} width="thin">
+          <NewsletterForm />
         </Wrapper>
       </Wrapper>
     </Layout>

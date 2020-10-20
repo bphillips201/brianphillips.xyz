@@ -10,6 +10,7 @@ import CategoryList from "../components/categoryList/categoryList"
 import { Grid, Cell } from "styled-css-grid";
 import SectionHeader from "../components/sectionHeader/sectionHeader"
 import BioCard from "../components/bioCard/bioCard"
+import NewsletterForm from "../components/newsletterForm/newsletterForm"
 
 type HomePostData = TAllContentfulPosts & TAllContentfulCategories
 
@@ -34,7 +35,9 @@ const IndexPage: React.FC<PageProps<HomePostData>> = ({ data }) => {
             </Cell>
           </Grid>
           
-          <PostList posts={featuredPosts} variant="featured" backgroundImage={true} />
+          <PostList posts={featuredPosts} variant="featured" backgroundImage={true} style={{ marginBottom: "3.2rem" }} />
+
+          <NewsletterForm />
         </Wrapper>
 
         <Wrapper>

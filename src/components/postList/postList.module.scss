@@ -35,10 +35,12 @@
       height: 400px;
       overflow: hidden;
       border-radius: 4px;
-      transition: transform 300ms ease;
+      box-shadow: 0 0 10px 0 $light-gray;
+      transition: transform 300ms ease, box-shadow 300ms ease;
 
       &:hover {
         transform: scale(1.025);
+        box-shadow: 0 0 0 0 $light-gray;
       }
     }
 
@@ -68,12 +70,12 @@
           linear,
           left bottom,
           left top,
-          from(rgba(0, 0, 0, 0.75)),
+          from(rgba(0, 0, 0, 0.8)),
           to(transparent)
         );
         background: linear-gradient(
           to top,
-          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 0, 0, 0.8) 0%,
           transparent 100%
         );
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
