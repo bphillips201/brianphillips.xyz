@@ -13,7 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allContentfulPosts(sort: {fields: publishDate, order: DESC}) {
+      allContentfulPosts {
         edges {
           node {
             id

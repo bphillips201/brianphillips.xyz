@@ -73,7 +73,7 @@ export default IndexPage
 
 export const postQuery = graphql`
   query {
-    allContentfulPosts {
+    allContentfulPosts(sort: { fields: publishDate, order: DESC }) {
       edges {
         node {
           id

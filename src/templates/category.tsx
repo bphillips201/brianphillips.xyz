@@ -79,6 +79,7 @@ export const categoryListQuery = graphql`
       limit: $limit
       skip: $skip
       filter: { category: { id: { eq: $id } } }
+      sort: { fields: publishDate, order: DESC }
     ) {
       edges {
         node {

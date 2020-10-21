@@ -53,7 +53,11 @@ const Blog: React.FC<PageProps<BlogPageData>> = props => {
 
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
-    allContentfulPosts(limit: $limit, skip: $skip) {
+    allContentfulPosts(
+      limit: $limit
+      skip: $skip
+      sort: { fields: publishDate, order: DESC }
+    ) {
       edges {
         node {
           id
