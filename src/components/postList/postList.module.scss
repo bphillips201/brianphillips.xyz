@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .postList {
   list-style-type: none;
@@ -9,6 +9,10 @@
     li {
       padding: 4rem 0;
       border-bottom: 1px solid $light-gray;
+
+      &:first-of-type {
+        padding-top: 0;
+      }
     }
 
     h3 {
@@ -61,7 +65,7 @@
       }
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         height: 100%;
         width: 100%;
