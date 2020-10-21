@@ -16,7 +16,7 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <Wrapper width="content" as="article">
+      <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
         <Wrapper padX={false} width="thin" className={styles.postMeta}>
           <Category title={category.title} slug={category.slug} />
           <h1>{title}</h1>
@@ -28,7 +28,7 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
           <CustomMarkdown>{content.content}</CustomMarkdown>
         </Wrapper>
 
-        <Wrapper padX={false} width="thin">
+        <Wrapper padX={false} width="thin" className={styles.postNewsletter}>
           <NewsletterForm />
         </Wrapper>
       </Wrapper>

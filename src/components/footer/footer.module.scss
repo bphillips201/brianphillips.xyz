@@ -1,9 +1,11 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .footer {
   text-align: center;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .nav {

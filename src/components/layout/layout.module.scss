@@ -66,3 +66,26 @@ body {
     font-size: 4rem;
   }
 }
+
+.postNewsletter {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: $soft-gray;
+    overflow: hidden;
+    left: -150%;
+    top: 50%;
+    width: 400%;
+    height: 100%;
+    min-height: 250px;
+    z-index: 0;
+    transform: rotate(-4deg);
+  }
+
+  & > div {
+    position: relative;
+    z-index: 1;
+  }
+}

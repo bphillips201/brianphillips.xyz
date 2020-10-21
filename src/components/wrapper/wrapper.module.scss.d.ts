@@ -6,5 +6,8 @@ export const thin: string;
 export const chunk: string;
 export const white: string;
 export const gray: string;
+export const left: string;
+export const right: string;
+export const center: string;
 export const padX: string;
 export const bigY: string;

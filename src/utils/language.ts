@@ -17,7 +17,7 @@ type TLanguage = {
     emailPlaceholder: string
     submitButton: string
   }
-  blog: {
+  posts: {
     searchPlaceholder: string
     olderPosts: string
     newerPosts: string
@@ -44,7 +44,7 @@ const language: TLanguage = {
     emailPlaceholder: `Enter your email...`,
     submitButton: `Subscribe`,
   },
-  blog: {
+  posts: {
     searchPlaceholder: `Search posts...`,
     olderPosts: `Older Posts →`,
     newerPosts: `← Newer Posts`,

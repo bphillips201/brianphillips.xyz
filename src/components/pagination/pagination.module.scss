@@ -11,3 +11,11 @@
     justify-content: flex-end;
   }
 }
+
+.olderPosts {
+  justify-self: flex-end;
+}
+
+.newerPosts {
+  justify-self: flex-start;
+}

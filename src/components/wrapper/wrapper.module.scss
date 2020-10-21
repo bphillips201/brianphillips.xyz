@@ -35,6 +35,18 @@
   &.gray {
     background-color: $soft-gray;
   }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.center {
+    text-align: center;
+  }
 }
 
 .padX {

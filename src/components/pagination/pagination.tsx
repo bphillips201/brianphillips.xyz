@@ -30,13 +30,13 @@ const Pagination: React.FC<PaginationProps> = props => {
   return (
     <section className={paginationClasses}>
       {newerPostPath.length > 0 && (
-        <Link to={newerPostPath} style={{ justifySelf: 'flex-start' }}>
-          {language.blog.newerPosts}
+        <Link to={newerPostPath} className={styles.newerPosts}>
+          {language.posts.newerPosts}
         </Link>
       )}
       {olderPostPath.length > 0 && (
-        <Link to={olderPostPath} style={{ justifySelf: 'flex-end' }}>
-          {language.blog.olderPosts}
+        <Link to={olderPostPath} className={styles.olderPosts}>
+          {language.posts.olderPosts}
         </Link>
       )}
     </section>
