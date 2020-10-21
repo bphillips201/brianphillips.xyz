@@ -28,7 +28,7 @@ const About = () => (
       </Grid>
     </Wrapper>
 
-    <Wrapper width="content" color="gray" bigY={true}>
+    <Wrapper width="content" color="gray" bigY={true} align="center">
       <h2>I've lived in some fun places.</h2>
 
       <StateMap />

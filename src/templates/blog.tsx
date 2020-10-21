@@ -11,6 +11,8 @@ import { Grid, Cell } from 'styled-css-grid'
 import PostList from '../components/postList/postList'
 import CategoryList from '../components/categoryList/categoryList'
 import Pagination from '../components/pagination/pagination'
+import SectionHeader from '../components/sectionHeader/sectionHeader'
+import language from '../utils/language'
 
 type BlogPageData = TAllContentfulPosts & TAllContentfulCategories
 
@@ -24,9 +26,11 @@ const Blog: React.FC<PageProps<BlogPageData>> = props => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Wrapper>
+      <Wrapper color="gray">
         <h1>Blog</h1>
+      </Wrapper>
 
+      <Wrapper>
         <Grid columns={4} gap={'3.2rem'}>
           <Cell width={3}>
             <PostList posts={posts} />
@@ -38,6 +42,7 @@ const Blog: React.FC<PageProps<BlogPageData>> = props => {
           </Cell>
 
           <Cell width={1}>
+            <SectionHeader>{language.homePage.topics}</SectionHeader>
             <CategoryList categories={categories} />
           </Cell>
         </Grid>

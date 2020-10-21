@@ -12,6 +12,8 @@ import { Grid, Cell } from 'styled-css-grid'
 import PostList from '../components/postList/postList'
 import CategoryList from '../components/categoryList/categoryList'
 import Pagination from '../components/pagination/pagination'
+import SectionHeader from '../components/sectionHeader/sectionHeader'
+import language from '../utils/language'
 
 type CategoryPageData = TAllContentfulPosts &
   TContentfulCategory &
@@ -27,10 +29,12 @@ const Category: React.FC<PageProps<CategoryPageData>> = props => {
 
   return (
     <Layout>
-      <SEO title="Category" />
-      <Wrapper>
-        <h1>Category: {category.title}</h1>
+      <SEO title={category.title} />
+      <Wrapper color="gray">
+        <h1>{category.title}</h1>
+      </Wrapper>
 
+      <Wrapper>
         <Grid columns={4} gap={'3.2rem'}>
           <Cell width={3}>
             {posts.length > 0 ? (
@@ -48,6 +52,7 @@ const Category: React.FC<PageProps<CategoryPageData>> = props => {
           </Cell>
 
           <Cell width={1}>
+            <SectionHeader>{language.homePage.topics}</SectionHeader>
             <CategoryList categories={allCategories} />
           </Cell>
         </Grid>
