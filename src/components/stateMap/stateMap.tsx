@@ -248,20 +248,22 @@ const StateMap: React.FC<StateMapProps> = props => {
             ry="6"
           />
           <path
+            className={styles.jackToMem}
             d="m352.367107 253.999048c-5.354858-12.230534-5.649019-25.230216-.882481-38.999048"
             stroke={lineColor}
             strokeWidth="2"
             transform="matrix(-1 0 0 1 700.484626 0)"
           />
           <path
+            className={styles.memToSlo}
             d="m349 214.490566c0-.680382-45.688629-19.822748-156.109375-30.581132-73.613831-7.172256-130.2440388-8.142385-169.890625-2.910386"
             stroke={lineColor}
             strokeWidth="2"
           />
           <path
+            className={styles.sloToNyc}
             d="m22.1833515 180.999048c101.0160645-29.340117 179.3441385-47.720932 234.9842215-55.142444 55.640084-7.421513 137.250892-10.374031 244.832427-8.857556"
             stroke={lineColor}
-            strokeDasharray="4 4"
             strokeWidth="2"
           />
         </g>
