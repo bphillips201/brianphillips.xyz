@@ -22,7 +22,7 @@ const IndexPage: React.FC<PageProps<HomePageData>> = ({ data }) => {
   const allCategories = data.allContentfulCategories.edges.map(n => n.node)
   const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 3)
   const firstRead = allPosts.filter(p => p.isFirstFeatured).slice(0, 1)
-  const latestPosts = allPosts.slice(0, 8)
+  const latestPosts = allPosts.slice(0, 5)
 
   return (
     <Layout>
