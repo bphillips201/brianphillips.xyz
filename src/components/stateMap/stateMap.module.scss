@@ -40,7 +40,6 @@ ellipse {
 
 .sloToNyc {
   animation: draw 1s forwards infinite linear, appear 300ms forwards 6s;
-  stroke-dasharray: 4px;
   stroke-dashoffset: 8px;
   opacity: 0;
 }
