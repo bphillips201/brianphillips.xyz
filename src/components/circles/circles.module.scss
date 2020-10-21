@@ -32,7 +32,8 @@ $dim: 100;
     overflow: visible;
     position: absolute;
     border-radius: 50%;
-    animation-duration: 15s;
+    animation-delay: 500ms;
+    animation-duration: 12s;
     animation-iteration-count: infinite;
   }
 }
