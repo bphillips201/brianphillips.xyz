@@ -27,7 +27,6 @@ const Wrapper: React.FC<WrapperProps> = props => {
   const chunkClasses = classnames({
     [styles.chunk]: true,
     [styles[color]]: true,
-    [className]: className,
   })
   const wrapperClasses = classnames({
     [styles.wrapper]: true,

@@ -1,10 +1,11 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .wrapper {
   margin: 0 auto;
   position: relative;
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
+  width: 100%;
 
   &.full {
     max-width: 100%;

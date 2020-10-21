@@ -1,17 +1,17 @@
-import React from "react"
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
-import { graphql, PageProps } from "gatsby"
-import Img from "gatsby-image"
-import CustomMarkdown from "../components/customMarkdown"
-import Category from "../components/category/category"
-import { TContentfulPost } from "../utils/constants"
-import Wrapper from "../components/wrapper/wrapper"
-import * as styles from "../components/layout/layout.module.scss"
-import NewsletterForm from "../components/newsletterForm/newsletterForm"
+import React from 'react'
+import Layout from '../components/layout/layout'
+import SEO from '../components/seo'
+import { graphql, PageProps } from 'gatsby'
+import Img from 'gatsby-image'
+import CustomMarkdown from '../components/customMarkdown'
+import Category from '../components/category/category'
+import { TContentfulPost } from '../utils/constants'
+import Wrapper from '../components/wrapper/wrapper'
+import * as styles from '../components/layout/layout.module.scss'
+import NewsletterForm from '../components/newsletterForm/newsletterForm'
 
 const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
-  const { content, heroImage, title, category } = data.contentfulPosts;
+  const { content, heroImage, title, category } = data.contentfulPosts
 
   return (
     <Layout>
