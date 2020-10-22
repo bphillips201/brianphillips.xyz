@@ -31,7 +31,7 @@ const PostList: React.FC<TPostList> = props => {
             fluid={post.heroImage.fluid || null}
             key={post.id}
           >
-            <Link to={`/blog/${post.slug}`}>
+            <Link to={`/blog/${post.slug}`} data-testid={`post-${variant}`}>
               <Category
                 readOnly={true}
                 title={post.category.title}

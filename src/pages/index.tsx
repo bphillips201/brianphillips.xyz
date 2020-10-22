@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageProps, graphql } from 'gatsby'
+import { Link, PageProps, graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import {
@@ -57,6 +57,7 @@ const IndexPage: React.FC<PageProps<HomePageData>> = ({ data }) => {
           <Cell width={3}>
             <SectionHeader>{language.homePage.latestPosts}</SectionHeader>
             <PostList posts={latestPosts} />
+            <Link to={`/blog`}>{language.homePage.viewBlog}</Link>
           </Cell>
 
           <Cell width={1}>

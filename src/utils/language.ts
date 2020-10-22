@@ -10,6 +10,7 @@ type TLanguage = {
     topics: string
     learnMore: string
     aboutMe: string
+    viewBlog: string
   }
   newsletter: {
     newsletterHeader: string
@@ -36,6 +37,7 @@ const language: TLanguage = {
     latestPosts: `Latest Posts`,
     topics: `Topics`,
     learnMore: `Learn More`,
+    viewBlog: `View Blog →`,
     aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`,
   },
   newsletter: {

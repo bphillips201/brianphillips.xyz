@@ -9,7 +9,7 @@ type TCategoryList = {
 
 const CategoryList: React.FC<TCategoryList> = ({ categories }) => {
   return (
-    <ul className={styles.categoryList}>
+    <ul className={styles.categoryList} data-testid="category-list">
       {categories.map(cat => (
         <li key={cat.id}>
           <Category title={cat.title} slug={cat.slug} />
