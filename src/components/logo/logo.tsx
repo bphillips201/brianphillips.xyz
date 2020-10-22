@@ -3,7 +3,7 @@ import React from 'react'
 import * as styles from './logo.module.scss'
 
 const Logo: React.FC = () => (
-  <Link to={`/`}>
+  <Link to={`/`} title="Brian Phillips">
     <span className={styles.hidden}>Brian Phillips</span>
     <div className={styles.logo}>
       <div className={styles.topLeft}></div>

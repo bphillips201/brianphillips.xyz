@@ -15,6 +15,7 @@
       }
     }
 
+    h2,
     h3 {
       margin: 1.6rem 0 0;
       font-size: 2.4rem;
@@ -37,6 +38,7 @@
     li {
       position: relative;
       height: 400px;
+      background-color: #555;
       overflow: hidden;
       border-radius: 4px;
       box-shadow: 0 0 10px 0 $light-gray;
@@ -56,34 +58,17 @@
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      text-shadow: 0 0 5px $black;
 
+      div {
+        text-shadow: 0 0 10px black;
+      }
+
+      h2,
       h3 {
         position: relative;
         z-index: 1;
         line-height: 1.3;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        background: -webkit-gradient(
-          linear,
-          left bottom,
-          left top,
-          from(rgba(0, 0, 0, 0.8)),
-          to(transparent)
-        );
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.8) 0%,
-          transparent 100%
-        );
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+        text-shadow: 0 0 10px black;
       }
     }
   }
@@ -94,6 +79,7 @@
   gap: 3.2rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
+  h2,
   h3 {
     font-size: 2.4rem;
   }
@@ -102,10 +88,32 @@
     justify-content: center;
     text-align: center;
     padding: 2.4rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: -webkit-gradient(
+        linear,
+        bottom,
+        from(rgba(0, 0, 0, 0.8)),
+        to(rgba(0, 0, 0, 0))
+      );
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+    }
   }
 }
 
 .first {
+  h2,
   h3 {
     font-size: 3.2rem;
     margin: 0;
@@ -117,5 +125,27 @@
     padding: 4.8rem;
     width: 100%;
     justify-content: flex-end;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(rgba(0, 0, 0, 0.8)),
+        to(rgba(0, 0, 0, 0))
+      );
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+    }
   }
 }

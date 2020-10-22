@@ -14,6 +14,7 @@ type TPostList = AllHTMLAttributes<HTMLElement> & {
 
 const PostList: React.FC<TPostList> = props => {
   const { posts, variant = 'plain', backgroundImage = false, ...rest } = props
+  const Component: any = variant === 'first' ? 'h2' : 'h3'
 
   const postListClasses = classnames({
     [styles.postList]: true,
@@ -26,8 +27,8 @@ const PostList: React.FC<TPostList> = props => {
         backgroundImage ? (
           <BackgroundImage
             Tag="li"
-            fluid={post.heroImage.fluid}
-            backgroundColor={`#dcdcdc`}
+            // @ts-ignore
+            fluid={post.heroImage.fluid || null}
             key={post.id}
           >
             <Link to={`/blog/${post.slug}`}>
@@ -36,15 +37,15 @@ const PostList: React.FC<TPostList> = props => {
                 title={post.category.title}
                 slug={post.category.slug}
               />
-              <h3>{post.title}</h3>
+              <Component>{post.title}</Component>
             </Link>
           </BackgroundImage>
         ) : (
           <li key={post.id}>
             <Category title={post.category.title} slug={post.category.slug} />
-            <h3>
+            <Component>
               <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-            </h3>
+            </Component>
           </li>
         )
       )}
