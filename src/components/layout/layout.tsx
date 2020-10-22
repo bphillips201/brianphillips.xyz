@@ -1,17 +1,19 @@
 import React, { AllHTMLAttributes } from 'react'
 import Header from '../header/header'
 import Footer from '../footer/footer'
-
 import './layout.module.scss'
+import { PageProps } from 'gatsby'
 
-const Layout: React.FC<AllHTMLAttributes<HTMLElement>> = props => {
+const Layout: React.FC<PageProps> = props => {
   const { children, ...rest } = props
 
   return (
     <>
-      <Header />
-      <main {...rest}>{children}</main>
-      <Footer />
+      <main {...rest}>
+        <Header />
+        {children}
+        <Footer />
+      </main>
     </>
   )
 }

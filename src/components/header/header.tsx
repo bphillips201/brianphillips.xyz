@@ -4,7 +4,7 @@ import { Link, PageProps } from 'gatsby'
 import * as styles from './header.module.scss'
 import Wrapper from '../wrapper/wrapper'
 
-const Header: React.FC<PageProps> = () => {
+const Header: React.FC = () => {
   const Component: any = window.location.pathname === '/' ? 'h1' : 'div'
 
   return (
