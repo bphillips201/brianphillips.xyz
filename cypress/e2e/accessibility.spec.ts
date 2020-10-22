@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+import language from "../../src/utils/language";
+
 describe("Accessibility tests", () => {
     beforeEach(() => {
         cy.visit("/").get("main").injectAxe();
@@ -14,13 +16,13 @@ describe("Accessibility tests", () => {
     })
 
     it("Has no detectable a11y violations on the About page", () => {
-        cy.findByText(/learn more/i)
+        cy.findByText(language.homePage.aboutMeLink)
             .click()
             .checkA11y()
     })
 
     it("Has no detectable a11y violations on the Blog page", () => {
-        cy.findByText(/view blog/i)
+        cy.findByText(language.homePage.viewBlog)
             .click()
             .checkA11y()
     })
@@ -33,7 +35,7 @@ describe("Accessibility tests", () => {
 
     it("Has no detectable a11y violations on a Category page", () => {
         cy.findByTestId('category-list')
-            .findByText(/musings/i)
+            .find('li:first-of-type a')
             .click()
             .checkA11y()
     })

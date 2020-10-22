@@ -8,8 +8,8 @@ type TLanguage = {
     featuredWriting: string
     latestPosts: string
     topics: string
-    learnMore: string
     aboutMe: string
+    aboutMeLink: string
     viewBlog: string
   }
   newsletter: {
@@ -36,7 +36,7 @@ const language: TLanguage = {
     featuredWriting: `Featured Writing`,
     latestPosts: `Latest Posts`,
     topics: `Topics`,
-    learnMore: `Learn More`,
+    aboutMeLink: `Learn More`,
     viewBlog: `View Blog →`,
     aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`,
   },
