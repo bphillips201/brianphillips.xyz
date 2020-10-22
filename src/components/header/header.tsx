@@ -1,11 +1,12 @@
 import React from 'react'
 import Logo from '../logo/logo'
-import { Link, PageProps } from 'gatsby'
-import * as styles from './header.module.scss'
+import { Link } from 'gatsby'
 import Wrapper from '../wrapper/wrapper'
+import { useLocation } from '@reach/router'
+import * as styles from './header.module.scss'
 
 const Header: React.FC = () => {
-  const Component: any = window.location.pathname === '/' ? 'h1' : 'div'
+  const Component: any = useLocation().pathname === '/' ? 'h1' : 'div'
 
   return (
     <Wrapper as="header" width="full" className={styles.header}>
