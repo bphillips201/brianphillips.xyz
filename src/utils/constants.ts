@@ -1,5 +1,5 @@
 export type TImage = {
-  description: string
+  description?: string
   fluid: {
     aspectRatio: number
     base64: string
@@ -17,7 +17,7 @@ export type TPost = {
   isFeatured: boolean
   isFirstFeatured: boolean
   publishDate: Date
-  heroImage: TImage
+  heroImage?: TImage
   content: {
     content: string
   }

@@ -22,7 +22,9 @@ const PostTemplate: React.FC<PageProps<TContentfulPost>> = ({ data }) => {
           <h1>{title}</h1>
         </Wrapper>
 
-        <Img alt={heroImage.description} fluid={heroImage.fluid} />
+        {heroImage && (
+          <Img alt={heroImage.description || ''} fluid={heroImage.fluid} />
+        )}
 
         <Wrapper padX={false} width="thin" className={styles.content}>
           <CustomMarkdown>{content.content}</CustomMarkdown>
