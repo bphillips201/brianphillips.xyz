@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type ISEOProps = {
   description?: string
@@ -18,7 +18,7 @@ type ISEOProps = {
 
 const SEO: React.FC<ISEOProps> = ({
   description,
-  lang = "en",
+  lang = 'en',
   meta,
   title,
 }) => {

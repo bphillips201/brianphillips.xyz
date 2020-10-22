@@ -1,8 +1,8 @@
-import React from "react"
-import Logo from "../logo/logo"
-import { Link } from "gatsby"
-import * as styles from "./header.module.scss"
-import Wrapper from "../wrapper/wrapper"
+import React from 'react'
+import Logo from '../logo/logo'
+import { Link } from 'gatsby'
+import * as styles from './header.module.scss'
+import Wrapper from '../wrapper/wrapper'
 
 const Header: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "brianphillips",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal website built with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Brian Phillips <hey@brianphillips.xyz>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@types/classnames": "^2.2.10",

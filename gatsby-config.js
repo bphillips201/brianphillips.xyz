@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
@@ -58,11 +58,11 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: "q6jei6a1m4b2",
+        spaceId: 'q6jei6a1m4b2',
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
         environment:
-          process.env.NODE_ENV === "development" ? "master" : "master",
+          process.env.NODE_ENV === 'development' ? 'master' : 'master',
       },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,

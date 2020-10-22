@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
-import Wrapper from "../components/wrapper/wrapper"
+import Layout from '../components/layout/layout'
+import SEO from '../components/seo'
+import Wrapper from '../components/wrapper/wrapper'
 
 const Contact = () => (
   <Layout>

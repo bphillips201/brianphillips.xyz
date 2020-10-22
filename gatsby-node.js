@@ -39,20 +39,20 @@ exports.createPages = ({ actions, graphql }) => {
     const { allContentfulPosts, allContentfulCategories } = result.data
     const posts = allContentfulPosts.edges.map(n => n.node)
     const categories = allContentfulCategories.edges.map(n => n.node)
-    const postsPerPage = 10;
-    const numPages = Math.ceil(posts.length / postsPerPage);
+    const postsPerPage = 10
+    const numPages = Math.ceil(posts.length / postsPerPage)
 
     // Blog post list
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `blog` : `blog/${i + 1}`,
-        component: path.resolve("src/templates/blog.tsx"),
+        component: path.resolve('src/templates/blog.tsx'),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1
-        }
+          currentPage: i + 1,
+        },
       })
     })
 
@@ -60,29 +60,30 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(p => {
       createPage({
         path: `blog/${p.slug}`,
-        component: path.resolve("src/templates/post.tsx"),
+        component: path.resolve('src/templates/post.tsx'),
         context: {
-          id: p.id
+          id: p.id,
         },
       })
     })
 
     // Category post lists
     categories.forEach(c => {
-      const categoryPosts = posts.filter(p => p.category.id === c.id);
-      const numCategoryPages = Math.ceil(categoryPosts.length / postsPerPage) || 1;
+      const categoryPosts = posts.filter(p => p.category.id === c.id)
+      const numCategoryPages =
+        Math.ceil(categoryPosts.length / postsPerPage) || 1
 
       Array.from({ length: numCategoryPages }).forEach((_, i) => {
         createPage({
           path: i === 0 ? `c/${c.slug}` : `c/${c.slug}/${i + 1}`,
-          component: path.resolve("src/templates/category.tsx"),
+          component: path.resolve('src/templates/category.tsx'),
           context: {
             id: c.id,
             limit: postsPerPage,
             skip: i * postsPerPage,
             numPages: numCategoryPages,
-            currentPage: i + 1
-          }
+            currentPage: i + 1,
+          },
         })
       })
     })

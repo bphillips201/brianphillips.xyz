@@ -35,12 +35,11 @@ const language: TLanguage = {
     latestPosts: `Latest Posts`,
     topics: `Topics`,
     learnMore: `Learn More`,
-    aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`
+    aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`,
   },
   newsletter: {
     newsletterHeader: `Get the newsletter`,
-    newsletterBlurb:
-      `Receive my digest of featured writing, along with an occasional list of recommended books, movies, and video games. Ideal for geeks.`,
+    newsletterBlurb: `Receive my digest of featured writing, along with an occasional list of recommended books, movies, and video games. Ideal for geeks.`,
     emailPlaceholder: `Enter your email...`,
     submitButton: `Subscribe`,
   },
