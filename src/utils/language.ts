@@ -15,6 +15,7 @@ type TLanguage = {
     newsletterHeader: string
     newsletterBlurb: string
     emailPlaceholder: string
+    labelText: string
     submitButton: string
   }
   posts: {
@@ -40,7 +41,8 @@ const language: TLanguage = {
   newsletter: {
     newsletterHeader: `Get the newsletter`,
     newsletterBlurb: `Receive my digest of featured writing, along with an occasional list of recommended books, movies, and video games. Ideal for geeks.`,
-    emailPlaceholder: `Enter your email...`,
+    emailPlaceholder: `yourname@website.com`,
+    labelText: `Email address`,
     submitButton: `Subscribe`,
   },
   posts: {

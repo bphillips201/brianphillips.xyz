@@ -1,1 +1,1 @@
-export const category: string
+export const category: string;

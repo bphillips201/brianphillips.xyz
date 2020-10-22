@@ -1,1 +1,1 @@
-export const newsletterForm: string
+export const newsletterForm: string;

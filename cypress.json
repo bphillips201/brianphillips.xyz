@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:8000",
+  "projectId": "5hwd2m",
+  "integrationFolder": "cypress/e2e",
+  "watchForFileChanges": true
+}

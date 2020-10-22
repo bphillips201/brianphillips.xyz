@@ -1,1 +1,1 @@
-export const bioCard: string
+export const bioCard: string;

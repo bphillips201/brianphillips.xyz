@@ -1,1 +1,1 @@
-export const sectionHeader: string
+export const sectionHeader: string;

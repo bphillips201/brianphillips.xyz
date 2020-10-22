@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .newsletterForm {
   padding: 3.2rem;
@@ -15,23 +15,37 @@
     margin-bottom: 0;
   }
 
-  label {
-    font-size: 0rem;
-    display: block;
-    color: $softDark;
-    visibility: hidden;
-    height: 1px;
-    width: 1px;
-    line-height: 0;
+  :global .mc-field-group {
+    position: relative;
   }
 
-  input[type="email"] {
+  label {
+    display: inline-block;
+    position: absolute;
+    background-color: transparent;
+    padding: 0.8rem;
+    top: 0.4rem;
+    left: 0.4rem;
+    color: #777;
+    transform: translateY(0) translateX(0);
+    transition: transform 100ms ease, font-size 100ms ease,
+      background-color 100ms ease;
+  }
+
+  input[type='email'] {
     width: 100%;
     box-sizing: border-box;
     padding: 1.2rem;
     border: 1px solid $light-gray;
     border-radius: 4px;
+    outline: none;
     margin-bottom: 1.6rem;
+
+    &:focus + label {
+      transform: translateY(-2rem) translateX(0.4rem);
+      font-size: 1.4rem;
+      background-color: white;
+    }
   }
 
   button {

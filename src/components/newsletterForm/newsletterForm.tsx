@@ -35,15 +35,15 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
         >
           <div id="mc_embed_signup_scroll">
             <div className="mc-field-group">
-              <label htmlFor="mce-EMAIL">Email Address</label>
               <input
                 type="email"
                 defaultValue=""
                 name="EMAIL"
-                placeholder="Enter your email..."
                 className="required email"
                 id="mce-EMAIL"
+                required
               />
+              <label htmlFor="mce-EMAIL">{language.newsletter.labelText}</label>
             </div>
             <div id="mce-responses" className="clear">
               <div
