@@ -53,7 +53,6 @@ export const postQuery = graphql`
       heroImage {
         description
         fluid(
-          toFormat: JPG
           resizingBehavior: FILL
           maxWidth: 1000
           cropFocus: CENTER
