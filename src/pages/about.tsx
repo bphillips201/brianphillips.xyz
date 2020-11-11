@@ -38,8 +38,8 @@ const About: React.FC = () => (
         >
           Gatsby
         </a>
-        ; when I’m not building websites and apps, I’m writing stories,
-        anaylizing investment opportunites, and playing a lot of video games.
+        ; when I’m not building websites and apps, I’m writing stories, scouting
+        for investment opportunites, and playing a lot of video games.
       </p>
 
       <ul>
