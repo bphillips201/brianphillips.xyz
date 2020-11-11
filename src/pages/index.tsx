@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import {
   TAllContentfulCategories,
   TAllContentfulPosts,
+  TPostGlobals,
 } from '../utils/constants'
 import language from '../utils/language'
 import Wrapper from '../components/wrapper/wrapper'
@@ -14,12 +15,14 @@ import { Grid, Cell } from 'styled-css-grid'
 import SectionHeader from '../components/sectionHeader/sectionHeader'
 import BioCard from '../components/bioCard/bioCard'
 import NewsletterForm from '../components/newsletterForm/newsletterForm'
+import ActionLink from '../components/actionLink/actionLink'
+import Pagination from '../components/pagination/pagination'
 
-type HomePageData = TAllContentfulPosts & TAllContentfulCategories
-
-const IndexPage: React.FC<PageProps<HomePageData>> = ({ data }) => {
-  const allPosts = data.allContentfulPosts.edges.map(n => n.node)
-  const allCategories = data.allContentfulCategories.edges.map(n => n.node)
+const IndexPage: React.FC<TPostGlobals> = props => {
+  const allPosts = props.data.allContentfulPosts.edges.map(n => n.node)
+  const allCategories = props.data.allContentfulCategories.edges.map(
+    n => n.node
+  )
   const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 3)
   const firstRead = allPosts.filter(p => p.isFirstFeatured).slice(0, 1)
   const latestPosts = allPosts.slice(0, 5)
@@ -57,7 +60,7 @@ const IndexPage: React.FC<PageProps<HomePageData>> = ({ data }) => {
           <Cell width={3}>
             <SectionHeader>{language.homePage.latestPosts}</SectionHeader>
             <PostList posts={latestPosts} />
-            <Link to={`/blog`}>{language.homePage.viewBlog}</Link>
+            <Pagination path={props.path} />
           </Cell>
 
           <Cell width={1}>

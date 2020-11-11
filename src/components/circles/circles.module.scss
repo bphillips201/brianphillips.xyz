@@ -19,10 +19,10 @@ $dim: 100;
 
 .circles {
   position: relative;
-  width: 1px;
-  height: 1px;
+  width: #{$dim * $scale}px;
+  height: #{$dim * $scale}px;
   left: 50%;
-  top: -50px * $scale;
+  top: $scale;
   margin-left: -50px * $scale;
   transform-origin: center;
 

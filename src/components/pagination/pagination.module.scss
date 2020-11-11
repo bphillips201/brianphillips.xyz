@@ -3,7 +3,7 @@
   justify-content: space-between;
 
   a {
-    padding: 3.2rem 0;
+    margin: 3.2rem 0;
     display: inline-block;
   }
 
@@ -12,10 +12,10 @@
   }
 }
 
-.olderPosts {
+.rightLink {
   justify-self: flex-end;
 }
 
-.newerPosts {
+.leftLink {
   justify-self: flex-start;
 }

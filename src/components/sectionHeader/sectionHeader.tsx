@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './sectionHeader.module.scss'
 
 const SectionHeader: React.FC = props => {
-  return <div className={styles.sectionHeader}>{props.children}</div>
+  return <h4 className={styles.sectionHeader}>{props.children}</h4>
 }
 
 export default SectionHeader

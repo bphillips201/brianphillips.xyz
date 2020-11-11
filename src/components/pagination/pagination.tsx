@@ -1,17 +1,19 @@
 import React, { AllHTMLAttributes } from 'react'
-import { Link } from 'gatsby'
 import language from '../../utils/language'
 import * as styles from './pagination.module.scss'
 import classnames from 'classnames'
+import ActionLink from '../actionLink/actionLink'
+import Chevron from '../actionLink/chevron'
 
 type PaginationProps = AllHTMLAttributes<HTMLElement> & {
-  numPages: number
-  currentPage: number
+  numPages?: number
+  currentPage?: number
   path: string
 }
 
 const Pagination: React.FC<PaginationProps> = props => {
-  const { numPages, currentPage, path } = props
+  const { numPages = 0, currentPage = 0, path } = props
+  const isHome = path === '/'
   const basePath = path.replace(/(\/$)|(\/\d+)/g, '')
   const olderPostPath =
     currentPage < numPages ? `${basePath}/${currentPage + 1}` : ''
@@ -30,14 +32,19 @@ const Pagination: React.FC<PaginationProps> = props => {
   return (
     <section className={paginationClasses}>
       {newerPostPath.length > 0 && (
-        <Link to={newerPostPath} className={styles.newerPosts}>
-          {language.posts.newerPosts}
-        </Link>
+        <ActionLink to={newerPostPath} className={styles.leftLink}>
+          <Chevron direction="left" /> {language.posts.newerPosts}
+        </ActionLink>
       )}
       {olderPostPath.length > 0 && (
-        <Link to={olderPostPath} className={styles.olderPosts}>
-          {language.posts.olderPosts}
-        </Link>
+        <ActionLink to={olderPostPath} className={styles.rightLink}>
+          {language.posts.olderPosts} <Chevron direction="right" />
+        </ActionLink>
+      )}
+      {isHome && (
+        <ActionLink to={'/blog'} className={styles.rightLink}>
+          {language.homePage.viewBlog} <Chevron direction="right" />
+        </ActionLink>
       )}
     </section>
   )

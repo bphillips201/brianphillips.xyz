@@ -18,6 +18,7 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
       gap={'3.2rem'}
       alignItems="center"
       className={newsletterClasses}
+      {...rest}
     >
       <Cell width={1}>
         <h3>{language.newsletter.newsletterHeader}</h3>

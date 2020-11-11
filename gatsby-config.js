@@ -46,11 +46,11 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Libre Baskerville`,
-            variants: [`400`],
+            family: `Overpass`,
+            variants: [`600`],
           },
           {
-            family: `Source Sans Pro`,
+            family: `IBM Plex Sans`,
             variants: [`400`, `600`, `400i`, `600i`],
           },
         ],

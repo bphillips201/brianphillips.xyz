@@ -49,3 +49,12 @@ export type TAllContentfulCategories = {
     edges: Array<TContentfulCategory>
   }
 }
+
+export type TPostGlobals = {
+  data: TAllContentfulPosts & TAllContentfulCategories & TContentfulPost
+  path: string
+  pageContext: {
+    numPages: number
+    currentPage: number
+  }
+}

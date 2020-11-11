@@ -7,47 +7,64 @@ import * as styles from '../components/layout/layout.module.scss'
 import { Cell, Grid } from 'styled-css-grid'
 import Circles from '../components/circles/circles'
 import StateMap from '../components/stateMap/stateMap'
+import ActionLink from '../components/actionLink/actionLink'
 
-const About = () => (
+const About: React.FC = () => (
   <Layout className={styles.aboutPage}>
     <SEO title="About" />
     <Wrapper bigY={true}>
-      <Grid columns={2} gap="3.2rem">
-        <Cell>
-          <h1>
-            Engineer
-            <br />
-            Investor
-            <br />
-            Writer
-          </h1>
-        </Cell>
-        <Cell middle center>
-          <Circles />
-        </Cell>
-      </Grid>
+      <Circles />
     </Wrapper>
 
-    <Wrapper width="content" color="gray" bigY={true} align="center">
+    <Wrapper width="thin">
+      <h1>Engineer. Investor. Writer.</h1>
+
+      <p>
+        I grew up in a small Mississippi town and left home at 25 to work at fun
+        companies with cool people. By trade, I’m a front end engineer who’s
+        addicted to{' '}
+        <a
+          href="https://www.typescriptlang.org/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          TypeScript
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://www.gatsbyjs.com/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          Gatsby
+        </a>
+        ; when I’m not building websites and apps, I’m writing stories,
+        anaylizing investment opportunites, and playing a lot of video games.
+      </p>
+
+      <ul>
+        <li>
+          <ActionLink
+            to="https://www.linkedin.com/in/bphillips201/"
+            external={true}
+          >
+            View my LinkedIn profile
+          </ActionLink>
+        </li>
+
+        <li>
+          <ActionLink to="https://twitter.com/philianor" external={true}>
+            Follow me on Twitter
+          </ActionLink>
+        </li>
+      </ul>
+    </Wrapper>
+
+    {/* <Wrapper width="content" color="gray" bigY={true} align="center">
       <h2>I've lived in some fun places.</h2>
 
       <StateMap />
-
-      {/* <ul>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/bphillips201/"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            View my LinkedIn profile
-          </a>
-        </li>
-        <li>
-          <Link to={`/readme`}>View my Manager README</Link>
-        </li>
-      </ul> */}
-    </Wrapper>
+    </Wrapper> */}
   </Layout>
 )
 
