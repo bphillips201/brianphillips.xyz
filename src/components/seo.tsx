@@ -9,14 +9,14 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-type ISEOProps = {
+type TSEOProps = {
   description?: string
   lang?: string
   meta?: []
   title: string
 }
 
-const SEO: React.FC<ISEOProps> = ({
+const SEO: React.FC<TSEOProps> = ({
   description,
   lang = 'en',
   meta,
