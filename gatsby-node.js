@@ -39,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
     const { allContentfulPosts, allContentfulCategories } = result.data
     const posts = allContentfulPosts.edges.map(n => n.node)
     const categories = allContentfulCategories.edges.map(n => n.node)
-    const postsPerPage = 3
+    const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
 
     // Blog post list
