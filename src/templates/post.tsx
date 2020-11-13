@@ -18,14 +18,11 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
     title,
     category,
   } = props.data.contentfulPosts
+  const postImage = heroImage ? `https:${heroImage?.fluid.src}` : ''
 
   return (
     <Layout>
-      <SEO
-        title={title}
-        description={excerpt.excerpt}
-        image={`https:${heroImage?.fluid.src}`}
-      />
+      <SEO title={title} description={excerpt.excerpt} image={postImage} />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
         <Wrapper padX={false} width="thin" className={styles.postMeta}>
           <Category title={category.title} slug={category.slug} />
