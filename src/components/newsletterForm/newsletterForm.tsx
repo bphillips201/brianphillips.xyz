@@ -14,14 +14,14 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
 
   return (
     <Grid
-      columns="repeat(auto-fit,minmax(320px,1fr))"
-      gap={'3.2rem'}
+      columns="repeat(auto-fit,minmax(305px,1fr))"
+      gap={'2.4rem'}
       alignItems="center"
       className={newsletterClasses}
       {...rest}
     >
       <Cell width={1}>
-        <h3>{language.newsletter.newsletterHeader}</h3>
+        <h4>{language.newsletter.newsletterHeader}</h4>
         <p>{language.newsletter.newsletterBlurb}</p>
       </Cell>
       <Cell middle width={1}>

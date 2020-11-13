@@ -6,13 +6,13 @@ import ActionLink from '../actionLink/actionLink'
 import Chevron from '../actionLink/chevron'
 
 type PaginationProps = AllHTMLAttributes<HTMLElement> & {
-  numPages?: number
-  currentPage?: number
+  numPages: number
+  currentPage: number
   path: string
 }
 
 const Pagination: React.FC<PaginationProps> = props => {
-  const { numPages = 0, currentPage = 0, path } = props
+  const { numPages, currentPage, path } = props
   const isHome = path === '/'
   const basePath = path.replace(/(\/$)|(\/\d+)/g, '')
   const olderPostPath =

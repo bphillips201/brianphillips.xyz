@@ -10,6 +10,7 @@ import CategoryList from '../components/categoryList/categoryList'
 import Pagination from '../components/pagination/pagination'
 import SectionHeader from '../components/sectionHeader/sectionHeader'
 import language from '../utils/language'
+import PostFeed from '../components/postFeed/postFeed'
 
 const Blog: React.FC<TPostGlobals> = props => {
   const { data, pageContext, path } = props
@@ -23,23 +24,14 @@ const Blog: React.FC<TPostGlobals> = props => {
       <Wrapper color="gray">
         <h1>Blog</h1>
       </Wrapper>
-
       <Wrapper>
-        <Grid columns={4} gap={'3.2rem'}>
-          <Cell width={3}>
-            <PostList posts={posts} />
-            <Pagination
-              currentPage={currentPage}
-              numPages={numPages}
-              path={path}
-            />
-          </Cell>
-
-          <Cell width={1}>
-            <SectionHeader>{language.homePage.topics}</SectionHeader>
-            <CategoryList categories={categories} />
-          </Cell>
-        </Grid>
+        <PostFeed
+          posts={posts}
+          categories={categories}
+          path={path}
+          numPages={numPages}
+          currentPage={currentPage}
+        />
       </Wrapper>
     </Layout>
   )

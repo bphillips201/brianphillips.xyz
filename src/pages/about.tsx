@@ -10,7 +10,7 @@ import StateMap from '../components/stateMap/stateMap'
 import ActionLink from '../components/actionLink/actionLink'
 
 const About: React.FC = () => (
-  <Layout className={styles.aboutPage}>
+  <Layout>
     <SEO title="About" />
     <Wrapper bigY={true}>
       <Circles />
@@ -42,7 +42,7 @@ const About: React.FC = () => (
         for investment opportunites, and playing a lot of video games.
       </p>
 
-      <ul>
+      <ul className={styles.list}>
         <li>
           <ActionLink
             to="https://www.linkedin.com/in/bphillips201/"

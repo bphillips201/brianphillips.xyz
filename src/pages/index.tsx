@@ -1,22 +1,18 @@
 import React from 'react'
-import { Link, PageProps, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-import {
-  TAllContentfulCategories,
-  TAllContentfulPosts,
-  TPostGlobals,
-} from '../utils/constants'
+import { TPostGlobals } from '../utils/constants'
 import language from '../utils/language'
 import Wrapper from '../components/wrapper/wrapper'
 import PostList from '../components/postList/postList'
 import CategoryList from '../components/categoryList/categoryList'
 import { Grid, Cell } from 'styled-css-grid'
 import SectionHeader from '../components/sectionHeader/sectionHeader'
-import BioCard from '../components/bioCard/bioCard'
 import NewsletterForm from '../components/newsletterForm/newsletterForm'
-import ActionLink from '../components/actionLink/actionLink'
 import Pagination from '../components/pagination/pagination'
+import FeaturedContent from '../components/featuredContent/featuredContent'
+import PostFeed from '../components/postFeed/postFeed'
 
 const IndexPage: React.FC<TPostGlobals> = props => {
   const allPosts = props.data.allContentfulPosts.edges.map(n => n.node)
@@ -31,43 +27,16 @@ const IndexPage: React.FC<TPostGlobals> = props => {
     <Layout>
       <SEO title="Home" />
       <Wrapper color="gray">
-        <SectionHeader>{language.homePage.featuredWriting}</SectionHeader>
-        <Grid columns={3} gap="3.2rem" style={{ marginBottom: '3.2rem' }}>
-          <Cell width={2}>
-            <PostList
-              posts={firstRead}
-              variant="first"
-              backgroundImage={true}
-            />
-          </Cell>
-          <Cell width={1}>
-            <BioCard />
-          </Cell>
-        </Grid>
-
-        <PostList
-          posts={featuredPosts}
-          variant="featured"
-          backgroundImage={true}
-          style={{ marginBottom: '3.2rem' }}
-        />
-
+        <FeaturedContent firstRead={firstRead} featuredPosts={featuredPosts} />
         <NewsletterForm />
       </Wrapper>
 
       <Wrapper>
-        <Grid columns={4} gap={'3.2rem'}>
-          <Cell width={3}>
-            <SectionHeader>{language.homePage.latestPosts}</SectionHeader>
-            <PostList posts={latestPosts} />
-            <Pagination path={props.path} />
-          </Cell>
-
-          <Cell width={1}>
-            <SectionHeader>{language.homePage.topics}</SectionHeader>
-            <CategoryList categories={allCategories} />
-          </Cell>
-        </Grid>
+        <PostFeed
+          posts={latestPosts}
+          categories={allCategories}
+          path={props.path}
+        />
       </Wrapper>
     </Layout>
   )

@@ -20,8 +20,45 @@ h6 {
   letter-spacing: -0.025rem;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
 a {
   color: $strongBlue;
+}
+
+blockquote {
+  border-left: 4px solid $light-gray;
+  padding-left: 2.4rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  margin-left: 0;
+  font-family: $fonts-fancy;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 p,
@@ -29,9 +66,14 @@ ul,
 ol,
 blockquote {
   line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 strong,
 b {
   font-weight: 600;
+}
+
+li {
+  margin: 1.6rem 0;
 }

@@ -7,9 +7,13 @@
   box-shadow: 0 0 10px -2px $light-gray;
   width: 100%;
 
-  h3 {
+  @media screen and (max-width: 640px) {
+    padding: 2.4rem;
+  }
+
+  h4 {
     margin-top: 0;
-    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
   }
 
   p {
@@ -22,6 +26,7 @@
 
   label {
     display: inline-block;
+    cursor: text;
     position: absolute;
     background-color: transparent;
     padding: 0.8rem;

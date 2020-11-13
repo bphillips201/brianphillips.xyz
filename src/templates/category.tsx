@@ -10,6 +10,7 @@ import CategoryList from '../components/categoryList/categoryList'
 import Pagination from '../components/pagination/pagination'
 import SectionHeader from '../components/sectionHeader/sectionHeader'
 import language from '../utils/language'
+import PostFeed from '../components/postFeed/postFeed'
 
 const Category: React.FC<TPostGlobals> = props => {
   const { data, pageContext, path } = props
@@ -26,27 +27,13 @@ const Category: React.FC<TPostGlobals> = props => {
       </Wrapper>
 
       <Wrapper>
-        <Grid columns={4} gap={'3.2rem'}>
-          <Cell width={3}>
-            {posts.length > 0 ? (
-              <>
-                <PostList posts={posts} />
-                <Pagination
-                  currentPage={currentPage}
-                  numPages={numPages}
-                  path={path}
-                />
-              </>
-            ) : (
-              <h3>No posts found for this category</h3>
-            )}
-          </Cell>
-
-          <Cell width={1}>
-            <SectionHeader>{language.homePage.topics}</SectionHeader>
-            <CategoryList categories={allCategories} />
-          </Cell>
-        </Grid>
+        <PostFeed
+          posts={posts}
+          categories={allCategories}
+          path={path}
+          numPages={numPages}
+          currentPage={currentPage}
+        />
       </Wrapper>
     </Layout>
   )
