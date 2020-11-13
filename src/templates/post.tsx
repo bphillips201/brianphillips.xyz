@@ -24,7 +24,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
       <SEO
         title={title}
         description={excerpt.excerpt}
-        image={heroImage?.fluid.src}
+        image={`https:${heroImage?.fluid.src}`}
       />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
         <Wrapper padX={false} width="thin" className={styles.postMeta}>
@@ -72,7 +72,7 @@ export const postQuery = graphql`
           maxHeight: 500
           quality: 90
         ) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_withWebp
         }
       }
     }

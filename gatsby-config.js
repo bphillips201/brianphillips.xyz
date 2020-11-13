@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
     description: `Inspiring smart people to do smart things`,
-    author: `Brian Phillips`
+    author: `Brian Phillips`,
+    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://angry-fermat-ee6c83.netlify.app',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

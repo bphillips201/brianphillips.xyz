@@ -32,11 +32,12 @@ const SEO: React.FC<TSEOProps> = ({
             title
             description
             author
+            siteUrl
           }
         }
         file(relativePath: { eq: "banner-img.jpg" }) {
           childImageSharp {
-            fluid {
+            fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -45,10 +46,10 @@ const SEO: React.FC<TSEOProps> = ({
     `
   )
 
-  console.log(file.childImageSharp.fluid.src)
-
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const pageImage =
+    image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
 
   return (
     <Helmet
@@ -76,7 +77,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:image`,
-          content: image || file.childImageSharp.fluid.src,
+          content: pageImage,
         },
         {
           name: `twitter:card`,
@@ -96,7 +97,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:image`,
-          content: image || file.childImageSharp.fluid.src,
+          content: pageImage,
         },
       ].concat(meta || [])}
     />
