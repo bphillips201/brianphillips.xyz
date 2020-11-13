@@ -24,7 +24,7 @@ const SEO: React.FC<TSEOProps> = ({
   image = '',
   title,
 }) => {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -34,9 +34,18 @@ const SEO: React.FC<TSEOProps> = ({
             author
           }
         }
+        file(relativePath: { eq: "banner-img.jpg" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   )
+
+  console.log(file.childImageSharp.fluid.src)
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
@@ -67,7 +76,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:image`,
-          content: image,
+          content: image || file.childImageSharp.fluid.src,
         },
         {
           name: `twitter:card`,
@@ -84,6 +93,10 @@ const SEO: React.FC<TSEOProps> = ({
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: image || file.childImageSharp.fluid.src,
         },
       ].concat(meta || [])}
     />

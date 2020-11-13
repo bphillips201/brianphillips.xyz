@@ -4,17 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
     description: `Inspiring smart people to do smart things`,
-    author: `Brian Phillips`,
-    menuLinks: [
-      {
-        name: `home`,
-        link: `/`,
-      },
-      {
-        name: `about`,
-        link: `/about`,
-      },
-    ],
+    author: `Brian Phillips`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
