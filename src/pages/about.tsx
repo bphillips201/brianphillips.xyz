@@ -1,13 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import Wrapper from '../components/wrapper/wrapper'
-import * as styles from '../components/layout/layout.module.scss'
-import { Cell, Grid } from 'styled-css-grid'
 import Circles from '../components/circles/circles'
-import StateMap from '../components/stateMap/stateMap'
 import ActionLink from '../components/actionLink/actionLink'
+import * as styles from '../components/layout/layout.module.scss'
 
 const About: React.FC = () => (
   <Layout>
