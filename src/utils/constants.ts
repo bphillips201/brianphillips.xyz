@@ -56,6 +56,9 @@ export type TAllContentfulCategories = {
 export type TPostGlobals = {
   data: TAllContentfulPosts & TAllContentfulCategories & TContentfulPost
   path: string
+  location: {
+    href: string
+  }
   pageContext: {
     numPages: number
     currentPage: number

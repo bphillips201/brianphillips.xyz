@@ -51,8 +51,6 @@ const SEO: React.FC<TSEOProps> = ({
   const pageImage =
     image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
 
-  console.log(pageImage)
-
   return (
     <Helmet
       htmlAttributes={{

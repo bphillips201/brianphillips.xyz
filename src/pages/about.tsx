@@ -54,6 +54,12 @@ const About: React.FC = () => (
             Follow me on Twitter
           </ActionLink>
         </li>
+
+        <li>
+          <ActionLink to="/blog/readme" external={true}>
+            Read my Manager README
+          </ActionLink>
+        </li>
       </ul>
     </Wrapper>
 
