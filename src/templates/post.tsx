@@ -11,12 +11,21 @@ import * as styles from '../components/layout/layout.module.scss'
 import NewsletterForm from '../components/newsletterForm/newsletterForm'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
-  console.log(props)
-  const { content, heroImage, title, category } = props.data.contentfulPosts
+  const {
+    content,
+    excerpt,
+    heroImage,
+    title,
+    category,
+  } = props.data.contentfulPosts
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO
+        title={title}
+        description={excerpt.excerpt}
+        image={heroImage?.fluid.src}
+      />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
         <Wrapper padX={false} width="thin" className={styles.postMeta}>
           <Category title={category.title} slug={category.slug} />
@@ -46,6 +55,9 @@ export const postQuery = graphql`
       publishDate
       content {
         content
+      }
+      excerpt {
+        excerpt
       }
       category {
         title

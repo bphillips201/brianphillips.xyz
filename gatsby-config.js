@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
     description: `Inspiring smart people to do smart things`,
-    author: `@bphillips201`,
+    author: `Brian Phillips`,
     menuLinks: [
       {
         name: `home`,

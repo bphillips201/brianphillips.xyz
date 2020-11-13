@@ -13,6 +13,7 @@ type TSEOProps = {
   description?: string
   lang?: string
   meta?: []
+  image?: string
   title: string
 }
 
@@ -20,6 +21,7 @@ const SEO: React.FC<TSEOProps> = ({
   description,
   lang = 'en',
   meta,
+  image = '',
   title,
 }) => {
   const { site } = useStaticQuery(
@@ -53,7 +55,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.author}`,
         },
         {
           property: `og:description`,
@@ -62,6 +64,10 @@ const SEO: React.FC<TSEOProps> = ({
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           name: `twitter:card`,
@@ -73,7 +79,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.author}`,
         },
         {
           name: `twitter:description`,

@@ -21,6 +21,9 @@ export type TPost = {
   content: {
     content: string
   }
+  excerpt: {
+    excerpt: string
+  }
 }
 
 export type TContentfulPost = {

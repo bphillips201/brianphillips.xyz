@@ -13,8 +13,6 @@ type TFeaturedContentProps = {
 const FeaturedContent: React.FC<TFeaturedContentProps> = props => {
   const { firstRead, featuredPosts } = props
 
-  console.log(featuredPosts)
-
   return (
     <>
       <SectionHeader>{language.homePage.featuredWriting}</SectionHeader>
