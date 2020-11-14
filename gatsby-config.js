@@ -57,5 +57,60 @@ module.exports = {
           process.env.NODE_ENV === 'development' ? 'master' : 'master',
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulPosts } }) => {
+              return allContentfulPosts.edges.map(post => {
+                return Object.assign({}, post.node, {
+                  description: post.node.excerpt.excerpt,
+                  date: post.node.publishDate,
+                  url: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
+                  guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
+                  custom_elements: [{ "content:encoded": post.node.content.content }],
+                })
+              })
+            },
+            query: `
+              {
+                allContentfulPosts(sort: {order: DESC, fields: publishDate}) {
+                  edges {
+                    node {
+                      title
+                      content {
+                        content
+                      }
+                      slug
+                      publishDate
+                      excerpt {
+                        excerpt
+                      }
+                      updatedAt
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Latest posts from Brian Phillips",
+          },
+        ],
+      },
+    },
+
   ],
 }
