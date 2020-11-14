@@ -14,7 +14,7 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
 
   return (
     <Grid
-      columns="repeat(auto-fit,minmax(305px,1fr))"
+      columns="repeat(auto-fit,minmax(297px,1fr))"
       gap={'2.4rem'}
       alignItems="center"
       className={newsletterClasses}
