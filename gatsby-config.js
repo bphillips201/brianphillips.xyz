@@ -5,7 +5,7 @@ module.exports = {
     title: `Brian Phillips`,
     description: `Inspiring smart people to do smart things`,
     author: `Brian Phillips`,
-    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://angry-fermat-ee6c83.netlify.app',
+    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://brianphillips.xyz',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -136,7 +136,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Brian Phillips — Blog",
+            title: "Brian Phillips | Blog",
           },
         ],
       },
