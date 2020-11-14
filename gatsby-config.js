@@ -92,7 +92,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
                   custom_elements: [{ "content:encoded": post.node.content.childMarkdownRemark.html }],
                   enclosure: {
-                    url: post.node.heroImage ? `https:${post.node.heroImage.fluid.src}` : site.siteMetadata.siteUrl + file.childImageSharp.fluid.src
+                    url: post.node.heroImage ? `https:${post.node.heroImage.fluid.src}` : site.siteMetadata.siteUrl + file.childImageSharp.fluid.src.heroImage,
+                    type: 'image/jpeg'
                   }
                 })
               })
