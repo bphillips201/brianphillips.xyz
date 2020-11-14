@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `@contentful/gatsby-transformer-contentful-richtext`,
@@ -70,18 +71,31 @@ module.exports = {
                 site_url: siteUrl
               }
             }
+            file(relativePath: { eq: "banner-img.jpg" }) {
+              childImageSharp {
+                fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allContentfulPosts } }) => {
+            serialize: ({ query: { site, allContentfulPosts, file } }) => {
               return allContentfulPosts.edges.map(post => {
+                const pageImageUrl =
+                `https://${post.node.heroImage.fluid.src}` || site.siteMetadata.siteUrl + file.childImageSharp.fluid.src
+
                 return Object.assign({}, post.node, {
                   description: post.node.excerpt.excerpt,
                   date: post.node.publishDate,
                   url: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
                   guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
-                  custom_elements: [{ "content:encoded": post.node.content.content }],
+                  custom_elements: [{ "content:encoded": post.node.content.childMarkdownRemark.html }],
+                  enclosure: {
+                    url: postImageUrl
+                  }
                 })
               })
             },
@@ -92,7 +106,9 @@ module.exports = {
                     node {
                       title
                       content {
-                        content
+                        childMarkdownRemark {
+                          html
+                        }
                       }
                       slug
                       publishDate
@@ -100,13 +116,25 @@ module.exports = {
                         excerpt
                       }
                       updatedAt
+                      heroImage {
+                        description
+                        fluid(
+                          resizingBehavior: FILL
+                          maxWidth: 1000
+                          cropFocus: CENTER
+                          maxHeight: 500
+                          quality: 90
+                        ) {
+                          ...GatsbyContentfulFluid
+                        }
+                      }
                     }
                   }
                 }
               }
             `,
             output: "/rss.xml",
-            title: "Latest posts from Brian Phillips",
+            title: "Brian Phillips — Blog",
           },
         ],
       },

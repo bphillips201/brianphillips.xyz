@@ -3,7 +3,6 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import CustomMarkdown from '../components/customMarkdown'
 import Category from '../components/category/category'
 import { TPostGlobals } from '../utils/constants'
 import Wrapper from '../components/wrapper/wrapper'
@@ -45,7 +44,11 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
         )}
 
         <Wrapper padX={false} width="thin" className={styles.content}>
-          <CustomMarkdown>{content.content}</CustomMarkdown>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content.childMarkdownRemark.html,
+            }}
+          />
         </Wrapper>
 
         <Wrapper padX={false} width="thin" className={styles.share}>
@@ -90,7 +93,9 @@ export const postQuery = graphql`
       title
       publishDate
       content {
-        content
+        childMarkdownRemark {
+          html
+        }
       }
       excerpt {
         excerpt

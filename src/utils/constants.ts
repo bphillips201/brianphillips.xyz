@@ -19,7 +19,9 @@ export type TPost = {
   publishDate: Date
   heroImage?: TImage
   content: {
-    content: string
+    childMarkdownRemark: {
+      html: string
+    }
   }
   excerpt: {
     excerpt: string
