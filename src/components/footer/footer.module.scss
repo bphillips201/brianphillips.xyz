@@ -2,8 +2,6 @@
 
 .footer {
   text-align: center;
-  display: flex;
-  flex-direction: column;
   position: relative;
   z-index: 1;
 }
@@ -11,7 +9,7 @@
 .nav {
   flex: 1;
   text-align: center;
-  margin: 4.2rem 0;
+  margin: 3.2rem 0;
   font-family: $fonts-fancy;
 
   ul {
