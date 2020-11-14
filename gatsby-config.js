@@ -74,7 +74,7 @@ module.exports = {
             file(relativePath: { eq: "banner-img.jpg" }) {
               childImageSharp {
                 fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
-                  ...GatsbyImageSharpFluid
+                  src
                 }
               }
             }
@@ -84,17 +84,15 @@ module.exports = {
           {
             serialize: ({ query: { site, allContentfulPosts, file } }) => {
               return allContentfulPosts.edges.map(post => {
-                const pageImageUrl =
-                `https://${post.node.heroImage.fluid.src}` || site.siteMetadata.siteUrl + file.childImageSharp.fluid.src
-
                 return Object.assign({}, post.node, {
                   description: post.node.excerpt.excerpt,
+                  categories: post.category ? [post.category.title] : [],
                   date: post.node.publishDate,
                   url: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
                   guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
                   custom_elements: [{ "content:encoded": post.node.content.childMarkdownRemark.html }],
                   enclosure: {
-                    url: postImageUrl
+                    url: post.node.heroImage ? `https:${post.node.heroImage.fluid.src}` : site.siteMetadata.siteUrl + file.childImageSharp.fluid.src
                   }
                 })
               })
@@ -105,6 +103,9 @@ module.exports = {
                   edges {
                     node {
                       title
+                      category {
+                        title
+                      }
                       content {
                         childMarkdownRemark {
                           html
@@ -125,7 +126,7 @@ module.exports = {
                           maxHeight: 500
                           quality: 90
                         ) {
-                          ...GatsbyContentfulFluid
+                          src
                         }
                       }
                     }
