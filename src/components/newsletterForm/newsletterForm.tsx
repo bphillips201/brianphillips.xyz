@@ -42,6 +42,7 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
                 name="EMAIL"
                 className="required email"
                 id="mce-EMAIL"
+                placeholder=" "
                 required
               />
               <label htmlFor="mce-EMAIL">{language.newsletter.labelText}</label>

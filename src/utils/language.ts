@@ -36,7 +36,7 @@ const language: TLanguage = {
     featuredWriting: `Featured Writing`,
     latestPosts: `Latest Posts`,
     topics: `Categories`,
-    aboutMeLink: `Learn More`,
+    aboutMeLink: `About Me`,
     viewBlog: `View Blog`,
     aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`,
   },

@@ -39,7 +39,11 @@ const PostList: React.FC<TPostList> = props => {
           </div>
         ) : (
           <div className={styles[variant]} {...rest} key={post.id}>
-            <Category title={post.category.title} slug={post.category.slug} />
+            <Category
+              readOnly={true}
+              title={post.category.title}
+              slug={post.category.slug}
+            />
             <Component>
               <Link to={`/blog/${post.slug}`}>{post.title}</Link>
             </Component>

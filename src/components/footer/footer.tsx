@@ -13,10 +13,14 @@ const Footer: React.FC = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link activeClassName={styles.active} to="/blog">
+              Blog
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link activeClassName={styles.active} to="/about">
+              About
+            </Link>
           </li>
         </ul>
       </nav>

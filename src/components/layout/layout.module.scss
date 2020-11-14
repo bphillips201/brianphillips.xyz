@@ -99,21 +99,22 @@ body {
 .share {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 3.2rem;
 
   .shareIcon {
     position: relative;
     margin-top: 0;
     margin-right: 2.4rem;
-    box-shadow: 0 0 0 12px $soft-gray;
-    background-color: $soft-gray;
+    box-shadow: 0 0 0 12px $light-gray;
+    background-color: $light-gray;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
 
     svg {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       position: relative;
       left: -3px;
     }
@@ -121,7 +122,7 @@ body {
     &:after {
       content: '';
       position: absolute;
-      background-color: $soft-gray;
+      background-color: $light-gray;
       height: 4px;
       width: 1.6rem;
       right: -2.8rem;
@@ -134,7 +135,7 @@ body {
     position: relative;
     display: inline-block;
     margin: 0 0.8rem;
-    box-shadow: 0 0 0 4px $soft-gray;
+    box-shadow: 0 0 0 4px $light-gray;
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -160,7 +161,7 @@ body {
     &:after {
       content: '';
       position: absolute;
-      background-color: $soft-gray;
+      background-color: $light-gray;
       height: 4px;
       width: 1.6rem;
       right: -1.6rem;

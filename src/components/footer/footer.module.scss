@@ -23,11 +23,35 @@
   }
 
   a {
+    position: relative;
     text-decoration: none;
     color: $black;
     font-size: 1.6rem;
-    padding: 0.8rem;
-    margin: 0 1rem;
+    padding: 0.8rem 0;
+    margin: 1.6rem;
+    transition: color 300ms ease;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: $strongBlue;
+
+      &:after {
+        width: 100%;
+        background-color: $strongBlue;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $black;
+      transition: width 300ms ease, background-color 300ms ease;
+    }
   }
 }
 

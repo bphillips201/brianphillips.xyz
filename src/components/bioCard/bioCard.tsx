@@ -23,7 +23,7 @@ const BioCard: React.FC = () => {
       <Img fixed={data.avatar.childImageSharp.fixed} />
       <p>{language.homePage.aboutMe}</p>
       <ActionLink to={`/about`} arrow="right">
-        Learn More
+        {language.homePage.aboutMeLink}
       </ActionLink>
     </section>
   )

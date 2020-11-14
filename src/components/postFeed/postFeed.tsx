@@ -22,7 +22,7 @@ const PostFeed: React.FC<TPostFeedProps> = props => {
     <section className={styles.postFeed}>
       <div className={styles.posts}>
         {path === '/' && (
-          <SectionHeader>{language.homePage.latestPosts}</SectionHeader>
+          <SectionHeader as="h3">{language.homePage.latestPosts}</SectionHeader>
         )}
         {posts.length > 0 ? (
           <>
@@ -39,7 +39,7 @@ const PostFeed: React.FC<TPostFeedProps> = props => {
       </div>
 
       <div className={styles.categories}>
-        <SectionHeader>{language.homePage.topics}</SectionHeader>
+        <SectionHeader as="h3">{language.homePage.topics}</SectionHeader>
         <CategoryList categories={categories} />
       </div>
     </section>

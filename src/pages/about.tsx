@@ -49,11 +49,11 @@ const About: React.FC = () => (
           </ActionLink>
         </li>
 
-        <li>
+        {/* <li>
           <ActionLink to="https://twitter.com/philianor" external={true}>
             Follow me on Twitter
           </ActionLink>
-        </li>
+        </li> */}
 
         <li>
           <ActionLink to="/blog/readme" external={true}>

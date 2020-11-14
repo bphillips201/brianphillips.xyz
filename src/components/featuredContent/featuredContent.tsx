@@ -15,7 +15,7 @@ const FeaturedContent: React.FC<TFeaturedContentProps> = props => {
 
   return (
     <>
-      <SectionHeader>{language.homePage.featuredWriting}</SectionHeader>
+      <SectionHeader as="h2">{language.homePage.featuredWriting}</SectionHeader>
       <section className={styles.featuredContent}>
         <PostList posts={firstRead} variant="first" backgroundImage={true} />
         <BioCard />

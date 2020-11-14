@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { AllHTMLAttributes, ReactNode } from 'react'
 import * as styles from './sectionHeader.module.scss'
 
-const SectionHeader: React.FC = props => {
-  return <div className={styles.sectionHeader}>{props.children}</div>
+type TSectionHeaderProps = AllHTMLAttributes<HTMLElement> & {
+  as?: ReactNode
+}
+
+const SectionHeader: React.FC<TSectionHeaderProps> = props => {
+  const { as = 'div' } = props
+  const Component: any = as
+
+  return (
+    <Component className={styles.sectionHeader}>{props.children}</Component>
+  )
 }
 
 export default SectionHeader
