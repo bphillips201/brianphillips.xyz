@@ -14,30 +14,26 @@ const About: React.FC = () => (
     </Wrapper>
 
     <Wrapper width="thin">
-      <h1>Engineer. Investor. Writer.</h1>
+      <h1>Hello and welcome.</h1>
 
       <p>
-        I grew up in a small Mississippi town and left home at 25 to work at fun
-        companies with cool people. By trade, I’m a front end engineer who’s
-        addicted to{' '}
-        <a
-          href="https://www.typescriptlang.org/"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          TypeScript
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://www.gatsbyjs.com/"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          Gatsby
-        </a>
-        ; when I’m not building websites and apps, I’m writing stories, scouting
-        for investment opportunites, and playing a lot of video games.
+        I'm Brian Phillips, a software engineer, writer, and investor living in
+        California. I grew up in a small southern town and left home at 25 to
+        work at cool companies with cool people. In recent years, I was an
+        engineering manager leading a team of 17 engineers.
       </p>
+
+      <p>
+        In August 2020, I took a career break, during which I've been spending
+        time with my wife, building web apps, writing stories, and playing video
+        games.
+      </p>
+
+      <li>
+        <ActionLink to="http://eepurl.com/cSSbmz" external={true}>
+          Subscribe to my newsletter
+        </ActionLink>
+      </li>
 
       <ul className={styles.list}>
         <li>
@@ -46,18 +42,6 @@ const About: React.FC = () => (
             external={true}
           >
             View my LinkedIn profile
-          </ActionLink>
-        </li>
-
-        {/* <li>
-          <ActionLink to="https://twitter.com/philianor" external={true}>
-            Follow me on Twitter
-          </ActionLink>
-        </li> */}
-
-        <li>
-          <ActionLink to="/blog/readme" external={true}>
-            Read my Manager README
           </ActionLink>
         </li>
       </ul>
