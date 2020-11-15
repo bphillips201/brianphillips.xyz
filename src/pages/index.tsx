@@ -77,7 +77,7 @@ export const postQuery = graphql`
         }
       }
     }
-    allContentfulCategories {
+    allContentfulCategories(sort: { fields: title, order: ASC }) {
       edges {
         node {
           id

@@ -113,7 +113,7 @@ export const postQuery = graphql`
           maxHeight: 500
           quality: 90
         ) {
-          ...GatsbyContentfulFluid_withWebp
+          ...GatsbyContentfulFluid
         }
       }
     }

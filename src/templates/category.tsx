@@ -44,7 +44,7 @@ export const categoryListQuery = graphql`
     contentfulCategories(id: { eq: $id }) {
       title
     }
-    allContentfulCategories {
+    allContentfulCategories(sort: { fields: title, order: ASC }) {
       edges {
         node {
           id
