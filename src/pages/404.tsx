@@ -1,6 +1,8 @@
 import { navigate } from 'gatsby'
 
 export default function NotFoundPage() {
-  navigate('/', { replace: true })
+  if (typeof window !== 'undefined') {
+    navigate('/', { replace: true })
+  }
   return null
 }
