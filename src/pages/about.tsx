@@ -29,13 +29,13 @@ const About: React.FC = () => (
         games.
       </p>
 
-      <li>
-        <ActionLink to="http://eepurl.com/cSSbmz" external={true}>
-          Subscribe to my newsletter
-        </ActionLink>
-      </li>
-
       <ul className={styles.list}>
+        <li>
+          <ActionLink to="http://eepurl.com/cSSbmz" external={true}>
+            Subscribe to my newsletter
+          </ActionLink>
+        </li>
+
         <li>
           <ActionLink
             to="https://www.linkedin.com/in/bphillips201/"

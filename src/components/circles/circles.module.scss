@@ -22,7 +22,7 @@ $dim: 100;
   width: #{$dim * $scale}px;
   height: #{$dim * $scale}px;
   left: 50%;
-  top: $scale;
+  top: 0;
   margin-left: -50px * $scale;
   transform-origin: center;
 
