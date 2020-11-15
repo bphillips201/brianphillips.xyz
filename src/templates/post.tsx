@@ -18,7 +18,6 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share'
-import SectionHeader from '../components/sectionHeader/sectionHeader'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
   const {

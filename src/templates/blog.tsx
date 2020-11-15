@@ -4,12 +4,6 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import Wrapper from '../components/wrapper/wrapper'
 import { TPostGlobals } from '../utils/constants'
-import { Grid, Cell } from 'styled-css-grid'
-import PostList from '../components/postList/postList'
-import CategoryList from '../components/categoryList/categoryList'
-import Pagination from '../components/pagination/pagination'
-import SectionHeader from '../components/sectionHeader/sectionHeader'
-import language from '../utils/language'
 import PostFeed from '../components/postFeed/postFeed'
 
 const Blog: React.FC<TPostGlobals> = props => {
