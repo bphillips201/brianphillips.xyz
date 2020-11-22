@@ -58,14 +58,8 @@ export const postQuery = graphql`
           }
           heroImage {
             description
-            fluid(
-              resizingBehavior: FILL
-              maxWidth: 800
-              cropFocus: CENTER
-              maxHeight: 400
-              quality: 90
-            ) {
-              ...GatsbyContentfulFluid
+            fluid(maxWidth: 800, maxHeight: 400, quality: 90) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
         }

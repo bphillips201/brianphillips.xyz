@@ -33,7 +33,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
     <Layout>
       <SEO title={title} description={excerpt.excerpt} image={postImage} />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
-        <Wrapper padX={false} width="thin" className={styles.postMeta}>
+        <Wrapper noPadX width="thin" className={styles.postMeta}>
           <Category title={category.title} slug={category.slug} />
           <h1>{title}</h1>
         </Wrapper>
@@ -42,7 +42,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           <Img alt={heroImage.description || ''} fluid={heroImage.fluid} />
         )}
 
-        <Wrapper padX={false} width="thin" className={styles.content}>
+        <Wrapper noPadX width="thin" className={styles.content}>
           <div
             dangerouslySetInnerHTML={{
               __html: content.childMarkdownRemark.html,
@@ -50,7 +50,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           />
         </Wrapper>
 
-        <Wrapper padX={false} width="thin" className={styles.share}>
+        <Wrapper noPadX width="thin" className={styles.share}>
           <div className={styles.shareIcon} title="Share this post">
             <svg
               height="67"
@@ -65,20 +65,20 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
             </svg>
           </div>
           <FacebookShareButton url={props.location.href}>
-            <FacebookIcon size={40} round={true} />
+            <FacebookIcon size={40} round />
           </FacebookShareButton>
           <TwitterShareButton url={props.location.href}>
-            <TwitterIcon size={40} round={true} />
+            <TwitterIcon size={40} round />
           </TwitterShareButton>
           <RedditShareButton url={props.location.href}>
-            <RedditIcon size={40} round={true} />
+            <RedditIcon size={40} round />
           </RedditShareButton>
           <LinkedinShareButton url={props.location.href}>
-            <LinkedinIcon size={40} round={true} />
+            <LinkedinIcon size={40} round />
           </LinkedinShareButton>
         </Wrapper>
 
-        <Wrapper padX={false} width="thin" className={styles.postNewsletter}>
+        <Wrapper noPadX width="thin" className={styles.postNewsletter}>
           <NewsletterForm />
         </Wrapper>
       </Wrapper>
@@ -105,14 +105,8 @@ export const postQuery = graphql`
       }
       heroImage {
         description
-        fluid(
-          resizingBehavior: FILL
-          maxWidth: 1000
-          cropFocus: CENTER
-          maxHeight: 500
-          quality: 90
-        ) {
-          ...GatsbyContentfulFluid
+        fluid(maxWidth: 1000, maxHeight: 500, quality: 90) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }

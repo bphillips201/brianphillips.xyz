@@ -6,27 +6,21 @@ import Chevron from './Chevron'
 
 type TActionLinkProps = AllHTMLAttributes<HTMLElement> & {
   to: string
-  external?: boolean
+  text: string
   arrow?: 'left' | 'right' | 'none'
 }
 
 const ActionLink: React.FC<TActionLinkProps> = props => {
-  const {
-    to,
-    children,
-    external = false,
-    arrow = 'none',
-    className = '',
-    ...rest
-  } = props
+  const { to, children, text, arrow = 'right', className = '', ...rest } = props
   const actionLinkClasses = classnames({
     [styles.actionLink]: true,
     [className]: className,
   })
+  const isExternal = to.includes('http')
 
   return (
     <>
-      {external ? (
+      {isExternal ? (
         <a
           href={to}
           target="_blank"
@@ -34,12 +28,14 @@ const ActionLink: React.FC<TActionLinkProps> = props => {
           className={actionLinkClasses}
           {...rest}
         >
-          {children} <Chevron direction={'right'} />
+          {arrow === 'left' && <Chevron direction={'left'} />}
+          {text}
+          {arrow === 'right' && <Chevron direction={'right'} />}
         </a>
       ) : (
         <Link to={to} className={actionLinkClasses} {...rest}>
           {arrow === 'left' && <Chevron direction={arrow} />}
-          {children}
+          {text}
           {arrow === 'right' && <Chevron direction={arrow} />}
         </Link>
       )}

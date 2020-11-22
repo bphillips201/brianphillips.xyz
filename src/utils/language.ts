@@ -24,6 +24,12 @@ type TLanguage = {
     olderPosts: string
     newerPosts: string
   }
+  about: {
+    [name: string]: {
+      text: string
+      url: string
+    }
+  }
 }
 
 const language: TLanguage = {
@@ -51,6 +57,16 @@ const language: TLanguage = {
     searchPlaceholder: `Search posts...`,
     olderPosts: `Older Posts`,
     newerPosts: `Newer Posts`,
+  },
+  about: {
+    linkedIn: {
+      text: `View my LinkedIn profile`,
+      url: `https://www.linkedin.com/in/bphillips201/`,
+    },
+    newsletter: {
+      text: `Subscribe to my newsletter`,
+      url: `http://eepurl.com/cSSbmz`,
+    },
   },
 }
 
