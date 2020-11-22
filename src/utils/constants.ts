@@ -1,19 +1,17 @@
+import { FluidObject } from 'gatsby-image'
+
 export type TImage = {
   description?: string
-  fluid: {
-    aspectRatio: number
-    base64: string
-    sizes: string
-    src: string
-    srcSet: string
-  }
+  fluid: FluidObject
 }
 
 export type TPost = {
   id: string
   category: TCategory
   title: string
-  slug: string
+  fields: {
+    path: string
+  }
   isFeatured: boolean
   isFirstFeatured: boolean
   publishDate: Date
@@ -41,8 +39,9 @@ export type TAllContentfulPosts = {
 export type TCategory = {
   id?: string
   title: string
-  slug: string
-  readOnly?: boolean
+  fields: {
+    path: string
+  }
 }
 
 export type TContentfulCategory = {

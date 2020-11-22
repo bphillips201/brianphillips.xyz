@@ -5,7 +5,10 @@ module.exports = {
     title: `Brian Phillips`,
     description: `Inspiring smart people to do smart things`,
     author: `Brian Phillips`,
-    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://brianphillips.xyz',
+    siteUrl:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://brianphillips.xyz',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,18 +37,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Overpass`,
-            variants: [`600`],
-          },
-          {
-            family: `IBM Plex Sans`,
-            variants: [`400`, `600`, `400i`, `600i`],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: `Overpass`,
+              variants: [`600`],
+            },
+            {
+              family: `IBM Plex Sans`,
+              variants: [`400`, `600`, `400i`, `600i`],
+            },
+          ],
+        },
       },
     },
     {
@@ -90,11 +95,19 @@ module.exports = {
                   date: post.node.publishDate,
                   url: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
                   guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
-                  custom_elements: [{ "content:encoded": post.node.content.childMarkdownRemark.html }],
+                  custom_elements: [
+                    {
+                      'content:encoded':
+                        post.node.content.childMarkdownRemark.html,
+                    },
+                  ],
                   enclosure: {
-                    url: post.node.heroImage ? `https:${post.node.heroImage.fluid.src}` : site.siteMetadata.siteUrl + file.childImageSharp.fluid.src.heroImage,
-                    type: 'image/jpeg'
-                  }
+                    url: post.node.heroImage
+                      ? `https:${post.node.heroImage.fluid.src}`
+                      : site.siteMetadata.siteUrl +
+                        file.childImageSharp.fluid.src.heroImage,
+                    type: 'image/jpeg',
+                  },
                 })
               })
             },
@@ -135,12 +148,11 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Brian Phillips | Blog",
+            output: '/rss.xml',
+            title: 'Brian Phillips | Blog',
           },
         ],
       },
     },
-
   ],
 }

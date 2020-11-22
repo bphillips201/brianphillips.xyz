@@ -1,13 +1,12 @@
 import React from 'react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout/Layout'
+import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Category from '../components/category/category'
+import Category from '../components/Category/Category'
 import { TPostGlobals } from '../utils/constants'
-import Wrapper from '../components/wrapper/wrapper'
-import * as styles from '../components/layout/layout.module.scss'
-import NewsletterForm from '../components/newsletterForm/newsletterForm'
+import Wrapper from '../components/Wrapper/Wrapper'
+import NewsletterForm from '../components/NewsletterForm/NewsletterForm'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -18,6 +17,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share'
+import * as styles from '../components/Layout/Layout.module.scss'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
   const {
@@ -33,8 +33,8 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
     <Layout>
       <SEO title={title} description={excerpt.excerpt} image={postImage} />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
-        <Wrapper padX={false} width="thin" className={styles.postMeta}>
-          <Category title={category.title} slug={category.slug} />
+        <Wrapper noPadX width="thin" className={styles.postMeta}>
+          <Category title={category.title} path={category.fields.path} />
           <h1>{title}</h1>
         </Wrapper>
 
@@ -42,7 +42,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           <Img alt={heroImage.description || ''} fluid={heroImage.fluid} />
         )}
 
-        <Wrapper padX={false} width="thin" className={styles.content}>
+        <Wrapper noPadX width="thin" className={styles.content}>
           <div
             dangerouslySetInnerHTML={{
               __html: content.childMarkdownRemark.html,
@@ -50,7 +50,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           />
         </Wrapper>
 
-        <Wrapper padX={false} width="thin" className={styles.share}>
+        <Wrapper noPadX width="thin" className={styles.share}>
           <div className={styles.shareIcon} title="Share this post">
             <svg
               height="67"
@@ -65,20 +65,20 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
             </svg>
           </div>
           <FacebookShareButton url={props.location.href}>
-            <FacebookIcon size={40} round={true} />
+            <FacebookIcon size={40} round />
           </FacebookShareButton>
           <TwitterShareButton url={props.location.href}>
-            <TwitterIcon size={40} round={true} />
+            <TwitterIcon size={40} round />
           </TwitterShareButton>
           <RedditShareButton url={props.location.href}>
-            <RedditIcon size={40} round={true} />
+            <RedditIcon size={40} round />
           </RedditShareButton>
           <LinkedinShareButton url={props.location.href}>
-            <LinkedinIcon size={40} round={true} />
+            <LinkedinIcon size={40} round />
           </LinkedinShareButton>
         </Wrapper>
 
-        <Wrapper padX={false} width="thin" className={styles.postNewsletter}>
+        <Wrapper noPadX width="thin" className={styles.postNewsletter}>
           <NewsletterForm />
         </Wrapper>
       </Wrapper>
@@ -101,18 +101,14 @@ export const postQuery = graphql`
       }
       category {
         title
-        slug
+        fields {
+          path
+        }
       }
       heroImage {
         description
-        fluid(
-          resizingBehavior: FILL
-          maxWidth: 1000
-          cropFocus: CENTER
-          maxHeight: 500
-          quality: 90
-        ) {
-          ...GatsbyContentfulFluid
+        fluid(maxWidth: 1000, maxHeight: 500, quality: 90) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }

@@ -1,15 +1,16 @@
 import React from 'react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
-import Wrapper from '../components/wrapper/wrapper'
-import Circles from '../components/circles/circles'
-import ActionLink from '../components/actionLink/actionLink'
-import * as styles from '../components/layout/layout.module.scss'
+import SEO from '../components/SEO/SEO'
+import Layout from '../components/Layout/Layout'
+import Wrapper from '../components/Wrapper/Wrapper'
+import Circles from '../components/Circles/Circles'
+import ActionLink from '../components/ActionLink/ActionLink'
+import * as styles from '../components/Layout/Layout.module.scss'
+import language from '../utils/language'
 
 const About: React.FC = () => (
   <Layout>
     <SEO title="About" />
-    <Wrapper bigY={true}>
+    <Wrapper bigY>
       <Circles />
     </Wrapper>
 
@@ -31,27 +32,20 @@ const About: React.FC = () => (
 
       <ul className={styles.list}>
         <li>
-          <ActionLink to="http://eepurl.com/cSSbmz" external={true}>
-            Subscribe to my newsletter
-          </ActionLink>
+          <ActionLink
+            to={language.about.newsletter.url}
+            text={language.about.newsletter.text}
+          />
         </li>
 
         <li>
           <ActionLink
-            to="https://www.linkedin.com/in/bphillips201/"
-            external={true}
-          >
-            View my LinkedIn profile
-          </ActionLink>
+            to={language.about.linkedIn.url}
+            text={language.about.linkedIn.text}
+          />
         </li>
       </ul>
     </Wrapper>
-
-    {/* <Wrapper width="content" color="gray" bigY={true} align="center">
-      <h2>I've lived in some fun places.</h2>
-
-      <StateMap />
-    </Wrapper> */}
   </Layout>
 )
 
