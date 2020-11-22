@@ -1,8 +1,8 @@
 import React, { AllHTMLAttributes } from 'react'
-import Header from '../header/header'
-import Footer from '../footer/footer'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import classnames from 'classnames'
-import * as styles from './layout.module.scss'
+import * as styles from './Layout.module.scss'
 
 const Layout: React.FC<AllHTMLAttributes<HTMLElement>> = props => {
   const { children, className = '', ...rest } = props

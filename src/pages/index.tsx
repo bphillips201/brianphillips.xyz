@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout/Layout'
+import SEO from '../components/SEO/SEO'
 import { TPostGlobals } from '../utils/constants'
-import Wrapper from '../components/wrapper/wrapper'
-import NewsletterForm from '../components/newsletterForm/newsletterForm'
-import FeaturedContent from '../components/featuredContent/featuredContent'
-import PostFeed from '../components/postFeed/postFeed'
+import Wrapper from '../components/Wrapper/Wrapper'
+import NewsletterForm from '../components/NewsletterForm/NewsletterForm'
+import FeaturedContent from '../components/FeaturedContent/FeaturedContent'
+import PostFeed from '../components/PostFeed/PostFeed'
 
 const IndexPage: React.FC<TPostGlobals> = props => {
   const allPosts = props.data.allContentfulPosts.edges.map(n => n.node)

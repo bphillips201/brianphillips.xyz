@@ -1,10 +1,10 @@
 import React from 'react'
 import { TPost } from '../../utils/constants'
 import language from '../../utils/language'
-import BioCard from '../bioCard/bioCard'
-import PostList from '../postList/postList'
-import SectionHeader from '../sectionHeader/sectionHeader'
-import * as styles from './featuredContent.module.scss'
+import BioCard from '../BioCard/BioCard'
+import PostList from '../PostList/PostList'
+import SectionHeader from '../SectionHeader/SectionHeader'
+import * as styles from './FeaturedContent.module.scss'
 
 type TFeaturedContentProps = {
   [name: string]: TPost[]

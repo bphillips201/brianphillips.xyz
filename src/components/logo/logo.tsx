@@ -1,6 +1,6 @@
-import { Link } from 'gatsby'
 import React from 'react'
-import * as styles from './logo.module.scss'
+import { Link } from 'gatsby'
+import * as styles from './Logo.module.scss'
 
 const Logo: React.FC = () => (
   <Link to={`/`} title="Brian Phillips">

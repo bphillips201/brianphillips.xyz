@@ -1,10 +1,10 @@
 import React from 'react'
-import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
-import Wrapper from '../components/wrapper/wrapper'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout/Layout'
+import SEO from '../components/SEO/SEO'
+import Wrapper from '../components/Wrapper/Wrapper'
 import { TPostGlobals } from '../utils/constants'
-import PostFeed from '../components/postFeed/postFeed'
+import PostFeed from '../components/PostFeed/PostFeed'
 
 const Blog: React.FC<TPostGlobals> = props => {
   const { data, pageContext, path } = props

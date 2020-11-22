@@ -1,6 +1,6 @@
 import React, { AllHTMLAttributes, ReactNode } from 'react'
 import classnames from 'classnames'
-import * as styles from './wrapper.module.scss'
+import * as styles from './Wrapper.module.scss'
 
 type WrapperProps = AllHTMLAttributes<HTMLElement> & {
   color?: 'white' | 'gray'

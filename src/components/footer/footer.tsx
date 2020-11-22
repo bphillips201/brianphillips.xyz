@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../logo/logo'
+import Logo from '../Logo/Logo'
 import { Link } from 'gatsby'
-import * as styles from './footer.module.scss'
 import language from '../../utils/language'
-import Wrapper from '../wrapper/wrapper'
+import Wrapper from '../Wrapper/Wrapper'
+import * as styles from './Footer.module.scss'
 
 const Footer: React.FC = () => {
   return (

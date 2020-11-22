@@ -1,7 +1,7 @@
 import React from 'react'
 import { TCategory } from '../../utils/constants'
-import * as styles from './categoryList.module.scss'
-import Category from '../category/category'
+import Category from '../Category/Category'
+import * as styles from './CategoryList.module.scss'
 
 type TCategoryList = {
   categories: Array<TCategory>

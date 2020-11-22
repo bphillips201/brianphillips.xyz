@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../logo/logo'
+import Logo from '../Logo/Logo'
 import { Link } from 'gatsby'
-import Wrapper from '../wrapper/wrapper'
+import Wrapper from '../Wrapper/Wrapper'
 import { useLocation } from '@reach/router'
-import * as styles from './header.module.scss'
+import * as styles from './Header.module.scss'
 
 const Header: React.FC = () => {
   const Component: any = useLocation().pathname === '/' ? 'h1' : 'div'

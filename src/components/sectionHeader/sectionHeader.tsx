@@ -1,5 +1,5 @@
 import React, { AllHTMLAttributes, ReactNode } from 'react'
-import * as styles from './sectionHeader.module.scss'
+import * as styles from './SectionHeader.module.scss'
 
 type TSectionHeaderProps = AllHTMLAttributes<HTMLElement> & {
   as?: ReactNode

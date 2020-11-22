@@ -1,9 +1,9 @@
 import React, { AllHTMLAttributes } from 'react'
 import language from '../../utils/language'
-import * as styles from './pagination.module.scss'
 import classnames from 'classnames'
-import ActionLink from '../actionLink/actionLink'
-import Chevron from '../actionLink/chevron'
+import ActionLink from '../ActionLink/ActionLink'
+import Chevron from '../ActionLink/Chevron'
+import * as styles from './Pagination.module.scss'
 
 type PaginationProps = AllHTMLAttributes<HTMLElement> & {
   numPages: number

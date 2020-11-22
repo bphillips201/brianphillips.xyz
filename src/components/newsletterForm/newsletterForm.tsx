@@ -2,7 +2,7 @@ import React, { FormHTMLAttributes } from 'react'
 import language from '../../utils/language'
 import { Grid, Cell } from 'styled-css-grid'
 import classnames from 'classnames'
-import * as styles from './newsletterForm.module.scss'
+import * as styles from './NewsletterForm.module.scss'
 
 const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
   const { className = '', ...rest } = props

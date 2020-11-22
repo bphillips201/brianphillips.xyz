@@ -1,11 +1,11 @@
 import React from 'react'
 import { TCategory, TPost } from '../../utils/constants'
 import language from '../../utils/language'
-import CategoryList from '../categoryList/categoryList'
-import Pagination from '../pagination/pagination'
-import PostList from '../postList/postList'
-import SectionHeader from '../sectionHeader/sectionHeader'
-import * as styles from './postFeed.module.scss'
+import CategoryList from '../CategoryList/CategoryList'
+import Pagination from '../Pagination/Pagination'
+import PostList from '../PostList/PostList'
+import SectionHeader from '../SectionHeader/SectionHeader'
+import * as styles from './PostFeed.module.scss'
 
 type TPostFeedProps = {
   posts: TPost[]

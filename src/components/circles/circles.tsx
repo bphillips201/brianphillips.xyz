@@ -1,6 +1,5 @@
-import { Link } from 'gatsby'
 import React from 'react'
-import * as styles from './circles.module.scss'
+import * as styles from './Circles.module.scss'
 
 const Circles: React.FC = () => {
   return (

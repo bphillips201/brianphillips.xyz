@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { TCategory } from '../../utils/constants'
 import classnames from 'classnames'
-import * as styles from './category.module.scss'
+import * as styles from './Category.module.scss'
 
 const Category: React.FC<TCategory> = props => {
   const { title, slug, readOnly = false, ...rest } = props

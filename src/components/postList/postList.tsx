@@ -1,11 +1,9 @@
 import React, { AllHTMLAttributes } from 'react'
 import { TPost } from '../../utils/constants'
 import { Link } from 'gatsby'
-import Category from '../category/category'
+import Category from '../Category/Category'
 import BackgroundImage from 'gatsby-background-image'
-import classnames from 'classnames'
-import * as styles from './postList.module.scss'
-import { Cell } from 'styled-css-grid'
+import * as styles from './PostList.module.scss'
 
 type TPostList = AllHTMLAttributes<HTMLElement> & {
   posts: Array<TPost>

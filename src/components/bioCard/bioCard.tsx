@@ -1,9 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import * as styles from './bioCard.module.scss'
 import language from '../../utils/language'
-import ActionLink from '../actionLink/actionLink'
+import ActionLink from '../ActionLink/ActionLink'
+import * as styles from './BioCard.module.scss'
 
 const BioCard: React.FC = () => {
   const data = useStaticQuery(graphql`

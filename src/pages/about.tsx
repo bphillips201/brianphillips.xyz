@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo'
-import Wrapper from '../components/wrapper/wrapper'
-import Circles from '../components/circles/circles'
-import ActionLink from '../components/actionLink/actionLink'
-import * as styles from '../components/layout/layout.module.scss'
+import SEO from '../components/SEO/SEO'
+import Layout from '../components/Layout/Layout'
+import Wrapper from '../components/Wrapper/Wrapper'
+import Circles from '../components/Circles/Circles'
+import ActionLink from '../components/ActionLink/ActionLink'
+import * as styles from '../components/Layout/Layout.module.scss'
 
 const About: React.FC = () => (
   <Layout>

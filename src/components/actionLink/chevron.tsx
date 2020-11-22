@@ -1,5 +1,4 @@
 import React from 'react'
-import * as styles from './actionLink.module.scss'
 
 type TChevronProps = {
   direction: 'left' | 'right'
@@ -13,7 +12,6 @@ const Chevron: React.FC<TChevronProps> = props => {
 
   return (
     <svg
-      className={styles[direction]}
       height="186"
       viewBox="0 0 105 186"
       width="105"

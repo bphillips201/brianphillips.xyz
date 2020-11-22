@@ -1,8 +1,8 @@
 import React, { AllHTMLAttributes } from 'react'
 import { Link } from 'gatsby'
 import classnames from 'classnames'
-import * as styles from './actionLink.module.scss'
-import Chevron from './chevron'
+import * as styles from './ActionLink.module.scss'
+import Chevron from './Chevron'
 
 type TActionLinkProps = AllHTMLAttributes<HTMLElement> & {
   to: string
