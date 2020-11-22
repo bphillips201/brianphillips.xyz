@@ -6,12 +6,13 @@ import { useLocation } from '@reach/router'
 import * as styles from './Header.module.scss'
 
 const Header: React.FC = () => {
-  const Component: any = useLocation().pathname === '/' ? 'h1' : 'div'
+  const isHome = useLocation().pathname === '/'
+  const Component: any = isHome ? 'h1' : 'div'
 
   return (
     <Wrapper as="header" width="full" className={styles.header}>
       <Component className={styles.logo}>
-        <Logo />
+        <Logo animate={isHome} />
       </Component>
 
       <nav aria-label="navigation" className={styles.nav}>

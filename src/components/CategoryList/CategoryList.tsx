@@ -12,7 +12,7 @@ const CategoryList: React.FC<TCategoryList> = ({ categories }) => {
     <ul className={styles.categoryList} data-testid="category-list">
       {categories.map(cat => (
         <li key={cat.id}>
-          <Category title={cat.title} slug={cat.slug} />
+          <Category title={cat.title} path={cat.fields.path} />
         </li>
       ))}
     </ul>

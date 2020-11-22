@@ -45,7 +45,9 @@ export const postQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
           publishDate
           isFeatured
           isFirstFeatured
@@ -54,7 +56,9 @@ export const postQuery = graphql`
           }
           category {
             title
-            slug
+            fields {
+              path
+            }
           }
           heroImage {
             description
@@ -70,7 +74,9 @@ export const postQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
         }
       }
     }

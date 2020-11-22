@@ -43,7 +43,9 @@ export const categoryListQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
         }
       }
     }
@@ -57,10 +59,14 @@ export const categoryListQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
           category {
             title
-            slug
+            fields {
+              path
+            }
           }
         }
       }

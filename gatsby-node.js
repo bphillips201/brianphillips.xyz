@@ -8,6 +8,26 @@
 
 const path = require(`path`)
 
+exports.onCreateNode = ({ node, _, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'ContentfulPosts') {
+    createNodeField({
+      node,
+      name: 'path',
+      value: `/blog/${node.slug}`,
+    })
+  }
+
+  if (node.internal.type === 'ContentfulCategories') {
+    createNodeField({
+      node,
+      name: 'path',
+      value: `/category/${node.slug}`,
+    })
+  }
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -17,7 +37,9 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
-            slug
+            fields {
+              path
+            }
             category {
               id
             }
@@ -28,7 +50,9 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
-            slug
+            fields {
+              path
+            }
           }
         }
       }
@@ -59,7 +83,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Single post
     posts.forEach(p => {
       createPage({
-        path: `blog/${p.slug}`,
+        path: p.fields.path,
         component: path.resolve('src/templates/post.tsx'),
         context: {
           id: p.id,
@@ -75,7 +99,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       Array.from({ length: numCategoryPages }).forEach((_, i) => {
         createPage({
-          path: i === 0 ? `c/${c.slug}` : `c/${c.slug}/${i + 1}`,
+          path: i === 0 ? c.fields.path : `${c.fields.path}/${i + 1}`,
           component: path.resolve('src/templates/category.tsx'),
           context: {
             id: c.id,

@@ -24,11 +24,11 @@ const PostList: React.FC<TPostList> = props => {
               fluid={post.heroImage.fluid}
               style={{ height: '100%' }}
             >
-              <Link to={`/blog/${post.slug}`} data-testid={`post-${variant}`}>
+              <Link to={post.fields.path} data-testid={`post-${variant}`}>
                 <Category
                   readOnly
                   title={post.category.title}
-                  slug={post.category.slug}
+                  path={post.category.fields.path}
                 />
                 <Component>{post.title}</Component>
               </Link>
@@ -39,10 +39,10 @@ const PostList: React.FC<TPostList> = props => {
             <Category
               readOnly
               title={post.category.title}
-              slug={post.category.slug}
+              path={post.category.fields.path}
             />
             <Component>
-              <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+              <Link to={post.fields.path}>{post.title}</Link>
             </Component>
           </div>
         )

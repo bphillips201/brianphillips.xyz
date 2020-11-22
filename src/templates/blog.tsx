@@ -42,10 +42,14 @@ export const blogListQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
           category {
             title
-            slug
+            fields {
+              path
+            }
           }
         }
       }
@@ -55,7 +59,9 @@ export const blogListQuery = graphql`
         node {
           id
           title
-          slug
+          fields {
+            path
+          }
         }
       }
     }

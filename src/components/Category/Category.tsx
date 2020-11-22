@@ -4,8 +4,14 @@ import { TCategory } from '../../utils/constants'
 import classnames from 'classnames'
 import * as styles from './Category.module.scss'
 
-const Category: React.FC<TCategory> = props => {
-  const { title, slug, readOnly = false, ...rest } = props
+type TCategoryProps = {
+  title: string
+  path: string
+  readOnly?: boolean
+}
+
+const Category: React.FC<TCategoryProps> = props => {
+  const { title, path, readOnly = false, ...rest } = props
   const categoryClasses = classnames({
     [styles.category]: true,
     [styles.readOnly]: readOnly,
@@ -19,7 +25,7 @@ const Category: React.FC<TCategory> = props => {
     )
   } else {
     return (
-      <Link to={`/c/${slug}`} className={categoryClasses} {...rest}>
+      <Link to={path} className={categoryClasses} {...rest}>
         {title}
       </Link>
     )

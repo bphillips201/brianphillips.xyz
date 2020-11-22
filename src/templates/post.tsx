@@ -34,7 +34,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
       <SEO title={title} description={excerpt.excerpt} image={postImage} />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
         <Wrapper noPadX width="thin" className={styles.postMeta}>
-          <Category title={category.title} slug={category.slug} />
+          <Category title={category.title} path={category.fields.path} />
           <h1>{title}</h1>
         </Wrapper>
 
@@ -101,7 +101,9 @@ export const postQuery = graphql`
       }
       category {
         title
-        slug
+        fields {
+          path
+        }
       }
       heroImage {
         description
