@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    margin: 3.2rem 0;
+    display: inline-block;
+  }
+
+  &.firstPage {
+    justify-content: flex-end;
+  }
+}
+
+.rightLink {
+  justify-self: flex-end;
+}
+
+.leftLink {
+  justify-self: flex-start;
+}
