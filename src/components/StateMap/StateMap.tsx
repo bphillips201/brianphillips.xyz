@@ -1,5 +1,5 @@
 import React, { AllHTMLAttributes } from 'react'
-import * as styles from './stateMap.module.scss'
+import * as styles from './StateMap.module.scss'
 
 type StateMapProps = AllHTMLAttributes<HTMLElement> & {
   mapColor?: string
