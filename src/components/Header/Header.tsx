@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const Component: any = isHome ? 'h1' : 'div'
 
   return (
-    <Wrapper as="header" width="full" className={styles.header}>
+    <Wrapper as="header" className={styles.header}>
       <Component className={styles.logo}>
         <Logo animate={isHome} />
       </Component>
