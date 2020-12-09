@@ -4,7 +4,6 @@ import Layout from '../components/Layout/Layout'
 import Wrapper from '../components/Wrapper/Wrapper'
 import Circles from '../components/Circles/Circles'
 import ActionLink from '../components/ActionLink/ActionLink'
-import * as styles from '../components/Layout/Layout.module.scss'
 import language from '../utils/language'
 import StateMap from '../components/StateMap/StateMap'
 import { Link } from 'gatsby'
@@ -19,7 +18,7 @@ const About: React.FC = () => (
     <Wrapper width="thin" as="article">
       <h1>Hello and welcome.</h1>
 
-      <p>I’m Brian Phillips, a front end engineer, writer, and investor.</p>
+      <p>I’m Brian Phillips, a software engineer, writer, and investor.</p>
 
       <h2>I’ve lived in some fun places.</h2>
 
@@ -35,10 +34,12 @@ const About: React.FC = () => (
       <h2>I’ve worked with some cool people.</h2>
 
       <p>
-        I’ve been a front end engineer for many years and recently spent four
-        years leading a software engineering team at a global wellness company.
-        Before that, I designed and built websites in the agency and freelance
-        world for a few years, working with some splendid clients.
+        I wrote my first line of (Java) code in college and spent the next
+        couple years tinkering in C++ and Ruby. In my first job out of
+        college—working in IT—I picked up JavaScript and learned to love
+        development in the browser. I later worked as a web developer,
+        collaborating with some splendid clients, and recently spent four years
+        managing the front end engineering program at a global wellness company.
       </p>
 
       <p>
