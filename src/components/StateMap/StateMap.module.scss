@@ -40,9 +40,9 @@ ellipse {
 }
 
 .sloToNyc {
-  animation: draw 1s forwards infinite linear, appear 300ms forwards 6s;
-  stroke-dashoffset: 8px;
-  opacity: 0;
+  animation: draw 1s forwards 6s;
+  stroke-dasharray: 500px;
+  stroke-dashoffset: 500px;
 }
 
 @keyframes pop {

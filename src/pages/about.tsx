@@ -23,11 +23,24 @@ const About: React.FC = () => (
       <h2>I’ve lived in some fun places.</h2>
 
       <p>
-        At twenty-five, I moved with my wife to Memphis, Tennessee, then later
-        to San Luis Obispo, California.
+        At twenty-five, my wife and I moved out of small-town Mississippi to
+        Memphis, Tennessee. Later, a new job took us to San Luis Obispo,
+        California,{' '}
+        <a
+          href="https://www.theguardian.com/travel/2018/may/22/san-lius-obispo-california-happiest-us-city-oprah"
+          target="blank"
+        >
+          one of America’s happiest cities
+        </a>
+        .
       </p>
 
-      <p>(In 2021, we’ll call NYC our home.)</p>
+      <p>
+        Then, after five years on the West Coast, we drove 3,500 miles in the
+        other direction and now spend our days in New York City.
+      </p>
+
+      <p>Life is good.</p>
 
       <StateMap />
 

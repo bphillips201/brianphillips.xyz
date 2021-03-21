@@ -266,7 +266,7 @@ const StateMap: React.FC<StateMapProps> = props => {
             d="m22.1833515 180.999048c101.0160645-29.340117 179.3441385-47.720932 234.9842215-55.142444 55.640084-7.421513 137.250892-10.374031 244.832427-8.857556"
             stroke={lineColor}
             strokeWidth="2"
-            strokeDasharray="4"
+            // strokeDasharray="4"
           />
         </g>
       </g>
