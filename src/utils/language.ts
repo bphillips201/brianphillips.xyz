@@ -44,7 +44,7 @@ const language: TLanguage = {
     topics: `Categories`,
     aboutMeLink: `About Me`,
     viewBlog: `View Blog`,
-    aboutMe: `Brian Phillips is a software engineer, writer, and investor living on the California central coast.`,
+    aboutMe: `Brian Phillips is a front end engineer, writer, and investor living in New York City.`,
   },
   newsletter: {
     newsletterHeader: `Get the newsletter`,
