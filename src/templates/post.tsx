@@ -7,7 +7,6 @@ import Category from '../components/Category/Category'
 import { TPostGlobals } from '../utils/constants'
 import Wrapper from '../components/Wrapper/Wrapper'
 import NewsletterForm from '../components/NewsletterForm/NewsletterForm'
-import Cryptotip from '../components/Crypotip/Cryptotip'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -78,11 +77,6 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
             <LinkedinIcon size={40} round />
           </LinkedinShareButton>
         </Wrapper>
-
-        <Wrapper>
-          <Cryptotip />
-        </Wrapper>
-
         <Wrapper noPadX width="thin" className={styles.postNewsletter}>
           <NewsletterForm />
         </Wrapper>
