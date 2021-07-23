@@ -82,9 +82,9 @@ const About: React.FC = () => (
       <h2>I have a blog you might enjoy.</h2>
 
       <p>
-        I’ve been a writer for many years. Recently, I’ve written things like a{' '}
-        <Link to="/blog/31-lessons-learned-in-31-years">
-          list of 31 life lessons learned in 31 years
+        Recently, I’ve written things like a{' '}
+        <Link to="/blog/33-realizations-in-33-years">
+          list of 33 realizations in 33 years
         </Link>
         ,{' '}
         <Link to="/blog/the-multi-level-marketer-and-i">
