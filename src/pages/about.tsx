@@ -44,41 +44,6 @@ const About: React.FC = () => (
 
       <StateMap />
 
-      <h2>I’ve worked with some cool people.</h2>
-
-      <p>
-        I wrote my first line of (Java) code in college and spent the next
-        couple years tinkering in C++ and Ruby. In my first job out of
-        college—working in IT—I picked up JavaScript and learned to love
-        development in the browser. I later worked as a web developer,
-        collaborating with some splendid clients, and recently spent four years
-        managing the front end engineering program at a global wellness company.
-      </p>
-
-      <p>
-        In August 2020,{' '}
-        <Link to="/blog/i-quit-my-job-with-no-plan-should-you-do-the-same">
-          I quit my job to take a career break
-        </Link>
-        . Since then, I‘ve{' '}
-        <a
-          href="https://github.com/bphillips201"
-          target="_blank"
-          rel="noopener nofollow noreferrer"
-        >
-          coded
-        </a>{' '}
-        daily, <Link to="/blog">written</Link> frequently, and ended most days
-        with hikes and video games.
-      </p>
-
-      <p>
-        <ActionLink
-          to={language.about.linkedIn.url}
-          text={language.about.linkedIn.text}
-        />
-      </p>
-
       <h2>I have a blog you might enjoy.</h2>
 
       <p>
