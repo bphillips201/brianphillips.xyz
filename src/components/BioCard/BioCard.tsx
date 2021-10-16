@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import language from '../../utils/language'
 import ActionLink from '../ActionLink/ActionLink'
@@ -24,7 +24,10 @@ const BioCard: React.FC = () => {
         backgroundColor="#415065"
         fixed={data.avatar.childImageSharp.fixed}
       />
-      <p>{language.homePage.aboutMe}</p>
+      <p>
+        I’m Brian Phillips, a software engineer, writer, and investor living in
+        New York City. See what I’m doing <Link to="/now">now</Link>.
+      </p>
       <ActionLink
         to={`/about`}
         text={language.homePage.aboutMeLink}
