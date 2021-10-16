@@ -20,6 +20,13 @@ const About: React.FC = () => (
 
       <p>I’m Brian Phillips, a software engineer, writer, and investor.</p>
 
+      <p>
+        <ActionLink
+          to={language.about.now.url}
+          text={language.about.now.text}
+        />
+      </p>
+
       <h2>I’ve lived in some fun places.</h2>
 
       <p>

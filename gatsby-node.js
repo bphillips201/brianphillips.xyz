@@ -56,13 +56,26 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allContentfulPage {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) return Promise.reject(result.errors)
 
-    const { allContentfulPosts, allContentfulCategories } = result.data
+    const {
+      allContentfulPosts,
+      allContentfulCategories,
+      allContentfulPage,
+    } = result.data
     const posts = allContentfulPosts.edges.map(n => n.node)
     const categories = allContentfulCategories.edges.map(n => n.node)
+    const pages = allContentfulPage.edges.map(n => n.node)
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
 
@@ -85,6 +98,17 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: p.fields.path,
         component: path.resolve('src/templates/post.tsx'),
+        context: {
+          id: p.id,
+        },
+      })
+    })
+
+    // Pages
+    pages.forEach(p => {
+      createPage({
+        path: p.slug,
+        component: path.resolve('src/templates/page.tsx'),
         context: {
           id: p.id,
         },
