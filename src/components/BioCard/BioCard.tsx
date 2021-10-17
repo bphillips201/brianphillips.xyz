@@ -24,10 +24,7 @@ const BioCard: React.FC = () => {
         backgroundColor="#415065"
         fixed={data.avatar.childImageSharp.fixed}
       />
-      <p>
-        I’m Brian Phillips, a software engineer, writer, and investor living in
-        New York City. See what I’m doing <Link to="/now">now</Link>.
-      </p>
+      <p>{language.homePage.aboutMe}</p>
       <ActionLink
         to={`/about`}
         text={language.homePage.aboutMeLink}
