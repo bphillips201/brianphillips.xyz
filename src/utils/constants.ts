@@ -9,6 +9,8 @@ export type TPost = {
   id: string
   category: TCategory
   title: string
+  slug: string
+  updatedAt: string
   fields: {
     path: string
   }

@@ -4,6 +4,33 @@ body {
   overflow-x: hidden;
 }
 
+// Pages
+
+.page {
+  &:before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    background-color: lighten($lightBlue, 20%);
+  }
+
+  h1 {
+    font-size: 14rem;
+    font-family: $fonts-base;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -4px;
+
+    @media screen and (max-width: 800px) {
+      font-size: 12rem;
+    }
+  }
+}
+
 // Posts
 
 .postMeta {
