@@ -7,11 +7,16 @@ body {
 // Pages
 
 .page {
+  position: relative;
+}
+
+.pageHeader {
   &:before {
+    z-index: 0;
     content: '';
     position: absolute;
-    top: -20%;
-    right: -20%;
+    top: -70%;
+    right: -40%;
     height: 800px;
     width: 800px;
     border-radius: 50%;
@@ -19,6 +24,8 @@ body {
   }
 
   h1 {
+    position: relative;
+    z-index: 1;
     font-size: 14rem;
     font-family: $fonts-base;
     font-weight: 800;

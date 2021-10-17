@@ -12,7 +12,7 @@ const PageTemplate: React.FC<TPostGlobals> = props => {
     <Layout className={styles.page}>
       <SEO title={title} />
 
-      <Wrapper width="content">
+      <Wrapper className={styles.pageHeader} width="content">
         <h1>{title}</h1>
       </Wrapper>
 
