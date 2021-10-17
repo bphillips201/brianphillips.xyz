@@ -22,11 +22,12 @@ body {
     font-size: 14rem;
     font-family: $fonts-base;
     font-weight: 800;
-    line-height: 1;
+    line-height: 0.9;
     letter-spacing: -4px;
 
     @media screen and (max-width: 800px) {
       font-size: 12rem;
+      margin: 3.2rem 0;
     }
   }
 }
