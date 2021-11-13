@@ -67,3 +67,8 @@ export type TPostGlobals = {
     currentPage: number
   }
 }
+
+export enum Theme {
+  dark,
+  light,
+}
