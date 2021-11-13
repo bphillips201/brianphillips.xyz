@@ -32,7 +32,8 @@ body {
     letter-spacing: -4px;
 
     @media screen and (max-width: 800px) {
-      font-size: 12rem;
+      font-size: 11rem;
+      line-height: 0.85;
       margin: 3.2rem 0;
     }
   }
