@@ -18,7 +18,7 @@ const About: React.FC = () => (
     <Wrapper width="thin" as="article">
       <h1>Hello and welcome.</h1>
 
-      <p>I’m Brian Phillips, a software engineer, writer, and investor.</p>
+      <p>I’m Brian Phillips, a writer, investor, and front end coder.</p>
 
       <p>
         <ActionLink
