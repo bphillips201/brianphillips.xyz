@@ -17,6 +17,8 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share'
+// @ts-expect-error
+import { useGoal } from 'gatsby-plugin-fathom'
 import * as styles from '../components/Layout/Layout.module.scss'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
@@ -28,6 +30,10 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
     category,
   } = props.data.contentfulPosts
   const postImage = heroImage ? `https:${heroImage?.fluid.src}` : ''
+  const handleFbShareGoal = useGoal('S8A4KANS')
+  const handleTwitterShareGoal = useGoal('N3AAPT7L')
+  const handleRedditShareGoal = useGoal('R0WKRKYG')
+  const handleLinkedInShareGoal = useGoal('QWGUUHOT')
 
   return (
     <Layout>
@@ -64,16 +70,28 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
               />
             </svg>
           </div>
-          <FacebookShareButton url={props.location.href}>
+          <FacebookShareButton
+            onClick={() => handleFbShareGoal()}
+            url={props.location.href}
+          >
             <FacebookIcon size={40} round />
           </FacebookShareButton>
-          <TwitterShareButton url={props.location.href}>
+          <TwitterShareButton
+            onClick={() => handleTwitterShareGoal()}
+            url={props.location.href}
+          >
             <TwitterIcon size={40} round />
           </TwitterShareButton>
-          <RedditShareButton url={props.location.href}>
+          <RedditShareButton
+            onClick={() => handleRedditShareGoal()}
+            url={props.location.href}
+          >
             <RedditIcon size={40} round />
           </RedditShareButton>
-          <LinkedinShareButton url={props.location.href}>
+          <LinkedinShareButton
+            onClick={() => handleLinkedInShareGoal()}
+            url={props.location.href}
+          >
             <LinkedinIcon size={40} round />
           </LinkedinShareButton>
         </Wrapper>

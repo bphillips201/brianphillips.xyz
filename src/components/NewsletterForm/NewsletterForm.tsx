@@ -2,11 +2,13 @@ import React, { FormHTMLAttributes } from 'react'
 import language from '../../utils/language'
 import { Grid, Cell } from 'styled-css-grid'
 import classnames from 'classnames'
+// @ts-expect-error
+import { useGoal } from 'gatsby-plugin-fathom'
 import * as styles from './NewsletterForm.module.scss'
 
 const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
   const { className = '', ...rest } = props
-
+  const handleSignupEvent = useGoal('FDX5FUSO')
   const newsletterClasses = classnames({
     [styles.newsletterForm]: true,
     [className]: className,
@@ -71,7 +73,12 @@ const NewsletterForm: React.FC<FormHTMLAttributes<HTMLElement>> = props => {
               />
             </div>
             <div className="clear">
-              <button type="submit" name="subscribe" id="mc-embedded-subscribe">
+              <button
+                onClick={() => handleSignupEvent()}
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+              >
                 {language.newsletter.submitButton}
               </button>
             </div>
