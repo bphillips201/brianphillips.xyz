@@ -12,7 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <script
-          src="https://fabulous-yellow.brianphillips.xyz/script.js"
+          src="https://cdn.usefathom.com/script.js"
           data-spa="auto"
           data-site={process.env.SITE_ID}
           defer
