@@ -64,6 +64,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        siteId: process.env.SITE_ID,
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
