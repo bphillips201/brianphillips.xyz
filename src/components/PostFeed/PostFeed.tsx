@@ -1,7 +1,9 @@
 import React from 'react'
 import { TCategory, TPost } from '../../utils/constants'
 import language from '../../utils/language'
+import BioCard from '../BioCard/BioCard'
 import CategoryList from '../CategoryList/CategoryList'
+import NewsletterForm from '../NewsletterForm/NewsletterForm'
 import Pagination from '../Pagination/Pagination'
 import PostList from '../PostList/PostList'
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -21,9 +23,6 @@ const PostFeed: React.FC<TPostFeedProps> = props => {
   return (
     <section className={styles.postFeed}>
       <div className={styles.posts}>
-        {path === '/' && (
-          <SectionHeader as="h3">{language.homePage.latestPosts}</SectionHeader>
-        )}
         {posts.length > 0 ? (
           <>
             <PostList posts={posts} />
@@ -37,9 +36,9 @@ const PostFeed: React.FC<TPostFeedProps> = props => {
           <h3>No posts found for this category</h3>
         )}
       </div>
-
       <div className={styles.categories}>
-        <SectionHeader as="h3">{language.homePage.topics}</SectionHeader>
+        <BioCard />
+        <NewsletterForm />
         <CategoryList categories={categories} />
       </div>
     </section>

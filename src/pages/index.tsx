@@ -13,18 +13,11 @@ const IndexPage: React.FC<TPostGlobals> = props => {
   const allCategories = props.data.allContentfulCategories.edges.map(
     n => n.node
   )
-  const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 3)
-  const firstRead = allPosts.filter(p => p.isFirstFeatured).slice(0, 1)
   const latestPosts = allPosts.slice(0, 5)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <Wrapper color="gray">
-        <FeaturedContent firstRead={firstRead} featuredPosts={featuredPosts} />
-        <NewsletterForm />
-      </Wrapper>
-
       <Wrapper>
         <PostFeed
           posts={latestPosts}
@@ -52,7 +45,9 @@ export const postQuery = graphql`
           isFeatured
           isFirstFeatured
           content {
-            content
+            childMarkdownRemark {
+              html
+            }
           }
           category {
             title

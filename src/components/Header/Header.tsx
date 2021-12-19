@@ -14,21 +14,6 @@ const Header: React.FC = () => {
       <Component className={styles.logo}>
         <Logo animate={isHome} />
       </Component>
-
-      <nav aria-label="navigation" className={styles.nav}>
-        <ul>
-          <li>
-            <Link activeClassName={styles.active} to="/blog">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link activeClassName={styles.active} to="/about">
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
     </Wrapper>
   )
 }

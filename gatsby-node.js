@@ -80,18 +80,18 @@ exports.createPages = ({ actions, graphql }) => {
     const numPages = Math.ceil(posts.length / postsPerPage)
 
     // Blog post list
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `blog` : `blog/${i + 1}`,
-        component: path.resolve('src/templates/blog.tsx'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
-    })
+    // Array.from({ length: numPages }).forEach((_, i) => {
+    //   createPage({
+    //     path: i === 0 ? `blog` : `blog/${i + 1}`,
+    //     component: path.resolve('src/templates/blog.tsx'),
+    //     context: {
+    //       limit: postsPerPage,
+    //       skip: i * postsPerPage,
+    //       numPages,
+    //       currentPage: i + 1,
+    //     },
+    //   })
+    // })
 
     // Single post
     posts.forEach(p => {

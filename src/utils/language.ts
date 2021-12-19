@@ -48,8 +48,8 @@ const language: TLanguage = {
     viewBlog: `View Blog`,
   },
   newsletter: {
-    newsletterHeader: `Get the newsletter`,
-    newsletterBlurb: `Receive my digest of featured writing, along with an occasional list of recommended books, movies, and video games. Ideal for geeks.`,
+    newsletterHeader: `Newsletter`,
+    newsletterBlurb: `Get new posts in your inbox, along with my recommended books, movies, video games, and more. Ideal for geeks.`,
     emailPlaceholder: `yourname@website.com`,
     labelText: `Email address`,
     submitButton: `Subscribe`,

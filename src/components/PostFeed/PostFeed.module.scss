@@ -1,11 +1,11 @@
 .postFeed {
   display: grid;
-  gap: 2.4rem;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 6.4rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .posts {
-  grid-column-start: span 3;
+  grid-column-start: span 2;
 }
 
 .categories {
