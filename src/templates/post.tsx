@@ -3,10 +3,8 @@ import Layout from '../components/Layout/Layout'
 import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Category from '../components/Category/Category'
 import { TPostGlobals } from '../utils/constants'
 import Wrapper from '../components/Wrapper/Wrapper'
-import NewsletterForm from '../components/NewsletterForm/NewsletterForm'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -17,24 +15,16 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share'
-import * as styles from '../components/Layout/Layout.module.scss'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
-  const {
-    content,
-    excerpt,
-    heroImage,
-    title,
-    category,
-  } = props.data.contentfulPosts
+  const { content, excerpt, heroImage, title } = props.data.contentfulPosts
   const postImage = heroImage ? `https:${heroImage?.fluid.src}` : ''
 
   return (
     <Layout>
       <SEO title={title} description={excerpt.excerpt} image={postImage} />
       <Wrapper width="content" as="article" style={{ overflow: 'hidden' }}>
-        <Wrapper noPadX width="thin" className={styles.postMeta}>
-          <Category title={category.title} path={category.fields.path} />
+        <Wrapper noPadX width="thin">
           <h1>{title}</h1>
         </Wrapper>
 
@@ -42,7 +32,7 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           <Img alt={heroImage.description || ''} fluid={heroImage.fluid} />
         )}
 
-        <Wrapper noPadX width="thin" className={styles.content}>
+        <Wrapper noPadX width="thin" className="">
           <div
             dangerouslySetInnerHTML={{
               __html: content.childMarkdownRemark.html,
@@ -50,8 +40,8 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
           />
         </Wrapper>
 
-        <Wrapper noPadX width="thin" className={styles.share}>
-          <div className={styles.shareIcon} title="Share this post">
+        <Wrapper noPadX width="thin" className="">
+          <div className="" title="Share this post">
             <svg
               height="67"
               viewBox="0 0 62 67"
@@ -77,8 +67,8 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
             <LinkedinIcon size={40} round />
           </LinkedinShareButton>
         </Wrapper>
-        <Wrapper noPadX width="thin" className={styles.postNewsletter}>
-          <NewsletterForm />
+        <Wrapper noPadX width="thin" className="">
+          {/* <NewsletterForm /> */}
         </Wrapper>
       </Wrapper>
     </Layout>
@@ -97,12 +87,6 @@ export const postQuery = graphql`
       }
       excerpt {
         excerpt
-      }
-      category {
-        title
-        fields {
-          path
-        }
       }
       heroImage {
         description

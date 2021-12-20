@@ -44,10 +44,10 @@ module.exports = {
           google: [
             {
               family: `Overpass`,
-              variants: [`600`],
+              variants: [`400, 600`],
             },
             {
-              family: `IBM Plex Sans`,
+              family: `Noto Serif`,
               variants: [`400`, `600`, `400i`, `600i`],
             },
           ],

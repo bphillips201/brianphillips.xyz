@@ -4,15 +4,14 @@ import Layout from '../components/Layout/Layout'
 import Wrapper from '../components/Wrapper/Wrapper'
 import { graphql } from 'gatsby'
 import { TPostGlobals } from '../utils/constants'
-import * as styles from '../components/Layout/Layout.module.scss'
 
 const PageTemplate: React.FC<TPostGlobals> = props => {
   const { title, content, updatedAt, slug } = props.data.contentfulPage
   return (
-    <Layout className={styles.page}>
+    <Layout className="">
       <SEO title={title} />
 
-      <Wrapper className={styles.pageHeader} width="content">
+      <Wrapper className="" width="content">
         <h1>{title}</h1>
       </Wrapper>
 

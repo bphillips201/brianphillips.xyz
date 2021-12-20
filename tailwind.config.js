@@ -4,13 +4,18 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      sm: '540px',
+      md: '640px',
+      lg: '768px',
+      xl: '1024px',
+    },
     colors: {
-      gray: colors.coolGray,
-      blue: colors.blue,
-      green: colors.emerald,
+      zinc: colors.zinc,
+      gray: colors.gray,
     },
     fontFamily: {
-      body: ['IBM Plex Sans', 'sans-serif'],
+      body: ['Noto Serif', 'serif'],
       header: ['Overpass', 'sans-serif'],
     },
     extend: {
