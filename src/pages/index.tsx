@@ -22,12 +22,12 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             City.
           </p>
           <p className="mb-8">
-            This is my daily blog. I post essays and stories that{' '}
-            <strong>disappear after 24 hours</strong>.
+            This is my daily blog. I post essays, stories, and stray thoughts
+            that <strong>disappear after 24 hours</strong>.
           </p>
           <p className="mb-8">
             <a href="#">Sign up for my newsletter</a> to get my posts delivered
-            to your inbox. You’ll also get a special weekly email.
+            to your inbox.
           </p>
           <nav className="mb-0">
             <ul>
