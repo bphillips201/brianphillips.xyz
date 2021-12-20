@@ -57,7 +57,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             </>
           )}
           <h2 className="text-5xl mb-4 leading-tight">{latestPost.title}</h2>
-          <div className="flex justify-between mb-8 font-header text-base text-gray-500">
+          <div className="flex justify-between mb-16 font-header text-base text-gray-500">
             <span>{latestPost.readTime} minute read</span>
             <span>{latestPost.publishDate}</span>
           </div>
