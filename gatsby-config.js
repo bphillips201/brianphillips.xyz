@@ -44,7 +44,7 @@ module.exports = {
           google: [
             {
               family: `Overpass`,
-              variants: [`400, 600`],
+              variants: [`400`, `700`],
             },
             {
               family: `Noto Serif`,
@@ -61,7 +61,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
         environment:
-          process.env.NODE_ENV === 'development' ? 'development' : 'master',
+          process.env.NODE_ENV === 'development' ? '24-hour-blog' : 'master',
       },
     },
     {
@@ -118,9 +118,6 @@ module.exports = {
                   edges {
                     node {
                       title
-                      category {
-                        title
-                      }
                       content {
                         childMarkdownRemark {
                           html

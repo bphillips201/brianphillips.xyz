@@ -40,9 +40,6 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               path
             }
-            category {
-              id
-            }
           }
         }
       }

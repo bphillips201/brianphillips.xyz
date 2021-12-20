@@ -9,8 +9,6 @@ import Logo from '../components/Logo/Logo'
 const IndexPage: React.FC<TPostGlobals> = props => {
   const latestPost = props.data.allContentfulPosts.edges.map(n => n.node)[0]
 
-  console.log(latestPost)
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -24,8 +22,8 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             City.
           </p>
           <p className="mb-8">
-            This is my daily blog. I post essays and stories that disappear
-            after 24 hours.
+            This is my daily blog. I post essays and stories that{' '}
+            <strong>disappear after 24 hours</strong>.
           </p>
           <p className="mb-8">
             <a href="#">Sign up for my newsletter</a> to get my posts delivered
@@ -46,7 +44,11 @@ const IndexPage: React.FC<TPostGlobals> = props => {
 
       <section className="p-8 py-16">
         <article className="max-w-screen-sm mx-auto">
-          <h2 className="text-4xl mb-8">{latestPost.title}</h2>
+          <h2 className="text-4xl mb-4 leading-10">{latestPost.title}</h2>
+          <div className="flex justify-between mb-8 font-header text-base text-gray-500">
+            <span>{latestPost.readTime} minute read</span>
+            <span>{latestPost.publishDate}</span>
+          </div>
           <div
             dangerouslySetInnerHTML={{
               __html: latestPost.content.childMarkdownRemark.html,
@@ -67,10 +69,11 @@ export const postQuery = graphql`
         node {
           id
           title
+          readTime
+          publishDate(formatString: "MMMM D, YYYY")
           fields {
             path
           }
-          publishDate
           content {
             childMarkdownRemark {
               html

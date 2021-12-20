@@ -10,6 +10,7 @@ export type TPost = {
   category: TCategory
   title: string
   slug: string
+  readTime: string
   updatedAt: string
   fields: {
     path: string
