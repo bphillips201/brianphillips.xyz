@@ -48,6 +48,7 @@ article blockquote,
 article ul,
 article li {
   @apply text-lg;
+  @apply leading-relaxed;
   @apply mb-6;
 }
 

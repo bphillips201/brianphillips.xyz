@@ -44,10 +44,10 @@ module.exports = {
           google: [
             {
               family: `Overpass`,
-              variants: [`400`, `700`],
+              variants: [`400`],
             },
             {
-              family: `Noto Serif`,
+              family: `Bitter`,
               variants: [`400`, `600`, `400i`, `600i`],
             },
           ],

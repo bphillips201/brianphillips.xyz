@@ -15,7 +15,7 @@ module.exports = {
       gray: colors.gray,
     },
     fontFamily: {
-      body: ['Noto Serif', 'serif'],
+      body: ['Bitter', 'serif'],
       header: ['Overpass', 'sans-serif'],
     },
     extend: {
