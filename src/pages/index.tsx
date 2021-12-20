@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import SEO from '../components/SEO/SEO'
 import { TPostGlobals } from '../utils/constants'
@@ -12,11 +12,24 @@ const IndexPage: React.FC<TPostGlobals> = props => {
   return (
     <Layout>
       <SEO title="Home" />
-      <header className="p-8 py-16 bg-gray-100">
+      <header className="p-8 pb-16 bg-gray-100">
         <section className="max-w-screen-sm mx-auto">
-          <h1 title="Brian Phillips" className="mb-8">
-            <Logo animate={true} />
-          </h1>
+          <div className="flex justify-between mb-8 text-base">
+            <h1 title="Brian Phillips" className="mb-8">
+              <Logo animate />
+            </h1>
+            <nav className="text-right">
+              <ul>
+                <li className="inline-block mr-8">
+                  <a href="http://eepurl.com/hEt_PD">Newsletter</a>
+                </li>
+                <li className="inline-block">
+                  <Link to="/about">About</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
           <p className="text-3xl mb-8">
             I’m Brian—a writer, investor, and front end coder living in New York
             City.
@@ -25,20 +38,11 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             This is my daily blog. I post essays, stories, and stray thoughts
             that <strong>disappear after 24 hours</strong>.
           </p>
-          <p className="mb-8">
-            <a href="#">Sign up for my newsletter</a> to get my posts delivered
-            to your inbox.
+          <p>
+            <a href="http://eepurl.com/hEt_PD">Sign up for my newsletter</a> to
+            get a weekly email with my latest posts, along with recommended
+            books, media, and more.
           </p>
-          <nav className="mb-0">
-            <ul>
-              <li className="inline-block mr-8">
-                <a href="#">About me</a>
-              </li>
-              <li className="inline-block">
-                <a href="#">What I’m doing now</a>
-              </li>
-            </ul>
-          </nav>
         </section>
       </header>
 
@@ -56,7 +60,9 @@ const IndexPage: React.FC<TPostGlobals> = props => {
               </div>
             </>
           )}
-          <h2 className="text-5xl mb-4 leading-tight">{latestPost.title}</h2>
+          <h2 className="font-body text-5xl mb-4 leading-tight">
+            {latestPost.title}
+          </h2>
           <div className="flex justify-between mb-16 font-header text-base text-gray-500">
             <span>{latestPost.readTime} minute read</span>
             <span>{latestPost.publishDate}</span>
@@ -89,11 +95,20 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         <div className="max-w-screen-md mx-auto">
           <p className="mb-4">Miss yesterday’s post?</p>
           <p>
-            <a href="#">Sign up for my newsletter</a> to get today’s post—and
-            future posts—in your inbox.
+            <a href="#">Sign up for my newsletter</a> to get a link to the full
+            archive and more.
           </p>
         </div>
       </section>
+
+      <footer className="p-8 py-16 bg-gray-100">
+        <section className="max-w-screen-sm mx-auto text-center">
+          <Logo />
+          <p className="text-sm mt-8 text-center font-header">
+            © Brian Phillips {new Date().getFullYear()}
+          </p>
+        </section>
+      </footer>
     </Layout>
   )
 }
