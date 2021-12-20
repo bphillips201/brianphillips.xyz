@@ -42,7 +42,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         </section>
       </header>
 
-      <section className="p-8 py-16">
+      <section className="px-8 pt-16 pb-4">
         <article className="max-w-screen-sm mx-auto">
           {latestPost.heroImage && (
             <>
@@ -66,7 +66,33 @@ const IndexPage: React.FC<TPostGlobals> = props => {
               __html: latestPost.content.childMarkdownRemark.html,
             }}
           />
+          <div className="pb-8 pt-6 text-center text-2xl">👋</div>
         </article>
+      </section>
+
+      <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100">
+        <label className="block mb-2">Did you enjoy today’s post?</label>
+        <div className="flex gap-8 mb-8">
+          <a href="#">Yes</a>
+          <a href="#">No</a>
+          <a href="#">Didn’t finish it</a>
+        </div>
+
+        <label className="block mb-2">Did you like Ashlee’s doodle?</label>
+        <div className="flex gap-8">
+          <a href="#">Yes</a>
+          <a href="#">No</a>
+        </div>
+      </section>
+
+      <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100">
+        <div className="max-w-screen-md mx-auto">
+          <p className="mb-4">Miss yesterday’s post?</p>
+          <p>
+            <a href="#">Sign up for my newsletter</a> to get today’s post—and
+            future posts—in your inbox.
+          </p>
+        </div>
       </section>
     </Layout>
   )
