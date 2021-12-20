@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import SEO from '../components/SEO/SEO'
 import { TPostGlobals } from '../utils/constants'
-import Wrapper from '../components/Wrapper/Wrapper'
+import Img from 'gatsby-image'
 import Logo from '../components/Logo/Logo'
 
 const IndexPage: React.FC<TPostGlobals> = props => {
@@ -44,7 +44,19 @@ const IndexPage: React.FC<TPostGlobals> = props => {
 
       <section className="p-8 py-16">
         <article className="max-w-screen-sm mx-auto">
-          <h2 className="text-4xl mb-4 leading-10">{latestPost.title}</h2>
+          {latestPost.heroImage && (
+            <>
+              <Img
+                className="mb-2"
+                alt={latestPost.heroImage.description || ''}
+                fluid={latestPost.heroImage.fluid}
+              />
+              <div className="mb-16 text-xs font-header text-center">
+                doodle by <a href="#">Ashlee</a>
+              </div>
+            </>
+          )}
+          <h2 className="text-5xl mb-4 leading-tight">{latestPost.title}</h2>
           <div className="flex justify-between mb-8 font-header text-base text-gray-500">
             <span>{latestPost.readTime} minute read</span>
             <span>{latestPost.publishDate}</span>
@@ -81,7 +93,7 @@ export const postQuery = graphql`
           }
           heroImage {
             description
-            fluid(maxWidth: 800, maxHeight: 400, quality: 90) {
+            fluid(maxWidth: 800, quality: 90) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
