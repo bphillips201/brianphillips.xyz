@@ -9,7 +9,7 @@ const About: React.FC = () => (
   <Layout>
     <SEO title="About" />
 
-    <section className="my-20">
+    <section className="mt-6 mb-24">
       <Circles />
     </section>
 

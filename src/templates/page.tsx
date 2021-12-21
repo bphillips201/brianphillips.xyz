@@ -10,7 +10,7 @@ const PageTemplate: React.FC<TPostGlobals> = props => {
     <Layout className="">
       <SEO title={title} />
 
-      <article className="max-w-screen-sm mx-auto py-12">
+      <article className="max-w-screen-sm mx-auto">
         <h1 className="text-8xl">{title}</h1>
         {slug === 'now' && (
           <div className="text-base text-gray-500 font-header mb-16">

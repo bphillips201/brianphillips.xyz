@@ -11,7 +11,7 @@ const Header: React.FC = props => {
       <section className="max-w-screen-sm mx-auto">
         <div className="flex justify-between items-center text-base">
           <h1 className="text-xs" title="Brian Phillips">
-            <Logo animate />
+            <Logo animate={isHome} />
           </h1>
           <nav className="text-right">
             <ul>

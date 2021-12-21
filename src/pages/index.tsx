@@ -37,7 +37,9 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             __html: latestPost.content.childMarkdownRemark.html,
           }}
         />
-        <div className="pb-8 pt-6 text-center text-2xl">👋</div>
+        <div className="mb-14 pt-6 text-center font-header">
+          {`< 👋 later, gator. >`}
+        </div>
       </article>
 
       <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100">
@@ -55,7 +57,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         </div>
       </section>
 
-      <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100">
+      <section className="p-8 max-w-screen-sm mx-auto font-header bg-gray-100">
         <div className="max-w-screen-md mx-auto">
           <p className="mb-4">Miss yesterday’s post?</p>
           <p>
