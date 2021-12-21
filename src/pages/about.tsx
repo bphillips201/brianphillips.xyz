@@ -1,33 +1,43 @@
 import React from 'react'
 import SEO from '../components/SEO/SEO'
-import Layout from '../components/Layout/Layout'
-import Wrapper from '../components/Wrapper/Wrapper'
+import Layout from '../components/Layout'
 import Circles from '../components/Circles/Circles'
-import ActionLink from '../components/ActionLink/ActionLink'
-import language from '../utils/language'
 import StateMap from '../components/StateMap/StateMap'
 import { Link } from 'gatsby'
 
 const About: React.FC = () => (
   <Layout>
     <SEO title="About" />
-    <Wrapper bigY>
+
+    <section className="my-20">
       <Circles />
-    </Wrapper>
+    </section>
 
-    <Wrapper width="thin" as="article">
-      <h1>Hello and welcome.</h1>
-
-      <p>I’m Brian Phillips, a software engineer, writer, and investor.</p>
+    <article className="max-w-screen-sm mx-auto pb-8">
+      <h2>Hello and welcome.</h2>
 
       <p>
-        <ActionLink
-          to={language.about.now.url}
-          text={language.about.now.text}
-        />
+        I’m Brian Phillips, a writer, investor, and front end coder living in
+        New York City.
       </p>
 
-      <h2>I’ve lived in some fun places.</h2>
+      <p className="font-header">
+        <Link to="/now">See what I’m doing now</Link>
+      </p>
+
+      <h3>I have a blog you might enjoy.</h3>
+
+      <p>
+        I also send out a semi-infrequent newsletter with my latest posts, as
+        well as the occasional list of cool books, video games, and more. It’s a
+        fun time for geeks like me.
+      </p>
+
+      <p className="font-header">
+        <Link to="/now">Sign up for my newsletter</Link>
+      </p>
+
+      <h3>I’ve lived in some fun places.</h3>
 
       <p>
         At twenty-five, my wife and I moved out of small-town Mississippi to
@@ -47,41 +57,8 @@ const About: React.FC = () => (
         other direction and now spend our days in New York City.
       </p>
 
-      <p>Life is good.</p>
-
       <StateMap />
-
-      <h2>I have a blog you might enjoy.</h2>
-
-      <p>
-        Recently, I’ve written things like a{' '}
-        <Link to="/blog/33-realizations-in-33-years">
-          list of 33 realizations in 33 years
-        </Link>
-        ,{' '}
-        <Link to="/blog/the-multi-level-marketer-and-i">
-          a tale of multi-level marketing indoctrination
-        </Link>
-        , and some{' '}
-        <Link to="/blog/i-will-now-gush-about-words">
-          cheeky thoughts on the joy of writing
-        </Link>
-        .
-      </p>
-
-      <p>
-        I also send out a semi-infrequent newsletter with my latest posts, as
-        well as the occasional list of cool books, video games, and more. It’s a
-        fun time for geeks like me.
-      </p>
-
-      <p>
-        <ActionLink
-          to={language.about.newsletter.url}
-          text={language.about.newsletter.text}
-        />
-      </p>
-    </Wrapper>
+    </article>
   </Layout>
 )
 

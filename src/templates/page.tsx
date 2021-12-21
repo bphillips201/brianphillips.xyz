@@ -1,7 +1,6 @@
 import React from 'react'
 import SEO from '../components/SEO/SEO'
-import Layout from '../components/Layout/Layout'
-import Wrapper from '../components/Wrapper/Wrapper'
+import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import { TPostGlobals } from '../utils/constants'
 
@@ -11,22 +10,19 @@ const PageTemplate: React.FC<TPostGlobals> = props => {
     <Layout className="">
       <SEO title={title} />
 
-      <Wrapper className="" width="content">
-        <h1>{title}</h1>
-      </Wrapper>
-
-      <Wrapper width="thin" as="article">
+      <article className="max-w-screen-sm mx-auto py-12">
+        <h1 className="text-8xl">{title}</h1>
+        {slug === 'now' && (
+          <div className="text-base text-gray-500 font-header mb-16">
+            <strong>Last updated {updatedAt}</strong>
+          </div>
+        )}
         <div
           dangerouslySetInnerHTML={{
             __html: content.childMarkdownRemark.html,
           }}
         />
-        {slug === 'now' && (
-          <small>
-            <strong>Last updated {updatedAt}</strong>
-          </small>
-        )}
-      </Wrapper>
+      </article>
     </Layout>
   )
 }
