@@ -17,10 +17,14 @@ const Logo: React.FC<TLogoProps> = props => {
   return (
     <Link to={`/`} title="Brian Phillips">
       <div className={logoClasses}>
-        <div className={styles.topLeft}></div>
-        <div className={styles.topRight}></div>
-        <div className={styles.bottomLeft}></div>
-        <div className={styles.bottomRight}></div>
+        <div className={`${styles.topLeft} bg-gray-900 dark:bg-gray-50`}></div>
+        <div className={`${styles.topRight} bg-gray-900 dark:bg-gray-50`}></div>
+        <div
+          className={`${styles.bottomLeft} bg-gray-900 dark:bg-gray-50`}
+        ></div>
+        <div
+          className={`${styles.bottomRight} bg-gray-900 dark:bg-gray-50`}
+        ></div>
       </div>
     </Link>
   )

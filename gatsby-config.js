@@ -80,13 +80,6 @@ module.exports = {
                 site_url: siteUrl
               }
             }
-            file(relativePath: { eq: "banner-img.jpg" }) {
-              childImageSharp {
-                fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
-                  src
-                }
-              }
-            }
           }
         `,
         feeds: [
@@ -105,13 +98,13 @@ module.exports = {
                         post.node.content.childMarkdownRemark.html,
                     },
                   ],
-                  enclosure: {
-                    url: post.node.heroImage
-                      ? `https:${post.node.heroImage.fluid.src}`
-                      : site.siteMetadata.siteUrl +
-                        file.childImageSharp.fluid.src.heroImage,
-                    type: 'image/jpeg',
-                  },
+                  // enclosure: {
+                  //   url: post.node.heroImage
+                  //     ? `https:${post.node.heroImage.fluid.src}`
+                  //     : site.siteMetadata.siteUrl +
+                  //       file.childImageSharp.fluid.src.heroImage,
+                  //   type: 'image/jpeg',
+                  // },
                 })
               })
             },
@@ -134,15 +127,6 @@ module.exports = {
                       updatedAt
                       heroImage {
                         description
-                        fluid(
-                          resizingBehavior: FILL
-                          maxWidth: 1000
-                          cropFocus: CENTER
-                          maxHeight: 500
-                          quality: 90
-                        ) {
-                          src
-                        }
                       }
                     }
                   }

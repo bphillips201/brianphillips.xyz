@@ -8,7 +8,7 @@ const Layout: React.FC<AllHTMLAttributes<HTMLElement>> = props => {
   return (
     <>
       <Header />
-      <main className="px-8 py-16" {...rest}>
+      <main className="px-8 py-16 dark:bg-zinc-800 dark:text-gray-50" {...rest}>
         {children}
       </main>
       <Footer />

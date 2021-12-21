@@ -46,7 +46,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         </div>
       </article>
 
-      <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100">
+      <section className="p-8 mb-8 max-w-screen-sm mx-auto font-header bg-gray-100 dark:bg-zinc-900">
         <label className="block mb-2">Did you enjoy today’s post?</label>
         <div className="flex gap-8 mb-8">
           <a href="#">Yes</a>
@@ -61,7 +61,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         </div>
       </section>
 
-      <section className="p-8 max-w-screen-sm mx-auto font-header bg-gray-100">
+      <section className="p-8 max-w-screen-sm mx-auto font-header bg-gray-100 dark:bg-zinc-900">
         <div className="max-w-screen-md mx-auto">
           <p className="mb-4">Miss yesterday’s post?</p>
           <p>

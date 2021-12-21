@@ -28,7 +28,8 @@ $dim: 100;
 
   & > div {
     @include size($dim);
-    border: 3px solid $black;
+    border-width: 3px;
+    border-style: solid;
     overflow: visible;
     position: absolute;
     border-radius: 50%;

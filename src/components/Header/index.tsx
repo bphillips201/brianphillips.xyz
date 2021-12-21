@@ -7,7 +7,7 @@ const Header: React.FC = props => {
   const isHome = useLocation().pathname === '/'
 
   return (
-    <header className="p-8 bg-gray-100">
+    <header className="p-8 bg-gray-100 dark:bg-zinc-900 dark:text-gray-50">
       <section className="max-w-screen-sm mx-auto">
         <div className="flex justify-between items-center text-base">
           <h1 className="text-xs" title="Brian Phillips">

@@ -13,6 +13,7 @@ module.exports = {
     colors: {
       zinc: colors.zinc,
       gray: colors.gray,
+      slate: colors.slate,
     },
     fontFamily: {
       body: ['Bitter', 'serif'],

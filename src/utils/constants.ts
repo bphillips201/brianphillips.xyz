@@ -1,10 +1,4 @@
-import { FluidObject } from 'gatsby-image'
 import { ImageDataLike } from 'gatsby-plugin-image'
-
-export type TImage = {
-  description?: string
-  fluid: FluidObject
-}
 
 export type TPost = {
   id: string
