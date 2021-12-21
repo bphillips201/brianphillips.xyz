@@ -14,6 +14,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const PostTemplate: React.FC<TPostGlobals> = props => {
   const {
@@ -24,20 +25,17 @@ const PostTemplate: React.FC<TPostGlobals> = props => {
     readTime,
     publishDate,
   } = props.data.contentfulPosts
-  const postImage = heroImage ? `https:${heroImage?.fluid.src}` : ''
+  const postImagePath = heroImage ? `https:${getImage(heroImage)}` : ''
+  const postImage = getImage(heroImage)
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt.excerpt} image={postImage} />
+      <SEO title={title} description={excerpt.excerpt} image={postImagePath} />
       <section className="px-8 pt-16 pb-8">
         <article className="max-w-screen-sm mx-auto">
-          {heroImage && (
+          {postImage && (
             <>
-              <Img
-                className="mb-2"
-                alt={heroImage.description || ''}
-                fluid={heroImage.fluid}
-              />
+              <GatsbyImage className="mb-2" alt={''} image={postImage} />
               <div className="mb-16 text-xs font-header text-center">
                 doodle by <a href="#">Ashlee</a>
               </div>
@@ -101,9 +99,7 @@ export const postQuery = graphql`
       }
       heroImage {
         description
-        fluid(maxWidth: 1000, maxHeight: 500, quality: 90) {
-          ...GatsbyContentfulFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

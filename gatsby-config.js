@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
-    description: `Delete this blog`,
+    description: `This blog will self-destruct`,
     author: `Brian Phillips`,
     siteUrl:
       process.env.NODE_ENV === 'development'
@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-postcss',
     `@contentful/gatsby-transformer-contentful-richtext`,

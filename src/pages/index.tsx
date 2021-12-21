@@ -5,9 +5,11 @@ import SEO from '../components/SEO/SEO'
 import { TPostGlobals } from '../utils/constants'
 import Img from 'gatsby-image'
 import Logo from '../components/Logo/Logo'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const IndexPage: React.FC<TPostGlobals> = props => {
   const latestPost = props.data.allContentfulPosts.edges.map(n => n.node)[0]
+  const heroImage = getImage(latestPost.heroImage)
 
   return (
     <Layout>
@@ -15,11 +17,13 @@ const IndexPage: React.FC<TPostGlobals> = props => {
       <article className="max-w-screen-sm mx-auto">
         {latestPost.heroImage && (
           <>
-            <Img
-              className="mb-2"
-              alt={latestPost.heroImage.description || ''}
-              fluid={latestPost.heroImage.fluid}
-            />
+            {heroImage && (
+              <GatsbyImage
+                className="mb-2"
+                alt="Image by Ashlee"
+                image={heroImage}
+              />
+            )}
             <div className="mb-16 text-xs font-header text-center">
               doodle by <a href="#">Ashlee</a>
             </div>
@@ -91,9 +95,7 @@ export const postQuery = graphql`
           }
           heroImage {
             description
-            fluid(maxWidth: 800, quality: 90) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
