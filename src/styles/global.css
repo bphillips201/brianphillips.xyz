@@ -1,9 +1,16 @@
 @tailwind base;
 
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  @apply h-full;
+}
+
 body {
   @apply font-body;
   @apply text-lg;
-  @apply text-gray-800;
+  @apply text-black-850;
 }
 header {
   @apply font-header;
@@ -54,7 +61,7 @@ article ul,
 article li {
   @apply text-lg;
   @apply leading-relaxed;
-  @apply mb-6;
+  @apply mb-5;
 }
 
 @tailwind components;

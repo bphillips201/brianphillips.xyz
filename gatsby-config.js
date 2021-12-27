@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
-    description: `This blog will self-destruct`,
+    description: `a writer, investor, and programmer`,
     author: `Brian Phillips`,
     siteUrl:
       process.env.NODE_ENV === 'development'
@@ -35,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.svg`,
+        icon: `src/images/favicon.png`,
       },
     },
     {
@@ -44,11 +44,11 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Overpass`,
-              variants: [`400`],
+              family: `Yaldevi`,
+              variants: [`600`],
             },
             {
-              family: `Bitter`,
+              family: `Quattrocento Sans`,
               variants: [`400`, `600`, `400i`, `600i`],
             },
           ],

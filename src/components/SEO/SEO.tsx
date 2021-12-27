@@ -36,8 +36,8 @@ const SEO: React.FC<TSEOProps> = ({
   const defaultTitle = site.siteMetadata?.title
   const titleTemplate =
     title === 'Home'
-      ? `${site.siteMetadata.title} | ${metaDescription}`
-      : `${title} | ${site.siteMetadata.title}`
+      ? `${site.siteMetadata.title} — ${metaDescription}`
+      : `${title} — ${site.siteMetadata.title}`
   // const pageImage =
   //   image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
 
@@ -54,7 +54,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:title`,
-          content: `${title} | ${site.siteMetadata.author}`,
+          content: `${title} — ${site.siteMetadata.author}`,
         },
         {
           property: `og:description`,
@@ -78,7 +78,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:title`,
-          content: `${title} | ${site.siteMetadata.author}`,
+          content: `${title} — ${site.siteMetadata.author}`,
         },
         {
           name: `twitter:description`,

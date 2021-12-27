@@ -16,12 +16,17 @@ module.exports = {
       slate: colors.slate,
     },
     fontFamily: {
-      body: ['Bitter', 'serif'],
-      header: ['Overpass', 'sans-serif'],
+      body: ['Quattrocento Sans', 'serif'],
+      header: ['Yaldevi', 'sans-serif'],
     },
     extend: {
       borderRadius: {
         '4xl': '4px',
+      },
+      colors: {
+        black: {
+          850: '#1B0E27',
+        },
       },
     },
   },
