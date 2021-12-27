@@ -48,7 +48,7 @@ module.exports = {
               variants: [`600`],
             },
             {
-              family: `Quattrocento Sans`,
+              family: `Cabin`,
               variants: [`400`, `600`, `400i`, `600i`],
             },
           ],

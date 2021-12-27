@@ -16,7 +16,7 @@ module.exports = {
       slate: colors.slate,
     },
     fontFamily: {
-      body: ['Quattrocento Sans', 'serif'],
+      body: ['Cabin', 'Cabin'],
       header: ['Yaldevi', 'sans-serif'],
     },
     extend: {
