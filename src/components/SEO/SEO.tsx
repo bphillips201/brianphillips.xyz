@@ -38,8 +38,6 @@ const SEO: React.FC<TSEOProps> = ({
     title === 'Home'
       ? `${site.siteMetadata.title} — ${metaDescription}`
       : `${title} — ${site.siteMetadata.title}`
-  // const pageImage =
-  //   image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
 
   return (
     <Helmet
@@ -64,10 +62,10 @@ const SEO: React.FC<TSEOProps> = ({
           property: `og:type`,
           content: `website`,
         },
-        // {
-        //   property: `og:image`,
-        //   content: pageImage,
-        // },
+        {
+          property: `og:image`,
+          content: image,
+        },
         {
           name: `twitter:card`,
           content: `summary`,
@@ -84,10 +82,10 @@ const SEO: React.FC<TSEOProps> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-        // {
-        //   name: `twitter:image`,
-        //   content: pageImage,
-        // },
+        {
+          name: `twitter:image`,
+          content: image,
+        },
       ].concat(meta || [])}
     />
   )
