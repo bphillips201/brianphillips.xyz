@@ -62,7 +62,9 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
         environment:
-          process.env.NODE_ENV === 'development' ? 'master' : 'master',
+          process.env.NODE_ENV === 'development'
+            ? '24-hour-blog'
+            : '24-hour-blog',
       },
     },
   ],
