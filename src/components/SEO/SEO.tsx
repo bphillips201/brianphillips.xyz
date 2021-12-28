@@ -45,7 +45,8 @@ const SEO: React.FC<TSEOProps> = ({
     title === 'Home'
       ? `${site.siteMetadata.title} — ${metaDescription}`
       : `${title} — ${site.siteMetadata.title}`
-  const bannerImage = `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
+  const pageImage =
+    image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
 
   return (
     <Helmet
@@ -60,7 +61,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:title`,
-          content: `${titleTemplate}`,
+          content: `${title} — ${site.siteMetadata.author}`,
         },
         {
           property: `og:description`,
@@ -72,7 +73,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:image`,
-          content: bannerImage,
+          content: pageImage,
         },
         {
           name: `twitter:card`,
@@ -84,7 +85,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:title`,
-          content: `${titleTemplate}`,
+          content: `${title} — ${site.siteMetadata.author}`,
         },
         {
           name: `twitter:description`,
@@ -92,7 +93,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:image`,
-          content: bannerImage,
+          content: pageImage,
         },
       ].concat(meta || [])}
     />
