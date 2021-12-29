@@ -43,7 +43,7 @@ const language: TLanguage = {
     latestPosts: `Latest Posts`,
     topics: `Categories`,
     aboutMe: `I’m Brian Phillips, a writer, investor, and front end coder living in
-      New York City.`,
+    New York City.`,
     aboutMeLink: `About Me`,
     viewBlog: `View Blog`,
   },
