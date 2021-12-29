@@ -1,8 +1,8 @@
 {
   "name": "brianphillips",
   "private": true,
-  "description": "Delete this blog",
-  "version": "0.1.0",
+  "description": "Personal website. Built with Gatsby",
+  "version": "2.0.0",
   "author": "Brian Phillips <hello@brianphillips.xyz>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",

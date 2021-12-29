@@ -28,9 +28,9 @@ const SEO: React.FC<TSEOProps> = ({
             siteUrl
           }
         }
-        file(relativePath: { eq: "me33.png" }) {
+        file(relativePath: { eq: "social-banner.png" }) {
           childImageSharp {
-            fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
+            fluid(quality: 100, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -40,10 +40,9 @@ const SEO: React.FC<TSEOProps> = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
   const titleTemplate =
     title === 'Home'
-      ? `${site.siteMetadata.title} — ${metaDescription}`
+      ? `${site.siteMetadata.title}`
       : `${title} — ${site.siteMetadata.title}`
   const pageImage =
     image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
@@ -61,7 +60,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           property: `og:title`,
-          content: `${title} — ${site.siteMetadata.author}`,
+          content: titleTemplate,
         },
         {
           property: `og:description`,
@@ -85,7 +84,7 @@ const SEO: React.FC<TSEOProps> = ({
         },
         {
           name: `twitter:title`,
-          content: `${title} — ${site.siteMetadata.author}`,
+          content: titleTemplate,
         },
         {
           name: `twitter:description`,
