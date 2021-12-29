@@ -42,7 +42,7 @@ const SEO: React.FC<TSEOProps> = ({
   const metaDescription = description || site.siteMetadata.description
   const titleTemplate =
     title === 'Home'
-      ? `${site.siteMetadata.title}`
+      ? `${site.siteMetadata.title} — ${metaDescription}`
       : `${title} — ${site.siteMetadata.title}`
   const pageImage =
     image || `${site.siteMetadata.siteUrl}${file.childImageSharp.fluid.src}`
@@ -85,10 +85,6 @@ const SEO: React.FC<TSEOProps> = ({
         {
           name: `twitter:title`,
           content: titleTemplate,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
         },
         {
           name: `twitter:image`,
