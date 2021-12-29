@@ -1,15 +1,11 @@
-import { FluidObject } from 'gatsby-image'
-
-export type TImage = {
-  description?: string
-  fluid: FluidObject
-}
+import { ImageDataLike } from 'gatsby-plugin-image'
 
 export type TPost = {
   id: string
   category: TCategory
   title: string
   slug: string
+  readTime: string
   updatedAt: string
   fields: {
     path: string
@@ -17,7 +13,7 @@ export type TPost = {
   isFeatured: boolean
   isFirstFeatured: boolean
   publishDate: Date
-  heroImage?: TImage
+  heroImage: ImageDataLike
   content: {
     childMarkdownRemark: {
       html: string

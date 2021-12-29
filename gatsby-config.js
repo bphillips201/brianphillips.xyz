@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
-    description: `Writer, investor, and front end coder`,
+    description: `a writer, investor, and programmer`,
     author: `Brian Phillips`,
     siteUrl:
       process.env.NODE_ENV === 'development'
@@ -15,7 +15,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    'gatsby-plugin-postcss',
     `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -33,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.svg`,
+        icon: `src/images/favicon.png`,
       },
     },
     {
@@ -42,11 +44,11 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Overpass`,
+              family: `Yaldevi`,
               variants: [`600`],
             },
             {
-              family: `IBM Plex Sans`,
+              family: `Cabin`,
               variants: [`400`, `600`, `400i`, `600i`],
             },
           ],
@@ -60,105 +62,9 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
         environment:
-          process.env.NODE_ENV === 'development' ? 'development' : 'master',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-fathom',
-      options: {
-        trackingUrl: process.env.FATHOM_TRACKING_URL,
-        siteId: process.env.FATHOM_SITE_ID,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-            file(relativePath: { eq: "banner-img.jpg" }) {
-              childImageSharp {
-                fluid(quality: 100, cropFocus: CENTER, maxWidth: 1200) {
-                  src
-                }
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allContentfulPosts, file } }) => {
-              return allContentfulPosts.edges.map(post => {
-                return Object.assign({}, post.node, {
-                  description: post.node.excerpt.excerpt,
-                  categories: post.category ? [post.category.title] : [],
-                  date: post.node.publishDate,
-                  url: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
-                  guid: site.siteMetadata.siteUrl + `/blog/` + post.node.slug,
-                  custom_elements: [
-                    {
-                      'content:encoded':
-                        post.node.content.childMarkdownRemark.html,
-                    },
-                  ],
-                  enclosure: {
-                    url: post.node.heroImage
-                      ? `https:${post.node.heroImage.fluid.src}`
-                      : site.siteMetadata.siteUrl +
-                        file.childImageSharp.fluid.src.heroImage,
-                    type: 'image/jpeg',
-                  },
-                })
-              })
-            },
-            query: `
-              {
-                allContentfulPosts(sort: {order: DESC, fields: publishDate}) {
-                  edges {
-                    node {
-                      title
-                      category {
-                        title
-                      }
-                      content {
-                        childMarkdownRemark {
-                          html
-                        }
-                      }
-                      slug
-                      publishDate
-                      excerpt {
-                        excerpt
-                      }
-                      updatedAt
-                      heroImage {
-                        description
-                        fluid(
-                          resizingBehavior: FILL
-                          maxWidth: 1000
-                          cropFocus: CENTER
-                          maxHeight: 500
-                          quality: 90
-                        ) {
-                          src
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: 'Brian Phillips | Blog',
-          },
-        ],
+          process.env.NODE_ENV === 'development'
+            ? '24-hour-blog'
+            : '24-hour-blog',
       },
     },
   ],

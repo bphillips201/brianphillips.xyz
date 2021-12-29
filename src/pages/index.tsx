@@ -1,84 +1,55 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout/Layout'
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import Layout from '../components/Layout'
 import SEO from '../components/SEO/SEO'
 import { TPostGlobals } from '../utils/constants'
-import Wrapper from '../components/Wrapper/Wrapper'
-import NewsletterForm from '../components/NewsletterForm/NewsletterForm'
-import FeaturedContent from '../components/FeaturedContent/FeaturedContent'
-import PostFeed from '../components/PostFeed/PostFeed'
+import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const IndexPage: React.FC<TPostGlobals> = props => {
-  const allPosts = props.data.allContentfulPosts.edges.map(n => n.node)
-  const allCategories = props.data.allContentfulCategories.edges.map(
-    n => n.node
-  )
-  const featuredPosts = allPosts.filter(p => p.isFeatured).slice(0, 3)
-  const firstRead = allPosts.filter(p => p.isFirstFeatured).slice(0, 1)
-  const latestPosts = allPosts.slice(0, 5)
+  const data = useStaticQuery(graphql`
+    query {
+      avatar: file(relativePath: { eq: "me33.png" }) {
+        childImageSharp {
+          fluid(quality: 80) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <Wrapper color="gray">
-        <FeaturedContent firstRead={firstRead} featuredPosts={featuredPosts} />
-        <NewsletterForm />
-      </Wrapper>
 
-      <Wrapper>
-        <PostFeed
-          posts={latestPosts}
-          categories={allCategories}
-          path={props.path}
-        />
-      </Wrapper>
+      <div className="flex flex-col items-center md:flex-row max-w-screen-xl mx-auto">
+        <div className="flex-1">
+          <Img fluid={data.avatar.childImageSharp.fluid} />
+        </div>
+        <article className="flex-1">
+          <h1 className="mb-12">I’m Brian.</h1>
+
+          <p>I’m a writer, investor, and programmer.</p>
+
+          <p>I live in Manhattan with my wife and cat.</p>
+
+          <p>
+            My blog is{' '}
+            <a href="https://effortlessfuture.substack.com">
+              Effortless Future
+            </a>
+            .
+          </p>
+
+          <p>
+            If you know me and are curious, here’s{' '}
+            <Link to="/now">what I’m doing now</Link>.
+          </p>
+        </article>
+      </div>
     </Layout>
   )
 }
 
 export default IndexPage
-
-export const postQuery = graphql`
-  query {
-    allContentfulPosts(sort: { fields: publishDate, order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          fields {
-            path
-          }
-          publishDate
-          isFeatured
-          isFirstFeatured
-          content {
-            content
-          }
-          category {
-            title
-            fields {
-              path
-            }
-          }
-          heroImage {
-            description
-            fluid(maxWidth: 800, maxHeight: 400, quality: 90) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-        }
-      }
-    }
-    allContentfulCategories(sort: { fields: title, order: ASC }) {
-      edges {
-        node {
-          id
-          title
-          fields {
-            path
-          }
-        }
-      }
-    }
-  }
-`

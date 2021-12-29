@@ -1,33 +1,28 @@
 import React from 'react'
 import SEO from '../components/SEO/SEO'
-import Layout from '../components/Layout/Layout'
-import Wrapper from '../components/Wrapper/Wrapper'
+import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import { TPostGlobals } from '../utils/constants'
-import * as styles from '../components/Layout/Layout.module.scss'
 
 const PageTemplate: React.FC<TPostGlobals> = props => {
   const { title, content, updatedAt, slug } = props.data.contentfulPage
   return (
-    <Layout className={styles.page}>
+    <Layout className="">
       <SEO title={title} />
 
-      <Wrapper className={styles.pageHeader} width="content">
-        <h1>{title}</h1>
-      </Wrapper>
-
-      <Wrapper width="thin" as="article">
+      <article className="max-w-screen-sm mx-auto">
+        <h1 className="text-8xl">{title}</h1>
+        {slug === 'now' && (
+          <div className="text-base text-gray-500 font-header mb-16">
+            <strong>Last updated {updatedAt}</strong>
+          </div>
+        )}
         <div
           dangerouslySetInnerHTML={{
             __html: content.childMarkdownRemark.html,
           }}
         />
-        {slug === 'now' && (
-          <small>
-            <strong>Last updated {updatedAt}</strong>
-          </small>
-        )}
-      </Wrapper>
+      </article>
     </Layout>
   )
 }
