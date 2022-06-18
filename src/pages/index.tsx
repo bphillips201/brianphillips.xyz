@@ -32,7 +32,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
 
           <p>I’m a writer, investor, and programmer.</p>
 
-          <p>I live in Manhattan with my wife and cat.</p>
+          <p>I live in New York City with my wife and cat.</p>
 
           <p>
             My blog is{' '}
