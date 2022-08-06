@@ -43,7 +43,7 @@ const IndexPage: React.FC<TPostGlobals> = props => {
           </p>
 
           <p>
-            If you know me and are curious, here’s{' '}
+            Here’s{' '}
             <Link to="/now">what I’m doing now</Link>.
           </p>
         </article>
