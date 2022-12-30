@@ -16,8 +16,8 @@ module.exports = {
       slate: colors.slate,
     },
     fontFamily: {
-      body: ['Cabin', 'Cabin'],
-      header: ['Yaldevi', 'sans-serif'],
+      body: ['Red Hat Text', 'Arial'],
+      header: ['Caveat', 'sans-serif'],
     },
     extend: {
       borderRadius: {

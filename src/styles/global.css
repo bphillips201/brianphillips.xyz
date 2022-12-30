@@ -28,19 +28,19 @@ h6 {
   @apply font-header;
 }
 h1 {
-  @apply text-6xl;
+  @apply text-8xl;
 }
 h2 {
-  @apply text-4xl;
+  @apply text-5xl;
 }
 h3 {
-  @apply text-3xl;
+  @apply text-4xl;
 }
 h4 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 h5 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 h6 {
   @apply text-lg;
@@ -52,16 +52,33 @@ article h3,
 article h4,
 article h5,
 article h6 {
-  @apply mt-10;
-  @apply mb-4;
+  @apply mt-12;
+  @apply mb-6;
+}
+article p,
+article blockquote {
+  @apply text-lg;
+  @apply leading-relaxed;
+  @apply mb-5;
 }
 article p,
 article blockquote,
 article ul,
+article ol {
+  letter-spacing: -0.4px;
+}
+article ul,
+article ol {
+  @apply list-disc;
+  @apply pl-8;
+  @apply mt-4;
+  @apply mb-6;
+}
 article li {
-  @apply text-lg;
-  @apply leading-relaxed;
-  @apply mb-5;
+  @apply mb-3;
+}
+article li:last-of-type {
+  @apply mb-0;
 }
 
 @tailwind components;

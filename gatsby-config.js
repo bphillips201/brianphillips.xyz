@@ -44,12 +44,12 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Yaldevi`,
+              family: `Caveat`,
               variants: [`600`],
             },
             {
-              family: `Cabin`,
-              variants: [`400`, `600`, `400i`, `600i`],
+              family: `Red Hat Text`,
+              variants: [`500`, `700`, `500i`, `500i`],
             },
           ],
         },
@@ -61,8 +61,7 @@ module.exports = {
         spaceId: 'q6jei6a1m4b2',
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
-        environment:
-          process.env.NODE_ENV === 'development' ? 'master' : 'master',
+        environment: 'master',
       },
     },
   ],

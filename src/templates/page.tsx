@@ -13,7 +13,7 @@ const PageTemplate: React.FC<TPostGlobals> = props => {
       <article className="max-w-screen-sm mx-auto">
         <h1 className="text-8xl mt-0">{title}</h1>
         {slug === 'now' && (
-          <div className="text-base text-gray-500 font-header mb-16">
+          <div className="text-base text-gray-500 mb-16">
             <strong>Last updated {updatedAt}</strong>
           </div>
         )}
