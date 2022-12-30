@@ -61,12 +61,6 @@ article blockquote {
   @apply leading-relaxed;
   @apply mb-5;
 }
-article p,
-article blockquote,
-article ul,
-article ol {
-  letter-spacing: -0.4px;
-}
 article ul,
 article ol {
   @apply list-disc;

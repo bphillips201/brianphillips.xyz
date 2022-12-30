@@ -48,7 +48,7 @@ module.exports = {
               variants: [`600`],
             },
             {
-              family: `Red Hat Text`,
+              family: `Cabin`,
               variants: [`400`, `700`, `400i`, `700i`],
             },
           ],
