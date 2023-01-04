@@ -44,8 +44,8 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Caveat`,
-              variants: [`600`],
+              family: `Signika Negative`,
+              variants: [`400`],
             },
             {
               family: `Cabin`,
