@@ -30,8 +30,6 @@ const IndexPage: React.FC<TPostGlobals> = props => {
         <article className="flex-1">
           <h1 className="mb-12">I’m Brian.</h1>
 
-          <p>I’m a writer, investor, and programmer.</p>
-
           <p>I live in New York City with my wife and cat.</p>
 
           <p>
