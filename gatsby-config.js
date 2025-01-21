@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Brian Phillips`,
-    description: `a writer, investor, and programmer`,
+    description: ``,
     author: `Brian Phillips`,
     siteUrl:
       process.env.NODE_ENV === 'development'
