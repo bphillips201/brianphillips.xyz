@@ -44,6 +44,13 @@ const IndexPage: React.FC<TPostGlobals> = props => {
             Here’s{' '}
             <Link to="/now">what I’m doing now</Link>.
           </p>
+
+          <p>
+            Here’s my{' '}
+            <a href="https://www.linkedin.com/in/bphillips201">
+              LinkedIn
+            </a>.
+          </p>
         </article>
       </div>
     </Layout>
